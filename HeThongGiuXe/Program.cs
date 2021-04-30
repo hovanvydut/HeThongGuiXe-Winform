@@ -16,7 +16,7 @@ namespace HeThongGiuXe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.CheckinForm());
+            Application.Run(new CheckinForm());
         }
     }
 }
