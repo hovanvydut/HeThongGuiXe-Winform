@@ -22,7 +22,7 @@ namespace HeThongGiuXe
         public CheckinForm()
         {
             InitializeComponent();
-            InitializeVideo();
+            InitializeVideo("0");
             InitializeSerial("COM7", 9600);
             InitializeParkingList();
         }
@@ -39,12 +39,22 @@ namespace HeThongGiuXe
                 Console.WriteLine(err.Message);
             }
         }
-        private void InitializeVideo()
+        private void InitializeVideo(string cam)
         {
-            // Declare camera
-            if (Capture == null)
+            this.lbPlate.Text = "";
+            // Cam is device or file ?
+            if (cam.All(c => Char.IsDigit(c)))
             {
-                Capture = new VideoCapture(0);
+                Capture = new VideoCapture(Convert.ToInt32(cam));
+            } else
+            {
+                Capture = new VideoCapture(cam);
+            }
+            // Is camera connected ? 
+            if (!Capture.IsOpened)
+            {
+                MessageBox.Show("Không thể kết nối đến camera, hãy thử chọn một thiết bị khác", "Lỗi thiết bị");
+                return;
             }
             // What thing to do when have frame?
             Capture.ImageGrabbed += ShowFrame;
@@ -55,8 +65,12 @@ namespace HeThongGiuXe
         {
             this.tableVehicleInPark.DataSource = 
                 CheckInOutBLL.Instance.GetDataTableParkingHistories(hasCheckout:false);
-            this.tableVehicleInPark.FirstDisplayedScrollingRowIndex 
+            if (this.tableVehicleInPark.RowCount > 0)
+            {
+                this.tableVehicleInPark.FirstDisplayedScrollingRowIndex
                 = this.tableVehicleInPark.RowCount - 1;
+            }
+            
         }
         private void ShowFrame(object sender, EventArgs e)
         {
@@ -71,8 +85,6 @@ namespace HeThongGiuXe
             }
             catch (Exception err)
             {
-                MessageBox.Show("Không thể truy xuất hình ảnh từ camera",
-                                "Lỗi thiết bị");
                 Console.WriteLine(err.Message);
             }
         }
@@ -105,10 +117,19 @@ namespace HeThongGiuXe
         }
         private async Task TryGetPlate()
         {
+            // Check if exist camera
+            if (!this.Capture.IsOpened)
+            {
+                this.lbPlate.Text = "Chưa kết nối đến camera";
+                this.lbPlate.ForeColor = Color.Red;
+                return;
+            }
             // return;
             this.CurrentPlate = null;
             // Loading signal
-            this.txtPlate.Text = "...";
+            this.txtPlate.Text = "";
+            this.lbPlate.Text = "Đang trích xuất...";
+            this.lbPlate.ForeColor = Color.Yellow;
             this.txtPlate.ReadOnly = true;
             // Save capture image
             ImageProcesing.CaptureToImageFile(this.Capture, "tmp.jpg");
@@ -120,15 +141,24 @@ namespace HeThongGiuXe
             if (resutls == null || resutls.Count == 0)
             {
                 // Cannot get plate or no plate in image
-                this.txtPlate.Text = "Lỗi nhận dạng";
+                this.lbPlate.Text = "Không thể nhận dạng";
+                this.lbPlate.ForeColor = Color.Red;
                 this.CurrentPlate = null;
+                return;
             }
-            else
+            // If multiple plate
+            if (resutls.Count > 1)
             {
-                // Show first plate
-                this.txtPlate.Text = resutls[0].Plate;
-                this.CurrentPlate = resutls[0].Plate;
+                this.lbPlate.Text = "Quá nhiều biển số";
+                this.lbPlate.ForeColor = Color.Red;
+                return;
             }
+            // Show plate
+            this.txtPlate.Text = resutls[0].Plate;
+            this.CurrentPlate = resutls[0].Plate;
+            this.lbPlate.Text = "Hợp lệ";
+            this.lbPlate.ForeColor = Color.Green;
+            
         }
         private async Task CheckCardStatus(string cardID)
         {
@@ -235,6 +265,12 @@ namespace HeThongGiuXe
         private void btlGetAllInPark_Click(object sender, EventArgs e)
         {
             InitializeParkingList();
+        }
+
+        private void btnSettingCamera_Click(object sender, EventArgs e)
+        {
+            SettingCamera form = new SettingCamera(InitializeVideo);
+            form.ShowDialog();
         }
     }
 }
