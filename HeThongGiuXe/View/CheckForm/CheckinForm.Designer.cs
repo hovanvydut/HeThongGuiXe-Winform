@@ -37,6 +37,7 @@ namespace HeThongGiuXe
             this.btnTryGetPlate = new System.Windows.Forms.Button();
             this.txtPlate = new System.Windows.Forms.TextBox();
             this.groupCardInfo = new System.Windows.Forms.GroupBox();
+            this.btnSetingSerial = new System.Windows.Forms.Button();
             this.lbStatusCard = new System.Windows.Forms.Label();
             this.txtCard = new System.Windows.Forms.TextBox();
             this.groupControl = new System.Windows.Forms.GroupBox();
@@ -121,9 +122,11 @@ namespace HeThongGiuXe
             this.txtPlate.Size = new System.Drawing.Size(286, 34);
             this.txtPlate.TabIndex = 0;
             this.txtPlate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPlate.TextChanged += new System.EventHandler(this.txtPlate_TextChanged);
             // 
             // groupCardInfo
             // 
+            this.groupCardInfo.Controls.Add(this.btnSetingSerial);
             this.groupCardInfo.Controls.Add(this.lbStatusCard);
             this.groupCardInfo.Controls.Add(this.txtCard);
             this.groupCardInfo.Location = new System.Drawing.Point(19, 31);
@@ -132,6 +135,17 @@ namespace HeThongGiuXe
             this.groupCardInfo.TabIndex = 0;
             this.groupCardInfo.TabStop = false;
             this.groupCardInfo.Text = "Thông tin thẻ";
+            // 
+            // btnSetingSerial
+            // 
+            this.btnSetingSerial.BackgroundImage = global::HeThongGiuXe.Properties.Resources.settings_solid;
+            this.btnSetingSerial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSetingSerial.Location = new System.Drawing.Point(276, 63);
+            this.btnSetingSerial.Name = "btnSetingSerial";
+            this.btnSetingSerial.Size = new System.Drawing.Size(35, 34);
+            this.btnSetingSerial.TabIndex = 2;
+            this.btnSetingSerial.UseVisualStyleBackColor = true;
+            this.btnSetingSerial.Click += new System.EventHandler(this.btnSetingSerial_Click);
             // 
             // lbStatusCard
             // 
@@ -146,9 +160,9 @@ namespace HeThongGiuXe
             // 
             this.txtCard.Enabled = false;
             this.txtCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCard.Location = new System.Drawing.Point(15, 63);
+            this.txtCard.Location = new System.Drawing.Point(12, 63);
             this.txtCard.Name = "txtCard";
-            this.txtCard.Size = new System.Drawing.Size(286, 34);
+            this.txtCard.Size = new System.Drawing.Size(254, 34);
             this.txtCard.TabIndex = 1;
             this.txtCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -264,6 +278,7 @@ namespace HeThongGiuXe
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "Đóng cổng";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnOpen
             // 
@@ -273,6 +288,7 @@ namespace HeThongGiuXe
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Mở cổng";
             this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // CheckinForm
             // 
@@ -324,5 +340,6 @@ namespace HeThongGiuXe
         private System.Windows.Forms.Label lbStatusCard;
         private Emgu.CV.UI.ImageBox imgCamera;
         private System.Windows.Forms.Button btnTryGetPlate;
+        private System.Windows.Forms.Button btnSetingSerial;
     }
 }

@@ -16,23 +16,21 @@ namespace HeThongGiuXe
     {
         private VideoCapture Capture;
         private ArduinoSerial ArduinoSerial;
-        private string ArduinoPort = "COM7";
-        private int CameraSource = 0;
         // This property use to make decision of checkin
         private Customer CurrentCustomer;
         private string CurrentPlate;
         public CheckinForm()
         {
             InitializeComponent();
-            LoadVideo();
-            LoadSerial();
-            LoadParkingList();
+            InitializeVideo();
+            InitializeSerial("COM7", 9600);
+            InitializeParkingList();
         }
-        private void LoadSerial()
+        private void InitializeSerial(string port, int baud)
         {
             try
             {
-                this.ArduinoSerial = new ArduinoSerial(this.ArduinoPort, 9600, this.HandleNewCardID);
+                this.ArduinoSerial = new ArduinoSerial(port, baud, this.HandleNewCardID);
             }
             catch (Exception err)
             {
@@ -41,19 +39,19 @@ namespace HeThongGiuXe
                 Console.WriteLine(err.Message);
             }
         }
-        private void LoadVideo()
+        private void InitializeVideo()
         {
             // Declare camera
             if (Capture == null)
             {
-                Capture = new VideoCapture(this.CameraSource);
+                Capture = new VideoCapture(0);
             }
             // What thing to do when have frame?
             Capture.ImageGrabbed += ShowFrame;
             // Start camera thread
             Capture.Start();
         }
-        private void LoadParkingList()
+        private void InitializeParkingList()
         {
             this.tableVehicleInPark.DataSource = CheckInOutBLL.Instance.GetParkingHistoriesNotCheckOut();
         }
@@ -94,7 +92,14 @@ namespace HeThongGiuXe
                 CheckIn();
             }
         }
-
+        private void CleanCheckinInfo()
+        {
+            this.txtCard.Clear();
+            this.txtPlate.Clear();
+            this.lbStatusCard.Text = "Waiting";
+            this.CurrentPlate = null;
+            this.CurrentCustomer = null;
+        }
         private async Task TryGetPlate()
         {
             // return;
@@ -107,13 +112,15 @@ namespace HeThongGiuXe
             // Call API to get plate
             IList<Result> resutls = await APIPlateRecognizer.Instance.ReadPlateAsync("tmp.jpg");
 
-            this.txtPlate.ReadOnly = true;
+            this.txtPlate.ReadOnly = false;
             // Handle result
             if (resutls == null || resutls.Count == 0)
             {
                 // Cannot get plate or no plate in image
                 this.txtPlate.Text = "Lỗi nhận dạng";
-            } else
+                this.CurrentPlate = null;
+            }
+            else
             {
                 // Show first plate
                 this.txtPlate.Text = resutls[0].Plate;
@@ -156,8 +163,17 @@ namespace HeThongGiuXe
                 MessageBox.Show("Vui lòng kiểm tra thông tin thẻ hoặc biển số", "Lỗi thông tin");
                 return;
             }
-            CheckInOutBLL.Instance.CheckIn(this.CurrentCustomer, this.CurrentPlate);
-            LoadParkingList();
+            try
+            {
+                CheckInOutBLL.Instance.CheckIn(this.CurrentCustomer, this.CurrentPlate);
+            } catch (Exception err)
+            {
+                MessageBox.Show("Không thể thêm thông tin vào cơ sở dữ liệu", "Lỗi hệ thống");
+                return;
+            }
+            SystemSound.play(Sound.Accept);
+;           InitializeParkingList();
+            CleanCheckinInfo();
         }
         public void btnTryGetPlate_Click(object sender, EventArgs e)
         {
@@ -167,6 +183,27 @@ namespace HeThongGiuXe
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             CheckIn();
+        }
+
+        private void btnSetingSerial_Click(object sender, EventArgs e)
+        {
+            SerialSettingForm form = new SerialSettingForm(InitializeSerial);
+            form.ShowDialog(this);
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            this.ArduinoSerial.SendMessage("1");
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.ArduinoSerial.SendMessage("0");
+        }
+
+        private void txtPlate_TextChanged(object sender, EventArgs e)
+        {
+            this.CurrentPlate = ((TextBox)(sender)).Text;
         }
     }
 }

@@ -36,11 +36,5 @@ namespace HeThongGiuXe
         public virtual ICollection<Parking_History> Parking_History { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payment> Payments { get; set; }
-
-        // Custom property and method
-        public override string ToString()
-        {
-            return this.fullname;
-        }
     }
 }
