@@ -193,11 +193,16 @@ namespace HeThongGiuXe
             // 
             // tableVehicleInPark
             // 
+            this.tableVehicleInPark.AllowUserToAddRows = false;
+            this.tableVehicleInPark.AllowUserToDeleteRows = false;
+            this.tableVehicleInPark.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tableVehicleInPark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableVehicleInPark.Location = new System.Drawing.Point(15, 144);
             this.tableVehicleInPark.Name = "tableVehicleInPark";
+            this.tableVehicleInPark.ReadOnly = true;
             this.tableVehicleInPark.RowHeadersWidth = 51;
             this.tableVehicleInPark.RowTemplate.Height = 24;
+            this.tableVehicleInPark.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableVehicleInPark.Size = new System.Drawing.Size(510, 177);
             this.tableVehicleInPark.TabIndex = 3;
             // 
@@ -209,6 +214,7 @@ namespace HeThongGiuXe
             this.btlGetAllInPark.TabIndex = 2;
             this.btlGetAllInPark.Text = "Xem xe trong bãi";
             this.btlGetAllInPark.UseVisualStyleBackColor = true;
+            this.btlGetAllInPark.Click += new System.EventHandler(this.btlGetAllInPark_Click);
             // 
             // btnFilterWithPlate
             // 
@@ -218,6 +224,7 @@ namespace HeThongGiuXe
             this.btnFilterWithPlate.TabIndex = 1;
             this.btnFilterWithPlate.Text = "Xem theo biển số";
             this.btnFilterWithPlate.UseVisualStyleBackColor = true;
+            this.btnFilterWithPlate.Click += new System.EventHandler(this.btnFilterWithPlate_Click);
             // 
             // btnFilterWithCard
             // 
@@ -227,6 +234,7 @@ namespace HeThongGiuXe
             this.btnFilterWithCard.TabIndex = 0;
             this.btnFilterWithCard.Text = "Xem theo thẻ";
             this.btnFilterWithCard.UseVisualStyleBackColor = true;
+            this.btnFilterWithCard.Click += new System.EventHandler(this.btnFilterWithCard_Click);
             // 
             // groupConfirmControl
             // 

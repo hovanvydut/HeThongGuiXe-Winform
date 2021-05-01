@@ -53,7 +53,10 @@ namespace HeThongGiuXe
         }
         private void InitializeParkingList()
         {
-            this.tableVehicleInPark.DataSource = CheckInOutBLL.Instance.GetParkingHistoriesNotCheckOut();
+            this.tableVehicleInPark.DataSource = 
+                CheckInOutBLL.Instance.GetDataTableParkingHistories(hasCheckout:false);
+            this.tableVehicleInPark.FirstDisplayedScrollingRowIndex 
+                = this.tableVehicleInPark.RowCount - 1;
         }
         private void ShowFrame(object sender, EventArgs e)
         {
@@ -204,6 +207,34 @@ namespace HeThongGiuXe
         private void txtPlate_TextChanged(object sender, EventArgs e)
         {
             this.CurrentPlate = ((TextBox)(sender)).Text;
+        }
+
+        private void btnFilterWithPlate_Click(object sender, EventArgs e)
+        {
+            if (this.CurrentPlate == null)
+            {
+                MessageBox.Show("Biển số không hợp lệ", "Lỗi dữ liệu");
+            }
+            this.tableVehicleInPark.DataSource = CheckInOutBLL.Instance
+                .GetDataTableParkingHistories(hasCheckout: false, plate: this.CurrentPlate);
+        }
+
+        private void btnFilterWithCard_Click(object sender, EventArgs e)
+        {
+            string cardId = this.txtCard.Text.Trim();
+            Customer customer = CustomerBLL.Instance.GetCustomerByCardID(cardId);
+            if (customer == null)
+            {
+                MessageBox.Show("Thẻ không hợp lệ", "Lỗi dữ liệu");
+                return;
+            }
+            this.tableVehicleInPark.DataSource = CheckInOutBLL.Instance
+                .GetDataTableParkingHistories(hasCheckout: false, customer_id: customer.ID_customer);
+        }
+
+        private void btlGetAllInPark_Click(object sender, EventArgs e)
+        {
+            InitializeParkingList();
         }
     }
 }
