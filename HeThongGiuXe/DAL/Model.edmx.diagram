@@ -4,13 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5b0bbf9c4a5940ac932e44b4ab27939d" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Customer" Width="1.5" PointX="1.125" PointY="1.125" IsExpanded="true" />
+      <Diagram DiagramId="8d20b56d780b41c8a1ebfff248a68e56" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Parking_History" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Parking_Package" Width="1.5" PointX="5.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Parking_Package" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DatabaseModel.Payment" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.FK__Parking_H__custo__69FBBC1F" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Payment__custome__70A8B9AE" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DatabaseModel.Unit_Price" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK__Parking_H__custo__1209AD79" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK__Payment__custome__18B6AB08" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

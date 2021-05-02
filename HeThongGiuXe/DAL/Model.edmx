@@ -30,7 +30,7 @@
           <Property Name="check_out_at" Type="datetime" />
           <Property Name="is_payment" Type="bit" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
-          <Property Name="customer_ID" Type="int" />
+          <Property Name="customer_id" Type="int" />
         </EntityType>
         <EntityType Name="Parking_Package">
           <Key>
@@ -55,7 +55,23 @@
           <Property Name="end_date" Type="date" Nullable="false" />
           <Property Name="price" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Parking_H__custo__69FBBC1F">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PBL3.dbo.Unit_Price' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Unit_Price">
+          <Key>
+            <PropertyRef Name="ID_unit_price" />
+            <PropertyRef Name="price" />
+          </Key>
+          <Property Name="ID_unit_price" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="day_in_week" Type="int" />
+          <Property Name="start_time_in_day" Type="time" Precision="7" />
+          <Property Name="end_time_in_day" Type="time" Precision="7" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__Parking_H__custo__1209AD79">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Parking_History" Type="Self.Parking_History" Multiplicity="*" />
           <ReferentialConstraint>
@@ -63,11 +79,11 @@
               <PropertyRef Name="ID_customer" />
             </Principal>
             <Dependent Role="Parking_History">
-              <PropertyRef Name="customer_ID" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payment__custome__70A8B9AE">
+        <Association Name="FK__Payment__custome__18B6AB08">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,11 +100,23 @@
           <EntitySet Name="Parking_History" EntityType="Self.Parking_History" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parking_Package" EntityType="Self.Parking_Package" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Parking_H__custo__69FBBC1F" Association="Self.FK__Parking_H__custo__69FBBC1F">
+          <EntitySet Name="Unit_Price" EntityType="Self.Unit_Price" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Unit_Price].[ID_unit_price] AS [ID_unit_price], 
+    [Unit_Price].[day_in_week] AS [day_in_week], 
+    [Unit_Price].[start_time_in_day] AS [start_time_in_day], 
+    [Unit_Price].[end_time_in_day] AS [end_time_in_day], 
+    [Unit_Price].[start_date] AS [start_date], 
+    [Unit_Price].[end_date] AS [end_date], 
+    [Unit_Price].[price] AS [price], 
+    [Unit_Price].[description] AS [description]
+    FROM [dbo].[Unit_Price] AS [Unit_Price]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Parking_H__custo__1209AD79" Association="Self.FK__Parking_H__custo__1209AD79">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Parking_History" EntitySet="Parking_History" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payment__custome__70A8B9AE" Association="Self.FK__Payment__custome__70A8B9AE">
+          <AssociationSet Name="FK__Payment__custome__18B6AB08" Association="Self.FK__Payment__custome__18B6AB08">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Payment" EntitySet="Payment" />
           </AssociationSet>
@@ -112,8 +140,8 @@
           <Property Name="card_id" Type="String" MaxLength="19" FixedLength="false" Unicode="false" />
           <Property Name="created_at" Type="DateTime" Precision="3" />
           <Property Name="updated_at" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Parking_History" Relationship="Self.FK__Parking_H__custo__69FBBC1F" FromRole="Customer" ToRole="Parking_History" />
-          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__custome__70A8B9AE" FromRole="Customer" ToRole="Payment" />
+          <NavigationProperty Name="Parking_History" Relationship="Self.FK__Parking_H__custo__1209AD79" FromRole="Customer" ToRole="Parking_History" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__custome__18B6AB08" FromRole="Customer" ToRole="Payment" />
         </EntityType>
         <EntityType Name="Parking_History">
           <Key>
@@ -125,8 +153,8 @@
           <Property Name="check_out_at" Type="DateTime" Precision="3" />
           <Property Name="is_payment" Type="Boolean" Nullable="false" />
           <Property Name="price" Type="Int32" Nullable="false" />
-          <Property Name="customer_ID" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Parking_H__custo__69FBBC1F" FromRole="Parking_History" ToRole="Customer" />
+          <Property Name="customer_id" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Parking_H__custo__1209AD79" FromRole="Parking_History" ToRole="Customer" />
         </EntityType>
         <EntityType Name="Parking_Package">
           <Key>
@@ -150,9 +178,23 @@
           <Property Name="start_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="end_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="price" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Payment__custome__70A8B9AE" FromRole="Payment" ToRole="Customer" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Payment__custome__18B6AB08" FromRole="Payment" ToRole="Customer" />
         </EntityType>
-        <Association Name="FK__Parking_H__custo__69FBBC1F">
+        <EntityType Name="Unit_Price">
+          <Key>
+            <PropertyRef Name="ID_unit_price" />
+            <PropertyRef Name="price" />
+          </Key>
+          <Property Name="ID_unit_price" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="day_in_week" Type="Int32" />
+          <Property Name="start_time_in_day" Type="Time" Precision="7" />
+          <Property Name="end_time_in_day" Type="Time" Precision="7" />
+          <Property Name="start_date" Type="DateTime" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Precision="0" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Parking_H__custo__1209AD79">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Parking_History" Type="Self.Parking_History" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,11 +202,11 @@
               <PropertyRef Name="ID_customer" />
             </Principal>
             <Dependent Role="Parking_History">
-              <PropertyRef Name="customer_ID" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payment__custome__70A8B9AE">
+        <Association Name="FK__Payment__custome__18B6AB08">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,11 +223,12 @@
           <EntitySet Name="Parking_History" EntityType="Self.Parking_History" />
           <EntitySet Name="Parking_Package" EntityType="Self.Parking_Package" />
           <EntitySet Name="Payments" EntityType="Self.Payment" />
-          <AssociationSet Name="FK__Parking_H__custo__69FBBC1F" Association="Self.FK__Parking_H__custo__69FBBC1F">
+          <EntitySet Name="Unit_Price" EntityType="Self.Unit_Price" />
+          <AssociationSet Name="FK__Parking_H__custo__1209AD79" Association="Self.FK__Parking_H__custo__1209AD79">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Parking_History" EntitySet="Parking_History" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payment__custome__70A8B9AE" Association="Self.FK__Payment__custome__70A8B9AE">
+          <AssociationSet Name="FK__Payment__custome__18B6AB08" Association="Self.FK__Payment__custome__18B6AB08">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Payment" EntitySet="Payments" />
           </AssociationSet>
@@ -221,7 +264,7 @@
                 <ScalarProperty Name="check_out_at" ColumnName="check_out_at" />
                 <ScalarProperty Name="is_payment" ColumnName="is_payment" />
                 <ScalarProperty Name="price" ColumnName="price" />
-                <ScalarProperty Name="customer_ID" ColumnName="customer_ID" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -247,6 +290,20 @@
                 <ScalarProperty Name="start_date" ColumnName="start_date" />
                 <ScalarProperty Name="end_date" ColumnName="end_date" />
                 <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unit_Price">
+            <EntityTypeMapping TypeName="DatabaseModel.Unit_Price">
+              <MappingFragment StoreEntitySet="Unit_Price">
+                <ScalarProperty Name="ID_unit_price" ColumnName="ID_unit_price" />
+                <ScalarProperty Name="day_in_week" ColumnName="day_in_week" />
+                <ScalarProperty Name="start_time_in_day" ColumnName="start_time_in_day" />
+                <ScalarProperty Name="end_time_in_day" ColumnName="end_time_in_day" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

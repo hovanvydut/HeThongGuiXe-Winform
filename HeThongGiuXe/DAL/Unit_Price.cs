@@ -12,16 +12,15 @@ namespace HeThongGiuXe
     using System;
     using System.Collections.Generic;
     
-    public partial class Parking_History
+    public partial class Unit_Price
     {
-        public int ID_parking { get; set; }
-        public string license_plate { get; set; }
-        public System.DateTime check_in_at { get; set; }
-        public Nullable<System.DateTime> check_out_at { get; set; }
-        public bool is_payment { get; set; }
+        public int ID_unit_price { get; set; }
+        public Nullable<int> day_in_week { get; set; }
+        public Nullable<System.TimeSpan> start_time_in_day { get; set; }
+        public Nullable<System.TimeSpan> end_time_in_day { get; set; }
+        public Nullable<System.DateTime> start_date { get; set; }
+        public Nullable<System.DateTime> end_date { get; set; }
         public int price { get; set; }
-        public Nullable<int> customer_id { get; set; }
-    
-        public virtual Customer Customer { get; set; }
+        public string description { get; set; }
     }
 }

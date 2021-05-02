@@ -14,7 +14,7 @@ namespace HeThongGiuXe
             bool notCheckOut;
             using (DatabaseEntities db = new DatabaseEntities())
             {
-                notCheckOut = db.Parking_History.Any(o => o.customer_ID == customer.ID_customer
+                notCheckOut = db.Parking_History.Any(o => o.customer_id == customer.ID_customer
                                                             && o.check_out_at == null);
             }
             return !notCheckOut;
@@ -23,18 +23,40 @@ namespace HeThongGiuXe
         {
             Parking_History history = new Parking_History
             {
-                customer_ID = customer.ID_customer,
+                customer_id = customer.ID_customer,
                 is_payment = false,
                 check_in_at = DateTime.Now,
                 check_out_at = null,
                 license_plate = plate,
-                price = 1000
+                price = 0
             };
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 db.Parking_History.Add(history);
                 db.SaveChanges();
             }
+        }
+        public Parking_History CheckOut(string plate, bool isPayment)
+        {
+            Parking_History result = null;
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                result = db.Parking_History.Where(
+                    o => o.license_plate == plate && o.check_out_at == null
+                    ).FirstOrDefault();
+                if (result == default(Parking_History))
+                {
+                    return null;
+                }
+                // Update price
+
+                // Set checkout time
+                result.check_out_at = DateTime.Now;
+                db.SaveChanges();
+                // Return curent record
+            }
+            return result;
+
         }
         public List<Parking_History> GetParkingHistories(
             Nullable<int> customer_id = null,
@@ -48,7 +70,7 @@ namespace HeThongGiuXe
             using (DatabaseEntities db = new DatabaseEntities())
             {            
                 results = db.Parking_History.Where(o
-                    => (((customer_id == null) ? true : (o.customer_ID == customer_id))
+                    => (((customer_id == null) ? true : (o.customer_id == customer_id))
                     && ((plate == null) ? true : (o.license_plate == plate))
                     && ((start == null) ? true : (o.check_in_at >= start))
                     && ((end == null) ? true : (o.check_in_at <= end))
@@ -59,6 +81,24 @@ namespace HeThongGiuXe
                 ).ToList();
             }
             return results;
+        }
+        public Parking_History GetParkingHistory(
+            Nullable<int> customer_id = null,
+            string plate = null,
+            Nullable<bool> hasCheckout = null)
+        {
+            Parking_History result = null;
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                result = db.Parking_History.Where(o
+                    => (((customer_id == null) ? true : (o.customer_id == customer_id))
+                    && ((plate == null) ? true : (o.license_plate == plate))
+                    && ((hasCheckout == null) ? true :
+                        ((hasCheckout == true && o.check_out_at != null)
+                        || (hasCheckout == false && o.check_out_at == null))))
+                ).FirstOrDefault();
+            }
+            return result == default(Parking_History) ? null : result;
         }
         public DataTable GetDataTableParkingHistories(
             Nullable<int> customer_id = null,
@@ -82,7 +122,7 @@ namespace HeThongGiuXe
             {
                 // Get data
                 results = db.Parking_History.Where(o
-                    => (((customer_id == null) ? true : (o.customer_ID == customer_id))
+                    => (((customer_id == null) ? true : (o.customer_id == customer_id))
                     && ((plate == null) ? true : (o.license_plate.Contains(plate)))
                     && ((start == null) ? true : (o.check_in_at >= start))
                     && ((end == null) ? true : (o.check_in_at <= end))

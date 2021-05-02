@@ -29,5 +29,6 @@ namespace HeThongGiuXe
         public virtual DbSet<Parking_History> Parking_History { get; set; }
         public virtual DbSet<Parking_Package> Parking_Package { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<Unit_Price> Unit_Price { get; set; }
     }
 }
