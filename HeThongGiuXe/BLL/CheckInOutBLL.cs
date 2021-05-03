@@ -48,15 +48,73 @@ namespace HeThongGiuXe
                 {
                     return null;
                 }
-                // Update price
-
                 // Set checkout time
                 result.check_out_at = DateTime.Now;
+                result.is_payment = isPayment;
+                // Update price
+                DateTime startTime = result.check_in_at;
+                DateTime endTime = (DateTime)(result.check_out_at);
+                result.price = CalculatePrice(startTime, endTime, db);
+                // Save
                 db.SaveChanges();
-                // Return curent record
             }
             return result;
-
+        }
+        public bool Debit(Parking_History parking_History)
+        {
+            bool success = false;
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                Parking_History p = db.Parking_History.Find(parking_History.ID_parking);
+                if (p != null)
+                {
+                    success = true;
+                    p.is_payment = false;
+                    db.SaveChanges();
+                }
+            }
+            return success;
+        }
+        public int CalculatePrice(DateTime startTime, DateTime endTime, DatabaseEntities db)
+        {
+            int result = 0;
+            while (startTime < endTime)
+            {
+                // have special time
+                Unit_Price specialTime = db.Unit_Price.Where(o
+                    => o.start_date <= startTime 
+                    && o.end_date >= startTime).FirstOrDefault();
+                if (specialTime != default(Unit_Price))
+                {
+                    result += specialTime.price;
+                    startTime = (DateTime)(specialTime.end_date);
+                    startTime.AddSeconds(1);
+                    continue;
+                }
+                // calc by day
+                Console.WriteLine(startTime);
+                Console.WriteLine(result);
+                int day = (int)startTime.DayOfWeek + 1; // Monday is 1 -> Monday is 2
+                Unit_Price priceInDay = db.Unit_Price.Where(o
+                    => o.day_in_week == day
+                    && o.start_time_in_day <= startTime.TimeOfDay
+                    && o.end_time_in_day >= startTime.TimeOfDay).FirstOrDefault();
+                if (priceInDay == default(Unit_Price))
+                {
+                    throw new Exception("Cannot calculate price");
+                }
+                result += priceInDay.price;
+                startTime = new DateTime(
+                    startTime.Year,
+                    startTime.Month,
+                    startTime.Day,
+                    ((TimeSpan)(priceInDay.end_time_in_day)).Hours,
+                    ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
+                    ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
+                    );
+                startTime.AddSeconds(1);
+            }
+            return result;
         }
         public List<Parking_History> GetParkingHistories(
             Nullable<int> customer_id = null,

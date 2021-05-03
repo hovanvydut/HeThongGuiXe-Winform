@@ -131,10 +131,11 @@ namespace HeThongGiuXe
             this.lbPlate.Text = "Đang trích xuất...";
             this.lbPlate.ForeColor = Color.Yellow;
             this.txtPlate.ReadOnly = true;
-            // Save capture image
-            ImageProcesing.CaptureToImageFile(this.Capture, "tmp.jpg");
+            // Get capture image
+            Mat m = new Mat();
+            this.Capture.Retrieve(m);
             // Call API to get plate
-            IList<Result> resutls = await APIPlateRecognizer.Instance.ReadPlateAsync("tmp.jpg");
+            IList<Result> resutls = await APIPlateRecognizer.Instance.ReadPlateAsync(m.ToBitmap());
 
             this.txtPlate.ReadOnly = false;
             // Handle result

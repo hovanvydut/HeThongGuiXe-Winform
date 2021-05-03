@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
@@ -19,7 +21,7 @@ namespace HeThongGiuXe
             this.Token = ConfigurationManager.AppSettings["token_API"];
             client.DefaultRequestHeaders.Add("Authorization", "Token " + this.Token);
         }
-        public async System.Threading.Tasks.Task<IList<Result>> ReadPlateAsync(String filePath)
+        public async System.Threading.Tasks.Task<IList<Result>> ReadPlateAsync(Bitmap img)
         {
             List<Result> results = new List<Result>();
             // -----------------------------------------
@@ -29,8 +31,10 @@ namespace HeThongGiuXe
             multiForm.Add(new StringContent("regions"), "vn");
             multiForm.Add(new StringContent("mmc"), "false");
             // File params
-            FileStream fs = File.OpenRead(filePath);
-            multiForm.Add(new StreamContent(fs), "upload", Path.GetFileName(filePath));
+            Stream stream = new System.IO.MemoryStream();
+            img.Save(stream, ImageFormat.Jpeg);
+            stream.Position = 0;
+            multiForm.Add(new StreamContent(stream), "upload", "image");
             // Request
             try
             {

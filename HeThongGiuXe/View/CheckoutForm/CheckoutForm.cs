@@ -132,10 +132,11 @@ namespace HeThongGiuXe
             this.txtPlate.Text = "";
             this.lbPlate.Text = "Đang trích xuất...";
             this.lbPlate.ForeColor = Color.Yellow;
-            // Save capture image
-            ImageProcesing.CaptureToImageFile(this.Capture, "tmp.jpg");
+            // Get capture image
+            Mat m = new Mat();
+            this.Capture.Retrieve(m);
             // Call API to get plate
-            IList<Result> resutls = await APIPlateRecognizer.Instance.ReadPlateAsync("tmp.jpg");
+            IList<Result> resutls = await APIPlateRecognizer.Instance.ReadPlateAsync(m.ToBitmap());
 
             // Handle result
             if (resutls == null || resutls.Count == 0)
@@ -227,6 +228,11 @@ namespace HeThongGiuXe
                 if (form.DialogResult == DialogResult.Cancel)
                 {
                     // Update debit card
+                    bool success = CheckInOutBLL.Instance.Debit(currentParking);
+                    if (!success)
+                    {
+                        MessageBox.Show("Không thể tìm thấy lượt gửi xe nữa", "Lỗi hệ thống");
+                    }
                 }
                 // else do no thing
             }
