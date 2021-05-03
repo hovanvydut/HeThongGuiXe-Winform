@@ -89,6 +89,7 @@ namespace HeThongGiuXe
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.lbPayment);
             this.Name = "PaymentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
             this.ResumeLayout(false);
             this.PerformLayout();

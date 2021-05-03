@@ -272,5 +272,17 @@ namespace HeThongGiuXe
             SettingCamera form = new SettingCamera(InitializeVideo);
             form.ShowDialog();
         }
+
+        private void CheckinForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.ArduinoSerial != null)
+            {
+                this.ArduinoSerial.Close();
+            }
+            if (this.Capture != null)
+            {
+                this.Capture.Dispose();
+            }
+        }
     }
 }

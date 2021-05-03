@@ -103,6 +103,7 @@ namespace HeThongGiuXe
             this.Controls.Add(this.lbBaund);
             this.Controls.Add(this.lbPort);
             this.Name = "SerialSettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cài đặt giao tiếp serial";
             this.ResumeLayout(false);
             this.PerformLayout();

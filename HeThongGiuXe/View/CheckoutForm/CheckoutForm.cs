@@ -299,6 +299,16 @@ namespace HeThongGiuXe
             form.ShowDialog();
         }
 
-
+        private void CheckoutForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (this.ArduinoSerial != null)
+            {
+                this.ArduinoSerial.Close();
+            }
+            if (this.Capture != null)
+            {
+                this.Capture.Dispose();
+            }
+        }
     }
 }

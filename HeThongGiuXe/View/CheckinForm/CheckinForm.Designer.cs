@@ -34,6 +34,7 @@ namespace HeThongGiuXe
             this.imgCamera = new Emgu.CV.UI.ImageBox();
             this.groupExtractInfo = new System.Windows.Forms.GroupBox();
             this.groupPlateInfo = new System.Windows.Forms.GroupBox();
+            this.lbPlate = new System.Windows.Forms.Label();
             this.btnSettingCamera = new System.Windows.Forms.Button();
             this.btnTryGetPlate = new System.Windows.Forms.Button();
             this.txtPlate = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@ namespace HeThongGiuXe
             this.groupControlSOS = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.lbPlate = new System.Windows.Forms.Label();
             this.groupCamera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupExtractInfo.SuspendLayout();
@@ -107,6 +107,15 @@ namespace HeThongGiuXe
             this.groupPlateInfo.TabIndex = 1;
             this.groupPlateInfo.TabStop = false;
             this.groupPlateInfo.Text = "Thông tin biển số";
+            // 
+            // lbPlate
+            // 
+            this.lbPlate.Location = new System.Drawing.Point(13, 146);
+            this.lbPlate.Name = "lbPlate";
+            this.lbPlate.Size = new System.Drawing.Size(300, 23);
+            this.lbPlate.TabIndex = 3;
+            this.lbPlate.Text = "...";
+            this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSettingCamera
             // 
@@ -314,15 +323,6 @@ namespace HeThongGiuXe
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // lbPlate
-            // 
-            this.lbPlate.Location = new System.Drawing.Point(13, 146);
-            this.lbPlate.Name = "lbPlate";
-            this.lbPlate.Size = new System.Drawing.Size(300, 23);
-            this.lbPlate.TabIndex = 3;
-            this.lbPlate.Text = "...";
-            this.lbPlate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CheckinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,7 +332,9 @@ namespace HeThongGiuXe
             this.Controls.Add(this.groupExtractInfo);
             this.Controls.Add(this.groupCamera);
             this.Name = "CheckinForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điều khiển xe vào";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckinForm_FormClosing);
             this.groupCamera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).EndInit();
             this.groupExtractInfo.ResumeLayout(false);

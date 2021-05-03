@@ -30,24 +30,24 @@ namespace HeThongGiuXe.View.CustomerDetail
         private void InitializeComponent()
         {
             this.groupInfo = new System.Windows.Forms.GroupBox();
+            this.txtCardID = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtFullname = new System.Windows.Forms.TextBox();
+            this.lbCardID = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.lbStudentID = new System.Windows.Forms.Label();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
             this.lbFullname = new System.Windows.Forms.Label();
             this.groupControl = new System.Windows.Forms.GroupBox();
-            this.lbStudentID = new System.Windows.Forms.Label();
-            this.lbUsername = new System.Windows.Forms.Label();
-            this.lbPassword = new System.Windows.Forms.Label();
-            this.lbCardID = new System.Windows.Forms.Label();
-            this.txtFullname = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtStudentID = new System.Windows.Forms.TextBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtCardID = new System.Windows.Forms.TextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupInfo.SuspendLayout();
             this.groupControl.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,91 @@ namespace HeThongGiuXe.View.CustomerDetail
             this.groupInfo.TabIndex = 0;
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Thông tin";
+            // 
+            // txtCardID
+            // 
+            this.txtCardID.Location = new System.Drawing.Point(159, 200);
+            this.txtCardID.Name = "txtCardID";
+            this.txtCardID.Size = new System.Drawing.Size(289, 22);
+            this.txtCardID.TabIndex = 16;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(159, 172);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(289, 22);
+            this.txtPassword.TabIndex = 15;
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(159, 144);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(289, 22);
+            this.txtUsername.TabIndex = 14;
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Location = new System.Drawing.Point(159, 116);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(289, 22);
+            this.txtStudentID.TabIndex = 13;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(159, 88);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(289, 22);
+            this.txtEmail.TabIndex = 12;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(159, 60);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(289, 22);
+            this.txtPhone.TabIndex = 11;
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.Location = new System.Drawing.Point(159, 32);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(289, 22);
+            this.txtFullname.TabIndex = 10;
+            // 
+            // lbCardID
+            // 
+            this.lbCardID.AutoSize = true;
+            this.lbCardID.Location = new System.Drawing.Point(16, 205);
+            this.lbCardID.Name = "lbCardID";
+            this.lbCardID.Size = new System.Drawing.Size(67, 17);
+            this.lbCardID.TabIndex = 9;
+            this.lbCardID.Text = "Mã thẻ từ";
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(17, 177);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(66, 17);
+            this.lbPassword.TabIndex = 8;
+            this.lbPassword.Text = "Mật khẩu";
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Location = new System.Drawing.Point(16, 149);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(95, 17);
+            this.lbUsername.TabIndex = 7;
+            this.lbUsername.Text = "Tên tài khoản";
+            // 
+            // lbStudentID
+            // 
+            this.lbStudentID.AutoSize = true;
+            this.lbStudentID.Location = new System.Drawing.Point(17, 120);
+            this.lbStudentID.Name = "lbStudentID";
+            this.lbStudentID.Size = new System.Drawing.Size(106, 17);
+            this.lbStudentID.TabIndex = 6;
+            this.lbStudentID.Text = "Mã số sinh viên";
             // 
             // lbEmail
             // 
@@ -114,99 +199,14 @@ namespace HeThongGiuXe.View.CustomerDetail
             this.groupControl.TabStop = false;
             this.groupControl.Text = "Thao tác";
             // 
-            // lbStudentID
+            // btnOK
             // 
-            this.lbStudentID.AutoSize = true;
-            this.lbStudentID.Location = new System.Drawing.Point(17, 120);
-            this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(106, 17);
-            this.lbStudentID.TabIndex = 6;
-            this.lbStudentID.Text = "Mã số sinh viên";
-            // 
-            // lbUsername
-            // 
-            this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(16, 149);
-            this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(95, 17);
-            this.lbUsername.TabIndex = 7;
-            this.lbUsername.Text = "Tên tài khoản";
-            // 
-            // lbPassword
-            // 
-            this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(17, 177);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(66, 17);
-            this.lbPassword.TabIndex = 8;
-            this.lbPassword.Text = "Mật khẩu";
-            // 
-            // lbCardID
-            // 
-            this.lbCardID.AutoSize = true;
-            this.lbCardID.Location = new System.Drawing.Point(16, 205);
-            this.lbCardID.Name = "lbCardID";
-            this.lbCardID.Size = new System.Drawing.Size(67, 17);
-            this.lbCardID.TabIndex = 9;
-            this.lbCardID.Text = "Mã thẻ từ";
-            // 
-            // txtFullname
-            // 
-            this.txtFullname.Location = new System.Drawing.Point(159, 32);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(289, 22);
-            this.txtFullname.TabIndex = 10;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Location = new System.Drawing.Point(159, 60);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(289, 22);
-            this.txtPhone.TabIndex = 11;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(159, 88);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(289, 22);
-            this.txtEmail.TabIndex = 12;
-            // 
-            // txtStudentID
-            // 
-            this.txtStudentID.Location = new System.Drawing.Point(159, 116);
-            this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(289, 22);
-            this.txtStudentID.TabIndex = 13;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(159, 144);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(289, 22);
-            this.txtUsername.TabIndex = 14;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(159, 172);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(289, 22);
-            this.txtPassword.TabIndex = 15;
-            // 
-            // txtCardID
-            // 
-            this.txtCardID.Location = new System.Drawing.Point(159, 200);
-            this.txtCardID.Name = "txtCardID";
-            this.txtCardID.Size = new System.Drawing.Size(289, 22);
-            this.txtCardID.TabIndex = 16;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(12, 159);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(185, 35);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "Huỷ";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnOK.Location = new System.Drawing.Point(12, 54);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(185, 35);
+            this.btnOK.TabIndex = 21;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnReset
             // 
@@ -217,14 +217,14 @@ namespace HeThongGiuXe.View.CustomerDetail
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // btnOK
+            // btnCancel
             // 
-            this.btnOK.Location = new System.Drawing.Point(12, 54);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(185, 35);
-            this.btnOK.TabIndex = 21;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(12, 159);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(185, 35);
+            this.btnCancel.TabIndex = 19;
+            this.btnCancel.Text = "Huỷ";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // CustomerDetail
             // 
@@ -234,6 +234,7 @@ namespace HeThongGiuXe.View.CustomerDetail
             this.Controls.Add(this.groupControl);
             this.Controls.Add(this.groupInfo);
             this.Name = "CustomerDetail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin khách hàng";
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();

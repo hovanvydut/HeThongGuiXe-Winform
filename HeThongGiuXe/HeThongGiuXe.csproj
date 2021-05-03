@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Utils\APIPlateRecognizer.cs" />
     <Compile Include="Utils\ImageProcesing.cs" />
+    <Compile Include="Utils\Loading.cs" />
     <Compile Include="Utils\PlateReaderResult.cs" />
     <Compile Include="Utils\ArduinoSerial.cs" />
     <Compile Include="Utils\SoundPlayer.cs" />
@@ -148,6 +149,12 @@
     </Compile>
     <Compile Include="View\CustomerDetail\CustomerDetail.Designer.cs">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Loading\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Loading\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForm\MainForm.cs">
       <SubType>Form</SubType>
@@ -194,6 +201,9 @@
     <EmbeddedResource Include="View\CustomerDetail\CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Loading\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +244,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Images\Logo_Sgroup.png" />
+    <None Include="Assets\Images\Logo_DUT.png" />
+    <None Include="Assets\Images\Logo_IT.jpg" />
+    <None Include="Assets\Images\Loading_ico.gif" />
     <Content Include="DAL\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>

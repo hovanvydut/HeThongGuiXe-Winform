@@ -21,6 +21,10 @@ namespace HeThongGiuXe
         {
             this.serialPort.WriteLine(msg);
         }
+        public void Close()
+        {
+            this.serialPort.Close();
+        }
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string line = ((SerialPort)(sender)).ReadLine();

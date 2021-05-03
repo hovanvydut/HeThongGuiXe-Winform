@@ -49,12 +49,12 @@ namespace HeThongGiuXe
             this.btlGetAllInPark = new System.Windows.Forms.Button();
             this.btnFilterWithPlate = new System.Windows.Forms.Button();
             this.groupConfirmControl = new System.Windows.Forms.GroupBox();
+            this.cbDebit = new System.Windows.Forms.CheckBox();
             this.checkAutoCheckout = new System.Windows.Forms.CheckBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.groupControlSOS = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.cbDebit = new System.Windows.Forms.CheckBox();
             this.groupCamera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupExtractInfo.SuspendLayout();
@@ -275,6 +275,16 @@ namespace HeThongGiuXe
             this.groupConfirmControl.TabStop = false;
             this.groupConfirmControl.Text = "Xác nhận xe";
             // 
+            // cbDebit
+            // 
+            this.cbDebit.AutoSize = true;
+            this.cbDebit.Location = new System.Drawing.Point(403, 72);
+            this.cbDebit.Name = "cbDebit";
+            this.cbDebit.Size = new System.Drawing.Size(72, 21);
+            this.cbDebit.TabIndex = 4;
+            this.cbDebit.Text = "Ghi nợ";
+            this.cbDebit.UseVisualStyleBackColor = true;
+            // 
             // checkAutoCheckout
             // 
             this.checkAutoCheckout.AutoSize = true;
@@ -326,16 +336,6 @@ namespace HeThongGiuXe
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // cbDebit
-            // 
-            this.cbDebit.AutoSize = true;
-            this.cbDebit.Location = new System.Drawing.Point(403, 72);
-            this.cbDebit.Name = "cbDebit";
-            this.cbDebit.Size = new System.Drawing.Size(72, 21);
-            this.cbDebit.TabIndex = 4;
-            this.cbDebit.Text = "Ghi nợ";
-            this.cbDebit.UseVisualStyleBackColor = true;
-            // 
             // CheckoutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -345,7 +345,9 @@ namespace HeThongGiuXe
             this.Controls.Add(this.groupExtractInfo);
             this.Controls.Add(this.groupCamera);
             this.Name = "CheckoutForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điều khiển xe vào";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CheckoutForm_FormClosing);
             this.groupCamera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).EndInit();
             this.groupExtractInfo.ResumeLayout(false);

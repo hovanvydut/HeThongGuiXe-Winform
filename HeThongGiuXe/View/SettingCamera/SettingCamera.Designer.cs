@@ -82,6 +82,7 @@ namespace HeThongGiuXe
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lbCameraSelect);
             this.Name = "SettingCamera";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cài đặt camera";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -17,5 +17,25 @@ namespace HeThongGiuXe
         {
             InitializeComponent();
         }
+
+        private void btnCheckin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Loading.Start(this);
+            CheckinForm form = new CheckinForm();
+            Loading.Close();
+            form.ShowDialog();
+            this.Show();
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Loading.Start(this);
+            CheckoutForm form = new CheckoutForm();
+            Loading.Close();
+            form.ShowDialog();
+            this.Show();
+        }
     }
 }
