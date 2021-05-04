@@ -80,6 +80,16 @@ namespace HeThongGiuXe
             int result = 0;
             while (startTime < endTime)
             {
+                // check if in payment package
+                Payment paid = db.Payments.Where(o
+                    => o.start_date <= startTime
+                    && o.end_date >= startTime).FirstOrDefault();
+                if (paid != default(Payment))
+                {
+                    startTime = paid.end_date;
+                    startTime = startTime.AddSeconds(1);
+                    continue;
+                }
                 // have special time
                 Unit_Price specialTime = db.Unit_Price.Where(o
                     => o.start_date <= startTime 
@@ -88,12 +98,10 @@ namespace HeThongGiuXe
                 {
                     result += specialTime.price;
                     startTime = (DateTime)(specialTime.end_date);
-                    startTime.AddSeconds(1);
+                    startTime = startTime.AddSeconds(1);
                     continue;
                 }
                 // calc by day
-                Console.WriteLine(startTime);
-                Console.WriteLine(result);
                 int day = (int)startTime.DayOfWeek + 1; // Monday is 1 -> Monday is 2
                 Unit_Price priceInDay = db.Unit_Price.Where(o
                     => o.day_in_week == day
@@ -112,7 +120,7 @@ namespace HeThongGiuXe
                     ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
                     ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
                     );
-                startTime.AddSeconds(1);
+                startTime = startTime.AddSeconds(1);
             }
             return result;
         }
