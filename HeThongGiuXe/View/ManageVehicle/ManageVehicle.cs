@@ -17,9 +17,5 @@ namespace HeThongGiuXe.View.ManageVehicle
             InitializeComponent();
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
