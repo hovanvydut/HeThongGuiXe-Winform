@@ -36,12 +36,19 @@ namespace HeThongGiuXe.View.ManageVehicle
         {
             this.rb_all_range.Checked = true;
             this.rb_all_payment.Checked = true;
-            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories(isPayment:false);
+            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
             this.dtgv_list_vehicle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_list_vehicle.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
+        private void setStatusBtn()
+        {
+            this.btnAll.Enabled = !this.btnAll.Enabled;
+            this.btnClear.Enabled = !this.btnClear.Enabled;
+            this.btnSearch.Enabled = !this.btnSearch.Enabled;
+        }
         private void search()
         {
+            setStatusBtn();
             string username = this.txt_username.Text;
             string fullname = this.txt_fullname.Text;
             string licence_plate = this.txt_license_plates.Text;
@@ -62,6 +69,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             }
             this.dtgv_list_vehicle.DataSource =
             ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username, plate: licence_plate, start: start, end: end, isPayment: isPayment, hasCheckout: hasCheckout);
+            setStatusBtn();
         }
         private void clear()
         {
@@ -92,13 +100,15 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.gb_date.Enabled = this.cb_date.Checked;
         }
 
-        private void btn_all_Click(object sender, EventArgs e)
-        {
-            clear();
-            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
-        }
+      
 
         private void btnClear_Click(object sender, EventArgs e)
+        {
+            clear();
+            search();
+        }
+
+        private void btnAll_Click(object sender, EventArgs e)
         {
             clear();
             search();

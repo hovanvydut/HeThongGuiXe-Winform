@@ -138,7 +138,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.btnAll.TabIndex = 6;
             this.btnAll.Text = "Xem tất cả";
             this.btnAll.UseVisualStyleBackColor = true;
-            this.btnAll.Click += new System.EventHandler(this.btn_all_Click);
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // gb_date
             // 
