@@ -94,20 +94,15 @@ namespace HeThongGiuXe.View.ManageVehicle
             }
         }
 
-       
         private void cb_date_CheckedChanged(object sender, EventArgs e)
         {
             this.gb_date.Enabled = this.cb_date.Checked;
         }
-
-      
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             clear();
             search();
         }
-
         private void btnAll_Click(object sender, EventArgs e)
         {
             clear();
