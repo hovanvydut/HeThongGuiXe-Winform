@@ -51,6 +51,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.dtgv_list_vehicle = new System.Windows.Forms.DataGridView();
             this.cb_date = new System.Windows.Forms.CheckBox();
             this.gb_date = new System.Windows.Forms.GroupBox();
+            this.btn_all = new System.Windows.Forms.Button();
             this.gb_search.SuspendLayout();
             this.gb_range.SuspendLayout();
             this.gb_vehicleresult.SuspendLayout();
@@ -60,6 +61,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             // 
             // gb_search
             // 
+            this.gb_search.Controls.Add(this.btn_all);
             this.gb_search.Controls.Add(this.gb_date);
             this.gb_search.Controls.Add(this.cb_date);
             this.gb_search.Controls.Add(this.cb_isPayment);
@@ -177,7 +179,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.dtp_end_day.Name = "dtp_end_day";
             this.dtp_end_day.Size = new System.Drawing.Size(185, 20);
             this.dtp_end_day.TabIndex = 5;
-            this.dtp_end_day.Value = new System.DateTime(2021, 5, 4, 23, 59, 0, 0);
+            this.dtp_end_day.Value = new System.DateTime(2021, 5, 5, 23, 59, 0, 0);
             // 
             // dtp_start_day
             // 
@@ -285,6 +287,16 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.gb_date.TabStop = false;
             this.gb_date.Text = "Tìm theo ngày gửi";
             // 
+            // btn_all
+            // 
+            this.btn_all.Location = new System.Drawing.Point(933, 129);
+            this.btn_all.Name = "btn_all";
+            this.btn_all.Size = new System.Drawing.Size(75, 23);
+            this.btn_all.TabIndex = 6;
+            this.btn_all.Text = "Xem tất cả";
+            this.btn_all.UseVisualStyleBackColor = true;
+            this.btn_all.Click += new System.EventHandler(this.btn_all_Click);
+            // 
             // ManageVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,5 +343,6 @@ namespace HeThongGiuXe.View.ManageVehicle
         private System.Windows.Forms.CheckBox cb_isPayment;
         private System.Windows.Forms.GroupBox gb_date;
         private System.Windows.Forms.CheckBox cb_date;
+        private System.Windows.Forms.Button btn_all;
     }
 }

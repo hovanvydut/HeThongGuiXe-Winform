@@ -22,7 +22,6 @@ namespace HeThongGiuXe.BLL
             Nullable<bool> hasCheckout = null )
         {
             // Prepare table
-           // MessageBox.Show(isPayment + "," + hasCheckout + "," + start + "," + end + "," + customer_name + "," + username );
             List<Parking_History> results = null;
             DataTable table = new DataTable();
             table.Columns.AddRange(new DataColumn[] {
@@ -61,6 +60,7 @@ namespace HeThongGiuXe.BLL
                     newRow["Tên tài khoản"] = item.Customer.username;
                     newRow["Biển số"] = item.license_plate;
                     newRow["Giờ vào"] = item.check_in_at;
+                    // set value checkout if not checkout 
                     if( item.check_out_at != null)
                     {
                         newRow["Giờ ra"] = item.check_out_at;

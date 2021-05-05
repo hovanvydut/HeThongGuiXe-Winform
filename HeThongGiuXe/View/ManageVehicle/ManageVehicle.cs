@@ -33,41 +33,30 @@ namespace HeThongGiuXe.View.ManageVehicle
         private void InitializeHistoryList()
         {
             rb_all.Checked = true;
-            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
+            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories(isPayment:false);
         }
         private void search()
         {
             string username = this.txt_username.Text;
             string fullname = this.txt_fullname.Text;
             string licence_plate = this.txt_license_plates.Text;
-            DateTime start = this.dtp_start_day.Value;
-            DateTime end = this.dtp_end_day.Value;
-            Boolean isPayment = this.cb_isPayment.Checked;
+            Nullable<DateTime> start = this.dtp_start_day.Value;
+            Nullable<DateTime> end = this.dtp_end_day.Value;
+            Nullable<Boolean> isPayment = this.cb_isPayment.Checked;
             Nullable<Boolean> hasCheckout = this.rb_outpark.Checked;
-            if (this.rb_all.Checked) hasCheckout = null;
-            if (this.cb_date.Checked)
-            {
-                this.dtgv_list_vehicle.DataSource =
-                ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username, plate: licence_plate, start: start, end: end, isPayment: isPayment, hasCheckout: hasCheckout);
-            }
-            else
-            {
-                this.dtgv_list_vehicle.DataSource =
-                ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username,
-                plate: licence_plate, hasCheckout: hasCheckout, isPayment: isPayment);
-            }
-        }
-        private void btn_search_Click(object sender, EventArgs e)
-        {
-            search();z
-            if (this.dtgv_list_vehicle.RowCount > 0)
-            {
-                this.dtgv_list_vehicle.FirstDisplayedScrollingRowIndex
-                = this.dtgv_list_vehicle.RowCount - 1;
-            }
-        }
 
-        private void bnt_clear_Click(object sender, EventArgs e)
+            // reset to search with all history
+            if (this.rb_all.Checked) hasCheckout = null;
+            // check if don't have date limit 
+            if ( this.cb_date.Checked == false)
+            {
+                start = null;
+                end = null;
+            }
+            this.dtgv_list_vehicle.DataSource =
+            ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username, plate: licence_plate, start: start, end: end, isPayment: isPayment, hasCheckout: hasCheckout);
+        }
+        private void clear()
         {
             this.txt_fullname.Clear();
             this.txt_username.Clear();
@@ -77,12 +66,32 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.rb_inpark.Checked = false;
             this.rb_outpark.Checked = false;
             this.rb_all.Checked = true;
-            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories(isPayment:false);
+        }
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            search();
+            if (this.dtgv_list_vehicle.RowCount > 0)
+            {
+                this.dtgv_list_vehicle.FirstDisplayedScrollingRowIndex
+                = this.dtgv_list_vehicle.RowCount - 1;
+            }
+        }
+
+        private void bnt_clear_Click(object sender, EventArgs e)
+        {
+            clear();
+            search();
         }
 
         private void cb_date_CheckedChanged(object sender, EventArgs e)
         {
             this.gb_date.Enabled = this.cb_date.Checked;
+        }
+
+        private void btn_all_Click(object sender, EventArgs e)
+        {
+            clear();
+            this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
         }
     }
 }
