@@ -80,6 +80,7 @@ namespace HeThongGiuXe
             this.btnGeneralManagement.TabIndex = 3;
             this.btnGeneralManagement.Text = "Quản lí - thống kê";
             this.btnGeneralManagement.UseVisualStyleBackColor = true;
+            this.btnGeneralManagement.Click += new System.EventHandler(this.btnGeneralManagement_Click);
             // 
             // imgDUT
             // 

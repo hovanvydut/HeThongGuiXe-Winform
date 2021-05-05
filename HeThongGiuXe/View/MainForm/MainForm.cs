@@ -24,7 +24,7 @@ namespace HeThongGiuXe
             Loading.Start(this);
             CheckinForm form = new CheckinForm();
             Loading.Close();
-            form.ShowDialog();
+            form.ShowDialog(this);
             this.Show();
         }
 
@@ -34,7 +34,15 @@ namespace HeThongGiuXe
             Loading.Start(this);
             CheckoutForm form = new CheckoutForm();
             Loading.Close();
-            form.ShowDialog();
+            form.ShowDialog(this);
+            this.Show();
+        }
+
+        private void btnGeneralManagement_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GeneralManagement form = new GeneralManagement();
+            form.ShowDialog(this);
             this.Show();
         }
     }
