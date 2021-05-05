@@ -21,21 +21,24 @@ namespace HeThongGiuXe.View.ManageVehicle
         }
         private void InitializeSearchBox()
         {
-            txt_fullname.Text = null;
-            txt_username.Text = null;
-            txt_license_plates.Text = null;
-            cb_date.Checked = false;
-            rb_is_payment.Checked = false;
-            rb_isnt_payment.Checked = false;
-            rb_all_payment.Checked = true;
-            rb_inpark.Checked = false;
-            rb_outpark.Checked = false;
-            rb_all_range.Checked = true;
+            this.txt_fullname.Text = null;
+            this.txt_username.Text = null;
+            this.txt_license_plates.Text = null;
+            this.cb_date.Checked = false;
+            this.rb_is_payment.Checked = false;
+            this.rb_isnt_payment.Checked = false;
+            this.rb_all_payment.Checked = true;
+            this.rb_inpark.Checked = false;
+            this.rb_outpark.Checked = false;
+            this.rb_all_range.Checked = true;
         }
         private void InitializeHistoryList()
         {
-            rb_all_range.Checked = true;
+            this.rb_all_range.Checked = true;
+            this.rb_all_payment.Checked = true;
             this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories(isPayment:false);
+            this.dtgv_list_vehicle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_list_vehicle.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
         private void search()
         {
