@@ -30,6 +30,7 @@ namespace HeThongGiuXe.View.ManageVehicle
         private void InitializeComponent()
         {
             this.gb_search = new System.Windows.Forms.GroupBox();
+            this.cb_isPayment = new System.Windows.Forms.CheckBox();
             this.bnt_clear = new System.Windows.Forms.Button();
             this.btn_search = new System.Windows.Forms.Button();
             this.lb_licenseplates = new System.Windows.Forms.Label();
@@ -40,34 +41,36 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.rb_all = new System.Windows.Forms.RadioButton();
             this.dtp_end_day = new System.Windows.Forms.DateTimePicker();
             this.dtp_start_day = new System.Windows.Forms.DateTimePicker();
+            this.txt_fullname = new System.Windows.Forms.TextBox();
             this.txt_username = new System.Windows.Forms.TextBox();
-            this.txt_owner = new System.Windows.Forms.TextBox();
             this.lb_ownername = new System.Windows.Forms.Label();
             this.lb_startday = new System.Windows.Forms.Label();
             this.lb_endday = new System.Windows.Forms.Label();
             this.lb_username = new System.Windows.Forms.Label();
             this.gb_vehicleresult = new System.Windows.Forms.GroupBox();
             this.dtgv_list_vehicle = new System.Windows.Forms.DataGridView();
+            this.cb_date = new System.Windows.Forms.CheckBox();
+            this.gb_date = new System.Windows.Forms.GroupBox();
             this.gb_search.SuspendLayout();
             this.gb_range.SuspendLayout();
             this.gb_vehicleresult.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_list_vehicle)).BeginInit();
+            this.gb_date.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_search
             // 
+            this.gb_search.Controls.Add(this.gb_date);
+            this.gb_search.Controls.Add(this.cb_date);
+            this.gb_search.Controls.Add(this.cb_isPayment);
             this.gb_search.Controls.Add(this.bnt_clear);
             this.gb_search.Controls.Add(this.btn_search);
             this.gb_search.Controls.Add(this.lb_licenseplates);
             this.gb_search.Controls.Add(this.txt_license_plates);
             this.gb_search.Controls.Add(this.gb_range);
-            this.gb_search.Controls.Add(this.dtp_end_day);
-            this.gb_search.Controls.Add(this.dtp_start_day);
+            this.gb_search.Controls.Add(this.txt_fullname);
             this.gb_search.Controls.Add(this.txt_username);
-            this.gb_search.Controls.Add(this.txt_owner);
             this.gb_search.Controls.Add(this.lb_ownername);
-            this.gb_search.Controls.Add(this.lb_startday);
-            this.gb_search.Controls.Add(this.lb_endday);
             this.gb_search.Controls.Add(this.lb_username);
             this.gb_search.Location = new System.Drawing.Point(12, 12);
             this.gb_search.Name = "gb_search";
@@ -75,6 +78,16 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.gb_search.TabIndex = 0;
             this.gb_search.TabStop = false;
             this.gb_search.Text = "Tìm kiếm";
+            // 
+            // cb_isPayment
+            // 
+            this.cb_isPayment.AutoSize = true;
+            this.cb_isPayment.Location = new System.Drawing.Point(635, 25);
+            this.cb_isPayment.Name = "cb_isPayment";
+            this.cb_isPayment.Size = new System.Drawing.Size(102, 17);
+            this.cb_isPayment.TabIndex = 11;
+            this.cb_isPayment.Text = "Đã Thanh Toán";
+            this.cb_isPayment.UseVisualStyleBackColor = true;
             // 
             // bnt_clear
             // 
@@ -84,6 +97,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.bnt_clear.TabIndex = 10;
             this.bnt_clear.Text = "Đặt lại";
             this.bnt_clear.UseVisualStyleBackColor = true;
+            this.bnt_clear.Click += new System.EventHandler(this.bnt_clear_Click);
             // 
             // btn_search
             // 
@@ -93,11 +107,12 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.btn_search.TabIndex = 9;
             this.btn_search.Text = "Tìm kiếm";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // lb_licenseplates
             // 
             this.lb_licenseplates.AutoSize = true;
-            this.lb_licenseplates.Location = new System.Drawing.Point(24, 113);
+            this.lb_licenseplates.Location = new System.Drawing.Point(24, 134);
             this.lb_licenseplates.Name = "lb_licenseplates";
             this.lb_licenseplates.Size = new System.Drawing.Size(56, 13);
             this.lb_licenseplates.TabIndex = 1;
@@ -105,20 +120,19 @@ namespace HeThongGiuXe.View.ManageVehicle
             // 
             // txt_license_plates
             // 
-            this.txt_license_plates.Location = new System.Drawing.Point(133, 106);
+            this.txt_license_plates.Location = new System.Drawing.Point(133, 131);
             this.txt_license_plates.Name = "txt_license_plates";
             this.txt_license_plates.Size = new System.Drawing.Size(148, 20);
             this.txt_license_plates.TabIndex = 3;
-            this.txt_license_plates.Text = "Nhập nội dung";
             // 
             // gb_range
             // 
             this.gb_range.Controls.Add(this.rb_outpark);
             this.gb_range.Controls.Add(this.rb_inpark);
             this.gb_range.Controls.Add(this.rb_all);
-            this.gb_range.Location = new System.Drawing.Point(640, 32);
+            this.gb_range.Location = new System.Drawing.Point(635, 53);
             this.gb_range.Name = "gb_range";
-            this.gb_range.Size = new System.Drawing.Size(271, 76);
+            this.gb_range.Size = new System.Drawing.Size(273, 101);
             this.gb_range.TabIndex = 5;
             this.gb_range.TabStop = false;
             this.gb_range.Text = "Phạm vi";
@@ -159,49 +173,48 @@ namespace HeThongGiuXe.View.ManageVehicle
             // dtp_end_day
             // 
             this.dtp_end_day.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_end_day.Location = new System.Drawing.Point(388, 87);
+            this.dtp_end_day.Location = new System.Drawing.Point(79, 63);
             this.dtp_end_day.Name = "dtp_end_day";
-            this.dtp_end_day.Size = new System.Drawing.Size(212, 20);
+            this.dtp_end_day.Size = new System.Drawing.Size(185, 20);
             this.dtp_end_day.TabIndex = 5;
+            this.dtp_end_day.Value = new System.DateTime(2021, 5, 4, 23, 59, 0, 0);
             // 
             // dtp_start_day
             // 
-            this.dtp_start_day.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_start_day.Location = new System.Drawing.Point(388, 41);
+            this.dtp_start_day.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_start_day.Location = new System.Drawing.Point(79, 27);
             this.dtp_start_day.Name = "dtp_start_day";
-            this.dtp_start_day.Size = new System.Drawing.Size(212, 20);
+            this.dtp_start_day.Size = new System.Drawing.Size(185, 20);
             this.dtp_start_day.TabIndex = 4;
             this.dtp_start_day.Value = new System.DateTime(2021, 5, 5, 0, 0, 0, 0);
             // 
+            // txt_fullname
+            // 
+            this.txt_fullname.Location = new System.Drawing.Point(133, 25);
+            this.txt_fullname.Name = "txt_fullname";
+            this.txt_fullname.Size = new System.Drawing.Size(148, 20);
+            this.txt_fullname.TabIndex = 1;
+            // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(133, 25);
+            this.txt_username.Location = new System.Drawing.Point(133, 79);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(148, 20);
-            this.txt_username.TabIndex = 1;
-            this.txt_username.Text = "Nhập nội dung";
-            // 
-            // txt_owner
-            // 
-            this.txt_owner.Location = new System.Drawing.Point(133, 62);
-            this.txt_owner.Name = "txt_owner";
-            this.txt_owner.Size = new System.Drawing.Size(148, 20);
-            this.txt_owner.TabIndex = 2;
-            this.txt_owner.Text = "Nhập nội dung";
+            this.txt_username.TabIndex = 2;
             // 
             // lb_ownername
             // 
             this.lb_ownername.AutoSize = true;
-            this.lb_ownername.Location = new System.Drawing.Point(24, 69);
+            this.lb_ownername.Location = new System.Drawing.Point(24, 80);
             this.lb_ownername.Name = "lb_ownername";
-            this.lb_ownername.Size = new System.Drawing.Size(61, 13);
+            this.lb_ownername.Size = new System.Drawing.Size(73, 13);
             this.lb_ownername.TabIndex = 1;
-            this.lb_ownername.Text = "Tên chủ xe";
+            this.lb_ownername.Text = "Tên tài khoản";
             // 
             // lb_startday
             // 
             this.lb_startday.AutoSize = true;
-            this.lb_startday.Location = new System.Drawing.Point(329, 47);
+            this.lb_startday.Location = new System.Drawing.Point(6, 33);
             this.lb_startday.Name = "lb_startday";
             this.lb_startday.Size = new System.Drawing.Size(46, 13);
             this.lb_startday.TabIndex = 0;
@@ -210,7 +223,7 @@ namespace HeThongGiuXe.View.ManageVehicle
             // lb_endday
             // 
             this.lb_endday.AutoSize = true;
-            this.lb_endday.Location = new System.Drawing.Point(329, 94);
+            this.lb_endday.Location = new System.Drawing.Point(7, 69);
             this.lb_endday.Name = "lb_endday";
             this.lb_endday.Size = new System.Drawing.Size(53, 13);
             this.lb_endday.TabIndex = 0;
@@ -247,6 +260,31 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.dtgv_list_vehicle.Size = new System.Drawing.Size(1008, 279);
             this.dtgv_list_vehicle.TabIndex = 0;
             // 
+            // cb_date
+            // 
+            this.cb_date.AutoSize = true;
+            this.cb_date.Location = new System.Drawing.Point(328, 25);
+            this.cb_date.Name = "cb_date";
+            this.cb_date.Size = new System.Drawing.Size(110, 17);
+            this.cb_date.TabIndex = 12;
+            this.cb_date.Text = "Tìm theo ngày gửi";
+            this.cb_date.UseVisualStyleBackColor = true;
+            this.cb_date.CheckedChanged += new System.EventHandler(this.cb_date_CheckedChanged);
+            // 
+            // gb_date
+            // 
+            this.gb_date.Controls.Add(this.dtp_start_day);
+            this.gb_date.Controls.Add(this.dtp_end_day);
+            this.gb_date.Controls.Add(this.lb_endday);
+            this.gb_date.Controls.Add(this.lb_startday);
+            this.gb_date.Enabled = false;
+            this.gb_date.Location = new System.Drawing.Point(328, 53);
+            this.gb_date.Name = "gb_date";
+            this.gb_date.Size = new System.Drawing.Size(270, 101);
+            this.gb_date.TabIndex = 13;
+            this.gb_date.TabStop = false;
+            this.gb_date.Text = "Tìm theo ngày gửi";
+            // 
             // ManageVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +301,8 @@ namespace HeThongGiuXe.View.ManageVehicle
             this.gb_range.PerformLayout();
             this.gb_vehicleresult.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_list_vehicle)).EndInit();
+            this.gb_date.ResumeLayout(false);
+            this.gb_date.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,9 +317,9 @@ namespace HeThongGiuXe.View.ManageVehicle
         private System.Windows.Forms.Label lb_startday;
         private System.Windows.Forms.Label lb_endday;
         private System.Windows.Forms.Label lb_username;
-        private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.TextBox txt_fullname;
         private System.Windows.Forms.Label lb_ownername;
-        private System.Windows.Forms.TextBox txt_owner;
+        private System.Windows.Forms.TextBox txt_username;
         private System.Windows.Forms.GroupBox gb_range;
         private System.Windows.Forms.RadioButton rb_outpark;
         private System.Windows.Forms.RadioButton rb_inpark;
@@ -288,5 +328,8 @@ namespace HeThongGiuXe.View.ManageVehicle
         private System.Windows.Forms.GroupBox gb_vehicleresult;
         private System.Windows.Forms.DataGridView dtgv_list_vehicle;
         private System.Windows.Forms.Button bnt_clear;
+        private System.Windows.Forms.CheckBox cb_isPayment;
+        private System.Windows.Forms.GroupBox gb_date;
+        private System.Windows.Forms.CheckBox cb_date;
     }
 }

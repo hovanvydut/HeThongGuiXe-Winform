@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using HeThongGiuXe.DAL;
 
 namespace HeThongGiuXe
 {
