@@ -40,8 +40,16 @@ namespace HeThongGiuXe
 
         private void btnGeneralManagement_Click(object sender, EventArgs e)
         {
+            //this.Hide();
+            //GeneralManagement form = new GeneralManagement();
+            //form.ShowDialog(this);
+            //this.Show();
+        }
+
+        private void btnParkingManagement_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            GeneralManagement form = new GeneralManagement();
+            ManageVehicle form = new ManageVehicle();
             form.ShowDialog(this);
             this.Show();
         }

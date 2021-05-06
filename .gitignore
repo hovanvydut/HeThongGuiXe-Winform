@@ -6,3 +6,5 @@ HeThongGiuXe/*.userosscache
 HeThongGiuXe/*.sln.docstates
 packages/*
 HeThongGiuXe/App.config
+.vs
+HeThongGiuXe/.vs

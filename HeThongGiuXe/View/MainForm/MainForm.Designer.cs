@@ -71,6 +71,7 @@ namespace HeThongGiuXe
             this.btnParkingManagement.TabIndex = 2;
             this.btnParkingManagement.Text = "Quản lí xe trong bãi";
             this.btnParkingManagement.UseVisualStyleBackColor = true;
+            this.btnParkingManagement.Click += new System.EventHandler(this.btnParkingManagement_Click);
             // 
             // btnGeneralManagement
             // 
