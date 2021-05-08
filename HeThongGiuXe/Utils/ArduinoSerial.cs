@@ -30,6 +30,10 @@ namespace HeThongGiuXe
             string line = ((SerialPort)(sender)).ReadLine();
             receivedEvent(line.Trim());
         }
+        static void GetAllPortName()
+        {
+
+        }
         public delegate void LineReceivedEvent(string line);
         private LineReceivedEvent receivedEvent;
     }

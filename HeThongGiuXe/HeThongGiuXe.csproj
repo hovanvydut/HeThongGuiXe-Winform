@@ -145,11 +145,11 @@
     <Compile Include="View\CheckoutForm\CheckoutForm.Designer.cs">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomerDetail\CustomerDetail.cs">
+    <Compile Include="View\ManageCustomerForm\ManageCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CustomerDetail\CustomerDetail.Designer.cs">
-      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    <Compile Include="View\ManageCustomerForm\ManageCustomerForm.Designer.cs">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Loading\LoadingForm.cs">
       <SubType>Form</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="View\CheckoutForm\CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomerDetail\CustomerDetail.resx">
-      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    <EmbeddedResource Include="View\ManageCustomerForm\ManageCustomerForm.resx">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Loading\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
