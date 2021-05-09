@@ -43,27 +43,27 @@ namespace HeThongGiuXe
             this.lbStatusCard = new System.Windows.Forms.Label();
             this.txtCard = new System.Windows.Forms.TextBox();
             this.groupControl = new System.Windows.Forms.GroupBox();
-            this.groupManageControll = new System.Windows.Forms.GroupBox();
-            this.tableVehicleInPark = new System.Windows.Forms.DataGridView();
-            this.groupConfirmControl = new System.Windows.Forms.GroupBox();
             this.groupControlSOS = new System.Windows.Forms.GroupBox();
             this.btnClose = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.btnOpen = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnConfirm = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.checkAutoCheckin = new System.Windows.Forms.CheckBox();
-            this.btnFilterWithCard = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnFilterWithPlate = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.groupManageControll = new System.Windows.Forms.GroupBox();
             this.btlGetAllInPark = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnFilterWithPlate = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnFilterWithCard = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.tableVehicleInPark = new System.Windows.Forms.DataGridView();
+            this.groupConfirmControl = new System.Windows.Forms.GroupBox();
+            this.checkAutoCheckin = new System.Windows.Forms.CheckBox();
+            this.btnConfirm = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupCamera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCamera)).BeginInit();
             this.groupExtractInfo.SuspendLayout();
             this.groupPlateInfo.SuspendLayout();
             this.groupCardInfo.SuspendLayout();
             this.groupControl.SuspendLayout();
+            this.groupControlSOS.SuspendLayout();
             this.groupManageControll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableVehicleInPark)).BeginInit();
             this.groupConfirmControl.SuspendLayout();
-            this.groupControlSOS.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupCamera
@@ -71,9 +71,9 @@ namespace HeThongGiuXe
             this.groupCamera.Controls.Add(this.imgCamera);
             this.groupCamera.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupCamera.Location = new System.Drawing.Point(28, 24);
-            this.groupCamera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupCamera.Margin = new System.Windows.Forms.Padding(4);
             this.groupCamera.Name = "groupCamera";
-            this.groupCamera.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupCamera.Padding = new System.Windows.Forms.Padding(4);
             this.groupCamera.Size = new System.Drawing.Size(690, 450);
             this.groupCamera.TabIndex = 0;
             this.groupCamera.TabStop = false;
@@ -82,7 +82,7 @@ namespace HeThongGiuXe
             // imgCamera
             // 
             this.imgCamera.Location = new System.Drawing.Point(8, 31);
-            this.imgCamera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgCamera.Margin = new System.Windows.Forms.Padding(4);
             this.imgCamera.Name = "imgCamera";
             this.imgCamera.Size = new System.Drawing.Size(665, 411);
             this.imgCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,9 +95,9 @@ namespace HeThongGiuXe
             this.groupExtractInfo.Controls.Add(this.groupCardInfo);
             this.groupExtractInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupExtractInfo.Location = new System.Drawing.Point(28, 488);
-            this.groupExtractInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupExtractInfo.Margin = new System.Windows.Forms.Padding(4);
             this.groupExtractInfo.Name = "groupExtractInfo";
-            this.groupExtractInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupExtractInfo.Padding = new System.Windows.Forms.Padding(4);
             this.groupExtractInfo.Size = new System.Drawing.Size(690, 234);
             this.groupExtractInfo.TabIndex = 1;
             this.groupExtractInfo.TabStop = false;
@@ -111,9 +111,9 @@ namespace HeThongGiuXe
             this.groupPlateInfo.Controls.Add(this.txtPlate);
             this.groupPlateInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupPlateInfo.Location = new System.Drawing.Point(358, 45);
-            this.groupPlateInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupPlateInfo.Margin = new System.Windows.Forms.Padding(4);
             this.groupPlateInfo.Name = "groupPlateInfo";
-            this.groupPlateInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupPlateInfo.Padding = new System.Windows.Forms.Padding(4);
             this.groupPlateInfo.Size = new System.Drawing.Size(316, 176);
             this.groupPlateInfo.TabIndex = 1;
             this.groupPlateInfo.TabStop = false;
@@ -173,7 +173,7 @@ namespace HeThongGiuXe
             this.txtPlate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPlate.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlate.Location = new System.Drawing.Point(20, 44);
-            this.txtPlate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPlate.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlate.Name = "txtPlate";
             this.txtPlate.Size = new System.Drawing.Size(230, 36);
             this.txtPlate.TabIndex = 0;
@@ -187,9 +187,9 @@ namespace HeThongGiuXe
             this.groupCardInfo.Controls.Add(this.txtCard);
             this.groupCardInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupCardInfo.Location = new System.Drawing.Point(24, 45);
-            this.groupCardInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupCardInfo.Margin = new System.Windows.Forms.Padding(4);
             this.groupCardInfo.Name = "groupCardInfo";
-            this.groupCardInfo.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupCardInfo.Padding = new System.Windows.Forms.Padding(4);
             this.groupCardInfo.Size = new System.Drawing.Size(322, 176);
             this.groupCardInfo.TabIndex = 0;
             this.groupCardInfo.TabStop = false;
@@ -227,7 +227,7 @@ namespace HeThongGiuXe
             this.txtCard.Enabled = false;
             this.txtCard.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCard.Location = new System.Drawing.Point(17, 47);
-            this.txtCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(246, 36);
             this.txtCard.TabIndex = 1;
@@ -240,61 +240,13 @@ namespace HeThongGiuXe
             this.groupControl.Controls.Add(this.groupConfirmControl);
             this.groupControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupControl.Location = new System.Drawing.Point(738, 24);
-            this.groupControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl.Name = "groupControl";
-            this.groupControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupControl.Padding = new System.Windows.Forms.Padding(4);
             this.groupControl.Size = new System.Drawing.Size(626, 698);
             this.groupControl.TabIndex = 2;
             this.groupControl.TabStop = false;
             this.groupControl.Text = "Điều khiển";
-            // 
-            // groupManageControll
-            // 
-            this.groupManageControll.Controls.Add(this.btlGetAllInPark);
-            this.groupManageControll.Controls.Add(this.btnFilterWithPlate);
-            this.groupManageControll.Controls.Add(this.btnFilterWithCard);
-            this.groupManageControll.Controls.Add(this.tableVehicleInPark);
-            this.groupManageControll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.groupManageControll.Location = new System.Drawing.Point(21, 316);
-            this.groupManageControll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupManageControll.Name = "groupManageControll";
-            this.groupManageControll.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupManageControll.Size = new System.Drawing.Size(590, 369);
-            this.groupManageControll.TabIndex = 2;
-            this.groupManageControll.TabStop = false;
-            this.groupManageControll.Text = "Quản lí";
-            // 
-            // tableVehicleInPark
-            // 
-            this.tableVehicleInPark.AllowUserToAddRows = false;
-            this.tableVehicleInPark.AllowUserToDeleteRows = false;
-            this.tableVehicleInPark.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tableVehicleInPark.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.tableVehicleInPark.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableVehicleInPark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableVehicleInPark.Location = new System.Drawing.Point(23, 99);
-            this.tableVehicleInPark.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tableVehicleInPark.Name = "tableVehicleInPark";
-            this.tableVehicleInPark.ReadOnly = true;
-            this.tableVehicleInPark.RowHeadersWidth = 51;
-            this.tableVehicleInPark.RowTemplate.Height = 24;
-            this.tableVehicleInPark.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableVehicleInPark.Size = new System.Drawing.Size(554, 255);
-            this.tableVehicleInPark.TabIndex = 3;
-            // 
-            // groupConfirmControl
-            // 
-            this.groupConfirmControl.Controls.Add(this.checkAutoCheckin);
-            this.groupConfirmControl.Controls.Add(this.btnConfirm);
-            this.groupConfirmControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.groupConfirmControl.Location = new System.Drawing.Point(21, 164);
-            this.groupConfirmControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupConfirmControl.Name = "groupConfirmControl";
-            this.groupConfirmControl.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupConfirmControl.Size = new System.Drawing.Size(590, 134);
-            this.groupConfirmControl.TabIndex = 1;
-            this.groupConfirmControl.TabStop = false;
-            this.groupConfirmControl.Text = "Xác nhận xe";
             // 
             // groupControlSOS
             // 
@@ -356,91 +308,21 @@ namespace HeThongGiuXe
             this.btnOpen.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnOpen.UseVisualStyleBackColor = false;
             // 
-            // btnConfirm
+            // groupManageControll
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnConfirm.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnConfirm.FlatAppearance.BorderSize = 0;
-            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnConfirm.Location = new System.Drawing.Point(23, 53);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnConfirm.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnConfirm.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnConfirm.Size = new System.Drawing.Size(219, 53);
-            this.btnConfirm.TabIndex = 6;
-            this.btnConfirm.Text = "Xác nhận xe vào";
-            this.btnConfirm.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // checkAutoCheckin
-            // 
-            this.checkAutoCheckin.AutoSize = true;
-            this.checkAutoCheckin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
-            this.checkAutoCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkAutoCheckin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkAutoCheckin.Location = new System.Drawing.Point(428, 64);
-            this.checkAutoCheckin.Margin = new System.Windows.Forms.Padding(4);
-            this.checkAutoCheckin.Name = "checkAutoCheckin";
-            this.checkAutoCheckin.Size = new System.Drawing.Size(107, 29);
-            this.checkAutoCheckin.TabIndex = 7;
-            this.checkAutoCheckin.Text = "Tự động";
-            this.checkAutoCheckin.UseVisualStyleBackColor = false;
-            // 
-            // btnFilterWithCard
-            // 
-            this.btnFilterWithCard.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterWithCard.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnFilterWithCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFilterWithCard.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnFilterWithCard.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnFilterWithCard.FlatAppearance.BorderSize = 0;
-            this.btnFilterWithCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterWithCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFilterWithCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnFilterWithCard.Location = new System.Drawing.Point(23, 33);
-            this.btnFilterWithCard.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnFilterWithCard.Name = "btnFilterWithCard";
-            this.btnFilterWithCard.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnFilterWithCard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnFilterWithCard.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFilterWithCard.Size = new System.Drawing.Size(154, 56);
-            this.btnFilterWithCard.TabIndex = 5;
-            this.btnFilterWithCard.Text = "Xem theo thẻ";
-            this.btnFilterWithCard.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnFilterWithCard.UseVisualStyleBackColor = false;
-            this.btnFilterWithCard.Click += new System.EventHandler(this.btnFilterWithCard_Click);
-            // 
-            // btnFilterWithPlate
-            // 
-            this.btnFilterWithPlate.BackColor = System.Drawing.Color.Transparent;
-            this.btnFilterWithPlate.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnFilterWithPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFilterWithPlate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnFilterWithPlate.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnFilterWithPlate.FlatAppearance.BorderSize = 0;
-            this.btnFilterWithPlate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilterWithPlate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnFilterWithPlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnFilterWithPlate.Location = new System.Drawing.Point(187, 33);
-            this.btnFilterWithPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btnFilterWithPlate.Name = "btnFilterWithPlate";
-            this.btnFilterWithPlate.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnFilterWithPlate.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnFilterWithPlate.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnFilterWithPlate.Size = new System.Drawing.Size(194, 56);
-            this.btnFilterWithPlate.TabIndex = 6;
-            this.btnFilterWithPlate.Text = "Xem theo biển số";
-            this.btnFilterWithPlate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnFilterWithPlate.UseVisualStyleBackColor = false;
-            this.btnFilterWithPlate.Click += new System.EventHandler(this.btnFilterWithPlate_Click);
+            this.groupManageControll.Controls.Add(this.btlGetAllInPark);
+            this.groupManageControll.Controls.Add(this.btnFilterWithPlate);
+            this.groupManageControll.Controls.Add(this.btnFilterWithCard);
+            this.groupManageControll.Controls.Add(this.tableVehicleInPark);
+            this.groupManageControll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupManageControll.Location = new System.Drawing.Point(21, 316);
+            this.groupManageControll.Margin = new System.Windows.Forms.Padding(4);
+            this.groupManageControll.Name = "groupManageControll";
+            this.groupManageControll.Padding = new System.Windows.Forms.Padding(4);
+            this.groupManageControll.Size = new System.Drawing.Size(590, 369);
+            this.groupManageControll.TabIndex = 2;
+            this.groupManageControll.TabStop = false;
+            this.groupManageControll.Text = "Quản lí";
             // 
             // btlGetAllInPark
             // 
@@ -466,6 +348,124 @@ namespace HeThongGiuXe
             this.btlGetAllInPark.UseVisualStyleBackColor = false;
             this.btlGetAllInPark.Click += new System.EventHandler(this.btlGetAllInPark_Click);
             // 
+            // btnFilterWithPlate
+            // 
+            this.btnFilterWithPlate.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterWithPlate.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnFilterWithPlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFilterWithPlate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnFilterWithPlate.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnFilterWithPlate.FlatAppearance.BorderSize = 0;
+            this.btnFilterWithPlate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterWithPlate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFilterWithPlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnFilterWithPlate.Location = new System.Drawing.Point(187, 33);
+            this.btnFilterWithPlate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnFilterWithPlate.Name = "btnFilterWithPlate";
+            this.btnFilterWithPlate.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnFilterWithPlate.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnFilterWithPlate.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFilterWithPlate.Size = new System.Drawing.Size(194, 56);
+            this.btnFilterWithPlate.TabIndex = 6;
+            this.btnFilterWithPlate.Text = "Xem theo biển số";
+            this.btnFilterWithPlate.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnFilterWithPlate.UseVisualStyleBackColor = false;
+            this.btnFilterWithPlate.Click += new System.EventHandler(this.btnFilterWithPlate_Click);
+            // 
+            // btnFilterWithCard
+            // 
+            this.btnFilterWithCard.BackColor = System.Drawing.Color.Transparent;
+            this.btnFilterWithCard.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnFilterWithCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFilterWithCard.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnFilterWithCard.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnFilterWithCard.FlatAppearance.BorderSize = 0;
+            this.btnFilterWithCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilterWithCard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnFilterWithCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnFilterWithCard.Location = new System.Drawing.Point(23, 33);
+            this.btnFilterWithCard.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btnFilterWithCard.Name = "btnFilterWithCard";
+            this.btnFilterWithCard.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnFilterWithCard.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnFilterWithCard.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnFilterWithCard.Size = new System.Drawing.Size(154, 56);
+            this.btnFilterWithCard.TabIndex = 5;
+            this.btnFilterWithCard.Text = "Xem theo thẻ";
+            this.btnFilterWithCard.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnFilterWithCard.UseVisualStyleBackColor = false;
+            this.btnFilterWithCard.Click += new System.EventHandler(this.btnFilterWithCard_Click);
+            // 
+            // tableVehicleInPark
+            // 
+            this.tableVehicleInPark.AllowUserToAddRows = false;
+            this.tableVehicleInPark.AllowUserToDeleteRows = false;
+            this.tableVehicleInPark.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableVehicleInPark.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.tableVehicleInPark.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableVehicleInPark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableVehicleInPark.Location = new System.Drawing.Point(23, 99);
+            this.tableVehicleInPark.Margin = new System.Windows.Forms.Padding(4);
+            this.tableVehicleInPark.Name = "tableVehicleInPark";
+            this.tableVehicleInPark.ReadOnly = true;
+            this.tableVehicleInPark.RowHeadersWidth = 51;
+            this.tableVehicleInPark.RowTemplate.Height = 24;
+            this.tableVehicleInPark.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableVehicleInPark.Size = new System.Drawing.Size(554, 255);
+            this.tableVehicleInPark.TabIndex = 3;
+            // 
+            // groupConfirmControl
+            // 
+            this.groupConfirmControl.Controls.Add(this.checkAutoCheckin);
+            this.groupConfirmControl.Controls.Add(this.btnConfirm);
+            this.groupConfirmControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupConfirmControl.Location = new System.Drawing.Point(21, 164);
+            this.groupConfirmControl.Margin = new System.Windows.Forms.Padding(4);
+            this.groupConfirmControl.Name = "groupConfirmControl";
+            this.groupConfirmControl.Padding = new System.Windows.Forms.Padding(4);
+            this.groupConfirmControl.Size = new System.Drawing.Size(590, 134);
+            this.groupConfirmControl.TabIndex = 1;
+            this.groupConfirmControl.TabStop = false;
+            this.groupConfirmControl.Text = "Xác nhận xe";
+            // 
+            // checkAutoCheckin
+            // 
+            this.checkAutoCheckin.AutoSize = true;
+            this.checkAutoCheckin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
+            this.checkAutoCheckin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkAutoCheckin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkAutoCheckin.Location = new System.Drawing.Point(428, 64);
+            this.checkAutoCheckin.Margin = new System.Windows.Forms.Padding(4);
+            this.checkAutoCheckin.Name = "checkAutoCheckin";
+            this.checkAutoCheckin.Size = new System.Drawing.Size(107, 29);
+            this.checkAutoCheckin.TabIndex = 7;
+            this.checkAutoCheckin.Text = "Tự động";
+            this.checkAutoCheckin.UseVisualStyleBackColor = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnConfirm.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnConfirm.FlatAppearance.BorderSize = 0;
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnConfirm.Location = new System.Drawing.Point(23, 53);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnConfirm.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnConfirm.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnConfirm.Size = new System.Drawing.Size(219, 53);
+            this.btnConfirm.TabIndex = 6;
+            this.btnConfirm.Text = "Xác nhận xe vào";
+            this.btnConfirm.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // CheckinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -478,7 +478,7 @@ namespace HeThongGiuXe
             this.Controls.Add(this.groupCamera);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Điều khiển xe vào";
@@ -491,11 +491,11 @@ namespace HeThongGiuXe
             this.groupCardInfo.ResumeLayout(false);
             this.groupCardInfo.PerformLayout();
             this.groupControl.ResumeLayout(false);
+            this.groupControlSOS.ResumeLayout(false);
             this.groupManageControll.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableVehicleInPark)).EndInit();
             this.groupConfirmControl.ResumeLayout(false);
             this.groupConfirmControl.PerformLayout();
-            this.groupControlSOS.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
