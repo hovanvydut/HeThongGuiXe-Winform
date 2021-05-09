@@ -157,6 +157,12 @@
     <Compile Include="View\CustomerDetail\CustomerDetail.Designer.cs">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\GeneralManagementForm\GeneralManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GeneralManagementForm\GeneralManagement.Designer.cs">
+      <DependentUpon>GeneralManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Loading\LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomerDetail\CustomerDetail.resx">
       <DependentUpon>CustomerDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GeneralManagementForm\GeneralManagement.resx">
+      <DependentUpon>GeneralManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Loading\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>

@@ -107,12 +107,10 @@ namespace HeThongGiuXe
                     => o.day_in_week == day
                     && o.start_time_in_day <= startTime.TimeOfDay
                     && o.end_time_in_day >= startTime.TimeOfDay).FirstOrDefault();
-                if (priceInDay == default(Unit_Price))
+                if (priceInDay != default(Unit_Price))
                 {
-                    throw new Exception("Cannot calculate price");
-                }
-                result += priceInDay.price;
-                startTime = new DateTime(
+                    result += priceInDay.price;
+                    startTime = new DateTime(
                     startTime.Year,
                     startTime.Month,
                     startTime.Day,
@@ -120,8 +118,13 @@ namespace HeThongGiuXe
                     ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
                     ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
                     );
-                startTime = startTime.AddSeconds(1);
+                    startTime = startTime.AddSeconds(1);
+                    continue;
+                }
+                throw new Exception("Không thể tính tiền");
+                    
             }
+              
             return result;
         }
         public List<Parking_History> GetParkingHistories(

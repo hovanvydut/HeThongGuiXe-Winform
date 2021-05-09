@@ -158,7 +158,13 @@ namespace HeThongGiuXe
             this.txtPlate.Text = resutls[0].Plate;
             this.DetectedPlate = resutls[0].Plate;
             this.lbPlate.Text = "Đã trích xuất";
-            this.lbPlate.ForeColor = Color.Green;
+
+            // Signal that equal
+            if (this.DetectedPlate == this.SavedPlate)
+            {
+                this.lbPlate.Text = "Khớp thông tin";
+                this.lbPlate.ForeColor = Color.Green;
+            }
             
         }
         private async Task LoadCheckinInfoByCard(string cardID)
@@ -193,7 +199,13 @@ namespace HeThongGiuXe
             this.SavedPlate = checkin.license_plate;
             this.CurentCustomer = customer;
             this.txtSavedPlate.Text = checkin.license_plate;
-            
+            // Signal equal 
+            if (this.DetectedPlate == this.SavedPlate)
+            {
+                this.lbPlate.Text = "Khớp thông tin";
+                this.lbPlate.ForeColor = Color.Green;
+            }
+
         }
         private void CheckOut(bool ignoreCompare = false)
         {
@@ -215,10 +227,10 @@ namespace HeThongGiuXe
             try
             {
                 currentParking = CheckInOutBLL.Instance.CheckOut(this.SavedPlate, isPayment);
-                if (currentParking == null) throw new Exception();
+                if (currentParking == null) throw new Exception("Không thể truy cập dữ liệu");
             } catch (Exception err)
             {
-                MessageBox.Show("Không thể truy cập vào cơ sở dữ liệu", "Lỗi hệ thống");
+                MessageBox.Show(err.Message, "Lỗi hệ thống");
                 return;
             }
             if (isPayment)
