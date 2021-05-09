@@ -335,7 +335,7 @@ namespace HeThongGiuXe
             // 
             this.tableVehicleInPark.AllowUserToAddRows = false;
             this.tableVehicleInPark.AllowUserToDeleteRows = false;
-            this.tableVehicleInPark.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tableVehicleInPark.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableVehicleInPark.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.tableVehicleInPark.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableVehicleInPark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
