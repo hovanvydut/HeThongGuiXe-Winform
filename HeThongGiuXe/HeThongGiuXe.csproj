@@ -79,6 +79,7 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,6 +126,12 @@
     </Compile>
     <Compile Include="DAL\Unit_Price.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\RoundedButton.Designer.cs">
+      <DependentUpon>RoundedButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\APIPlateRecognizer.cs" />
     <Compile Include="Utils\ImageProcesing.cs" />
@@ -182,6 +189,9 @@
     <Compile Include="View\SettingSerial\SerialSettingForm.Designer.cs">
       <DependentUpon>SerialSettingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DTO\RoundedButton.resx">
+      <DependentUpon>RoundedButton.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -244,6 +254,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\settings %281%29.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\icons8-automatic-96.png" />
     <None Include="Assets\Images\Logo_Sgroup.png" />
     <None Include="Assets\Images\Logo_DUT.png" />
     <None Include="Assets\Images\Logo_IT.jpg" />
