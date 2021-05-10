@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongGiuXe.View.CustomerDetail
+namespace HeThongGiuXe.View.ManageUnitPriceForm
 {
-    public partial class CustomerDetail : Form
+    public partial class ManageUnitPrice : Form
     {
-        public CustomerDetail()
+        public ManageUnitPrice()
         {
             InitializeComponent();
         }
-
-      
     }
 }

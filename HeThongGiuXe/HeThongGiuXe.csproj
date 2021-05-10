@@ -152,11 +152,11 @@
     <Compile Include="View\CheckoutForm\CheckoutForm.Designer.cs">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CustomerDetail\CustomerDetail.cs">
+    <Compile Include="View\ManageCustomerForm\ManageCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CustomerDetail\CustomerDetail.Designer.cs">
-      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    <Compile Include="View\ManageCustomerForm\ManageCustomerForm.Designer.cs">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Loading\LoadingForm.cs">
       <SubType>Form</SubType>
@@ -172,6 +172,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ManageUnitPriceForm\ManageUnitPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ManageUnitPriceForm\ManageUnitPrice.Designer.cs">
+      <DependentUpon>ManageUnitPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ManageVehicle\ManageVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,14 +221,17 @@
     <EmbeddedResource Include="View\CheckoutForm\CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CustomerDetail\CustomerDetail.resx">
-      <DependentUpon>CustomerDetail.cs</DependentUpon>
+    <EmbeddedResource Include="View\ManageCustomerForm\ManageCustomerForm.resx">
+      <DependentUpon>ManageCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Loading\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ManageUnitPriceForm\ManageUnitPrice.resx">
+      <DependentUpon>ManageUnitPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ManageVehicle\ManageVehicle.resx">
       <DependentUpon>ManageVehicle.cs</DependentUpon>
