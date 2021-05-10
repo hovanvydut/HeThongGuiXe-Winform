@@ -165,6 +165,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ManageUnitPriceForm\ManageUnitPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ManageUnitPriceForm\ManageUnitPrice.Designer.cs">
+      <DependentUpon>ManageUnitPrice.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ManageVehicle\ManageVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ManageUnitPriceForm\ManageUnitPrice.resx">
+      <DependentUpon>ManageUnitPrice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ManageVehicle\ManageVehicle.resx">
       <DependentUpon>ManageVehicle.cs</DependentUpon>

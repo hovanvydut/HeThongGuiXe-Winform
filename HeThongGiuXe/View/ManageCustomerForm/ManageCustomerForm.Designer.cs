@@ -107,6 +107,7 @@ namespace HeThongGiuXe
             // 
             this.txtCardID.Location = new System.Drawing.Point(159, 200);
             this.txtCardID.Name = "txtCardID";
+            this.txtCardID.PasswordChar = '*';
             this.txtCardID.ReadOnly = true;
             this.txtCardID.Size = new System.Drawing.Size(198, 22);
             this.txtCardID.TabIndex = 16;
@@ -115,6 +116,7 @@ namespace HeThongGiuXe
             // 
             this.txtPassword.Location = new System.Drawing.Point(159, 172);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(289, 22);
             this.txtPassword.TabIndex = 15;
             // 
