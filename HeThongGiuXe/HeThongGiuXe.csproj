@@ -101,6 +101,9 @@
     <Compile Include="DAL\Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\Employee.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,6 +126,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Payment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\Unit_Price.cs">
@@ -273,13 +279,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\settings %281%29.png" />
-    <None Include="Resources\settings.png" />
-    <None Include="Resources\icons8-automatic-96.png" />
-    <None Include="Assets\Images\Logo_Sgroup.png" />
-    <None Include="Assets\Images\Logo_DUT.png" />
-    <None Include="Assets\Images\Logo_IT.jpg" />
-    <None Include="Assets\Images\Loading_ico.gif" />
     <Content Include="DAL\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -290,6 +289,13 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\settings %281%29.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\icons8-automatic-96.png" />
+    <None Include="Assets\Images\Logo_Sgroup.png" />
+    <None Include="Assets\Images\Logo_DUT.png" />
+    <None Include="Assets\Images\Logo_IT.jpg" />
+    <None Include="Assets\Images\Loading_ico.gif" />
     <None Include="Assets\Images\settings-solid.png" />
     <Content Include="Assets\Sounds\acceptSound.mp3" />
     <None Include="Resources\SettingImg.bmp" />

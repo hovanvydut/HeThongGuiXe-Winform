@@ -12,13 +12,19 @@ namespace HeThongGiuXe
     using System;
     using System.Collections.Generic;
     
-    public partial class Parking_Package
+    public partial class Role
     {
-        public int ID_package { get; set; }
-        public string name { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.Employees = new HashSet<Employee>();
+        }
+    
+        public int ID_role { get; set; }
+        public string code { get; set; }
         public string description { get; set; }
-        public int price { get; set; }
-        public int duration { get; set; }
-        public bool visible { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee> Employees { get; set; }
     }
 }

@@ -4,14 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8d20b56d780b41c8a1ebfff248a68e56" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Customer" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Parking_History" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Parking_Package" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Payment" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Unit_Price" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <AssociationConnector Association="DatabaseModel.FK__Parking_H__custo__1209AD79" ManuallyRouted="false" />
-        <AssociationConnector Association="DatabaseModel.FK__Payment__custome__18B6AB08" ManuallyRouted="false" />
+      <Diagram DiagramId="050744d3e1d3441ca705966741e2eda8" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Customer" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Parking_History" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Parking_Package" Width="1.5" PointX="5.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Payment" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Unit_Price" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK__Parking_H__custo__382F5661" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Payment__custome__3EDC53F0" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK__Employee__role_i__4A4E069C" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

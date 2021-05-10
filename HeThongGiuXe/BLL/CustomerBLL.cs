@@ -14,6 +14,7 @@ namespace HeThongGiuXe
             Validator.ValidateCustomerBeforeInsert(customer);
             using (DatabaseEntities db = new DatabaseEntities())
             {
+                customer.created_at = DateTime.Now;
                 db.Customers.Add(customer);
                 db.SaveChanges();
             }
