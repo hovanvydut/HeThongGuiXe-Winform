@@ -72,6 +72,16 @@ namespace HeThongGiuXe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap checkbox_bg {
+            get {
+                object obj = ResourceManager.GetObject("checkbox_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap icons8_automatic_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8_automatic_96", resourceCulture);
@@ -164,6 +174,16 @@ namespace HeThongGiuXe.Properties {
         public static System.Drawing.Bitmap settings_solid {
             get {
                 object obj = ResourceManager.GetObject("settings_solid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap textbox_background {
+            get {
+                object obj = ResourceManager.GetObject("textbox_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

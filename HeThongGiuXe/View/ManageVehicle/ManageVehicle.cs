@@ -83,7 +83,7 @@ namespace HeThongGiuXe
             this.rb_outpark.Checked = false;
             this.rb_all_range.Checked = true;
         }
-        private void btn_search_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             search();
             if (this.dtgv_list_vehicle.RowCount > 0)
@@ -97,6 +97,8 @@ namespace HeThongGiuXe
         {
             this.gb_date.Enabled = this.cb_date.Checked;
         }
+
+
         private void btnClear_Click(object sender, EventArgs e)
         {
             clear();
@@ -107,5 +109,6 @@ namespace HeThongGiuXe
             clear();
             search();
         }
+
     }
 }
