@@ -36,6 +36,7 @@ namespace HeThongGiuXe
             this.rb_all_range.Checked = true;
             this.rb_all_payment.Checked = true;
             this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
+            this.lbNumberTotal.Text = this.dtgv_list_vehicle.Rows.Count.ToString();
             this.dtgv_list_vehicle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_list_vehicle.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
@@ -68,6 +69,7 @@ namespace HeThongGiuXe
             }
             this.dtgv_list_vehicle.DataSource =
             ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username, plate: licence_plate, start: start, end: end, isPayment: isPayment, hasCheckout: hasCheckout);
+            this.lbNumberTotal.Text = this.dtgv_list_vehicle.Rows.Count.ToString();
             setStatusBtn();
         }
         private void clear()
@@ -83,7 +85,15 @@ namespace HeThongGiuXe
             this.rb_outpark.Checked = false;
             this.rb_all_range.Checked = true;
         }
-        private void btn_search_Click(object sender, EventArgs e)
+       
+
+        private void cb_date_CheckedChanged(object sender, EventArgs e)
+        {
+            this.gb_date.Enabled = this.cb_date.Checked;
+        }
+
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             search();
             if (this.dtgv_list_vehicle.RowCount > 0)
@@ -91,11 +101,6 @@ namespace HeThongGiuXe
                 this.dtgv_list_vehicle.FirstDisplayedScrollingRowIndex
                 = this.dtgv_list_vehicle.RowCount - 1;
             }
-        }
-
-        private void cb_date_CheckedChanged(object sender, EventArgs e)
-        {
-            this.gb_date.Enabled = this.cb_date.Checked;
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
