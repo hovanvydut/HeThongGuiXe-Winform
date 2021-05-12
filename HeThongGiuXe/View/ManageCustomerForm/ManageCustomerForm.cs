@@ -52,12 +52,7 @@ namespace HeThongGiuXe
             // Set to textfield
             this.txtCardID.Text = ID;
         }
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            clearDetail();
-            this.btnOK.Text = "Thêm";
-            this.currentSelectedID = null;
-        }
+      
         private void clearDetail()
         {
             this.txtCardID.Clear();
@@ -149,7 +144,12 @@ namespace HeThongGiuXe
                 phone = this.txtPhone.Text.Trim().Length == 0? null : this.txtPhone.Text.Trim(),
             };
         }
-
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            clearDetail();
+            this.btnOK.Text = "Thêm";
+            this.currentSelectedID = null;
+        }
         private void btnOK_Click(object sender, EventArgs e)
         {
             Customer customer = GetDetail();
@@ -205,5 +205,6 @@ namespace HeThongGiuXe
             }
             InitializeSerial(this.cbPort.Text, 9600);
         }
+
     }
 }
