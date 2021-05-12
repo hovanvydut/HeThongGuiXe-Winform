@@ -91,16 +91,17 @@ namespace HeThongGiuXe
             this.groupInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupInfo.Location = new System.Drawing.Point(29, 22);
             this.groupInfo.Name = "groupInfo";
-            this.groupInfo.Size = new System.Drawing.Size(646, 306);
+            this.groupInfo.Size = new System.Drawing.Size(646, 282);
             this.groupInfo.TabIndex = 0;
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Thông tin";
             // 
             // cbPort
             // 
+            this.cbPort.BackColor = System.Drawing.SystemColors.Info;
             this.cbPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPort.FormattingEnabled = true;
-            this.cbPort.Location = new System.Drawing.Point(433, 160);
+            this.cbPort.Location = new System.Drawing.Point(433, 157);
             this.cbPort.Name = "cbPort";
             this.cbPort.Size = new System.Drawing.Size(188, 28);
             this.cbPort.TabIndex = 17;
@@ -108,54 +109,68 @@ namespace HeThongGiuXe
             // 
             // txtCardID
             // 
+            this.txtCardID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCardID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCardID.Location = new System.Drawing.Point(433, 122);
             this.txtCardID.Name = "txtCardID";
             this.txtCardID.PasswordChar = '*';
             this.txtCardID.ReadOnly = true;
-            this.txtCardID.Size = new System.Drawing.Size(188, 27);
+            this.txtCardID.Size = new System.Drawing.Size(188, 20);
             this.txtCardID.TabIndex = 16;
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Location = new System.Drawing.Point(116, 164);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(192, 27);
+            this.txtPassword.Size = new System.Drawing.Size(192, 20);
             this.txtPassword.TabIndex = 15;
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.Info;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Location = new System.Drawing.Point(116, 122);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(192, 27);
+            this.txtUsername.Size = new System.Drawing.Size(192, 20);
             this.txtUsername.TabIndex = 14;
             // 
             // txtStudentID
             // 
+            this.txtStudentID.BackColor = System.Drawing.SystemColors.Info;
+            this.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentID.Location = new System.Drawing.Point(433, 79);
             this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(188, 27);
+            this.txtStudentID.Size = new System.Drawing.Size(188, 20);
             this.txtStudentID.TabIndex = 13;
             // 
             // txtEmail
             // 
+            this.txtEmail.BackColor = System.Drawing.SystemColors.Info;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Location = new System.Drawing.Point(116, 78);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(192, 27);
+            this.txtEmail.Size = new System.Drawing.Size(192, 20);
             this.txtEmail.TabIndex = 12;
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Location = new System.Drawing.Point(433, 37);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(188, 27);
+            this.txtPhone.Size = new System.Drawing.Size(188, 20);
             this.txtPhone.TabIndex = 11;
             // 
             // txtFullname
             // 
-            this.txtFullname.Location = new System.Drawing.Point(116, 37);
+            this.txtFullname.BackColor = System.Drawing.SystemColors.Info;
+            this.txtFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFullname.Location = new System.Drawing.Point(116, 41);
             this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(192, 27);
+            this.txtFullname.Size = new System.Drawing.Size(192, 20);
             this.txtFullname.TabIndex = 10;
             // 
             // lbCardID
@@ -232,14 +247,14 @@ namespace HeThongGiuXe
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnCancel.Location = new System.Drawing.Point(456, 248);
+            this.btnCancel.Location = new System.Drawing.Point(478, 218);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnCancel.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.Size = new System.Drawing.Size(101, 36);
-            this.btnCancel.TabIndex = 22;
+            this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Xóa";
             this.btnCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -256,14 +271,14 @@ namespace HeThongGiuXe
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnOK.Location = new System.Drawing.Point(116, 248);
+            this.btnOK.Location = new System.Drawing.Point(116, 218);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnOK.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnOK.OnHoverTextColor = System.Drawing.Color.White;
             this.btnOK.Size = new System.Drawing.Size(101, 36);
-            this.btnOK.TabIndex = 22;
+            this.btnOK.TabIndex = 18;
             this.btnOK.Text = "Thêm";
             this.btnOK.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnOK.UseVisualStyleBackColor = false;
@@ -280,14 +295,14 @@ namespace HeThongGiuXe
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnReset.Location = new System.Drawing.Point(291, 248);
+            this.btnReset.Location = new System.Drawing.Point(301, 218);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnReset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnReset.OnHoverTextColor = System.Drawing.Color.White;
             this.btnReset.Size = new System.Drawing.Size(101, 36);
-            this.btnReset.TabIndex = 22;
+            this.btnReset.TabIndex = 19;
             this.btnReset.Text = "Đặt lại";
             this.btnReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnReset.UseVisualStyleBackColor = false;
@@ -297,7 +312,7 @@ namespace HeThongGiuXe
             // 
             this.groupList.Controls.Add(this.tableCustomers);
             this.groupList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.groupList.Location = new System.Drawing.Point(29, 343);
+            this.groupList.Location = new System.Drawing.Point(29, 330);
             this.groupList.Name = "groupList";
             this.groupList.Size = new System.Drawing.Size(1031, 277);
             this.groupList.TabIndex = 2;
@@ -319,38 +334,46 @@ namespace HeThongGiuXe
             this.groupFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupFilter.Location = new System.Drawing.Point(693, 22);
             this.groupFilter.Name = "groupFilter";
-            this.groupFilter.Size = new System.Drawing.Size(367, 306);
+            this.groupFilter.Size = new System.Drawing.Size(367, 282);
             this.groupFilter.TabIndex = 3;
             this.groupFilter.TabStop = false;
             this.groupFilter.Text = "Tìm kiếm";
             // 
             // txtStudentIDFilter
             // 
+            this.txtStudentIDFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.txtStudentIDFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentIDFilter.Location = new System.Drawing.Point(135, 119);
             this.txtStudentIDFilter.Name = "txtStudentIDFilter";
-            this.txtStudentIDFilter.Size = new System.Drawing.Size(201, 27);
-            this.txtStudentIDFilter.TabIndex = 9;
+            this.txtStudentIDFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtStudentIDFilter.TabIndex = 23;
             // 
             // txtEmailFilter
             // 
+            this.txtEmailFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.txtEmailFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmailFilter.Location = new System.Drawing.Point(135, 78);
             this.txtEmailFilter.Name = "txtEmailFilter";
-            this.txtEmailFilter.Size = new System.Drawing.Size(201, 27);
-            this.txtEmailFilter.TabIndex = 8;
+            this.txtEmailFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtEmailFilter.TabIndex = 22;
             // 
             // txtPhoneFilter
             // 
+            this.txtPhoneFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPhoneFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhoneFilter.Location = new System.Drawing.Point(135, 160);
             this.txtPhoneFilter.Name = "txtPhoneFilter";
-            this.txtPhoneFilter.Size = new System.Drawing.Size(201, 27);
-            this.txtPhoneFilter.TabIndex = 7;
+            this.txtPhoneFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtPhoneFilter.TabIndex = 24;
             // 
             // txtFullnameFilter
             // 
+            this.txtFullnameFilter.BackColor = System.Drawing.SystemColors.Info;
+            this.txtFullnameFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullnameFilter.Location = new System.Drawing.Point(135, 41);
             this.txtFullnameFilter.Name = "txtFullnameFilter";
-            this.txtFullnameFilter.Size = new System.Drawing.Size(201, 27);
-            this.txtFullnameFilter.TabIndex = 6;
+            this.txtFullnameFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtFullnameFilter.TabIndex = 21;
             // 
             // lbStudentIdFilter
             // 
@@ -418,14 +441,14 @@ namespace HeThongGiuXe
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnShowAll.Location = new System.Drawing.Point(59, 248);
+            this.btnShowAll.Location = new System.Drawing.Point(55, 218);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnShowAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnShowAll.OnHoverTextColor = System.Drawing.Color.White;
             this.btnShowAll.Size = new System.Drawing.Size(122, 36);
-            this.btnShowAll.TabIndex = 23;
+            this.btnShowAll.TabIndex = 25;
             this.btnShowAll.Text = "Xem tất cả";
             this.btnShowAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnShowAll.UseVisualStyleBackColor = false;
@@ -441,14 +464,14 @@ namespace HeThongGiuXe
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.Location = new System.Drawing.Point(205, 248);
+            this.btnSearch.Location = new System.Drawing.Point(185, 218);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSearch.Size = new System.Drawing.Size(120, 36);
-            this.btnSearch.TabIndex = 23;
+            this.btnSearch.TabIndex = 26;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnSearch.UseVisualStyleBackColor = false;
