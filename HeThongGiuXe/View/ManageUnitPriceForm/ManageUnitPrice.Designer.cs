@@ -1,5 +1,5 @@
 ﻿
-namespace HeThongGiuXe.View.ManageUnitPriceForm
+namespace HeThongGiuXe
 {
     partial class ManageUnitPrice
     {
@@ -30,29 +30,30 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
         private void InitializeComponent()
         {
             this.groupDayPrice = new System.Windows.Forms.GroupBox();
+            this.btnSaveChange = new System.Windows.Forms.Button();
+            this.cbDay = new System.Windows.Forms.ComboBox();
             this.tableDayPrice = new System.Windows.Forms.DataGridView();
             this.groupSpecicalTime = new System.Windows.Forms.GroupBox();
-            this.cbDay = new System.Windows.Forms.ComboBox();
-            this.btnSaveChange = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lbDescription = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.dateFilter = new System.Windows.Forms.DateTimePicker();
+            this.dateStart = new System.Windows.Forms.DateTimePicker();
+            this.dateEnd = new System.Windows.Forms.DateTimePicker();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lbPrice = new System.Windows.Forms.Label();
+            this.lbEnd = new System.Windows.Forms.Label();
+            this.lbStart = new System.Windows.Forms.Label();
+            this.lbStartFilter = new System.Windows.Forms.Label();
+            this.tableSpecialPrice = new System.Windows.Forms.DataGridView();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.groupDayPrice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDayPrice)).BeginInit();
             this.groupSpecicalTime.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSpecialPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // groupDayPrice
@@ -67,11 +68,42 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
             this.groupDayPrice.TabStop = false;
             this.groupDayPrice.Text = "Đơn giá hàng ngày";
             // 
+            // btnSaveChange
+            // 
+            this.btnSaveChange.Enabled = false;
+            this.btnSaveChange.Location = new System.Drawing.Point(193, 46);
+            this.btnSaveChange.Name = "btnSaveChange";
+            this.btnSaveChange.Size = new System.Drawing.Size(121, 24);
+            this.btnSaveChange.TabIndex = 2;
+            this.btnSaveChange.Text = "Lưu thay đổi";
+            this.btnSaveChange.UseVisualStyleBackColor = true;
+            this.btnSaveChange.Click += new System.EventHandler(this.btnSaveChange_Click);
+            // 
+            // cbDay
+            // 
+            this.cbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDay.FormattingEnabled = true;
+            this.cbDay.Items.AddRange(new object[] {
+            "Chủ nhật",
+            "Thứ 2",
+            "Thứ 3",
+            "Thứ 4",
+            "Thứ 5",
+            "Thứ 6",
+            "Thứ 7"});
+            this.cbDay.Location = new System.Drawing.Point(35, 46);
+            this.cbDay.Name = "cbDay";
+            this.cbDay.Size = new System.Drawing.Size(137, 24);
+            this.cbDay.TabIndex = 1;
+            this.cbDay.SelectedIndexChanged += new System.EventHandler(this.cbDay_SelectedIndexChanged);
+            // 
             // tableDayPrice
             // 
+            this.tableDayPrice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableDayPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableDayPrice.Location = new System.Drawing.Point(25, 90);
             this.tableDayPrice.Name = "tableDayPrice";
+            this.tableDayPrice.RowHeadersVisible = false;
             this.tableDayPrice.RowHeadersWidth = 51;
             this.tableDayPrice.RowTemplate.Height = 24;
             this.tableDayPrice.Size = new System.Drawing.Size(289, 363);
@@ -79,21 +111,22 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
             // 
             // groupSpecicalTime
             // 
-            this.groupSpecicalTime.Controls.Add(this.button4);
-            this.groupSpecicalTime.Controls.Add(this.button3);
-            this.groupSpecicalTime.Controls.Add(this.button2);
-            this.groupSpecicalTime.Controls.Add(this.button1);
-            this.groupSpecicalTime.Controls.Add(this.dateTimePicker3);
-            this.groupSpecicalTime.Controls.Add(this.dateTimePicker4);
-            this.groupSpecicalTime.Controls.Add(this.dateTimePicker2);
-            this.groupSpecicalTime.Controls.Add(this.dateTimePicker1);
-            this.groupSpecicalTime.Controls.Add(this.textBox1);
-            this.groupSpecicalTime.Controls.Add(this.label5);
-            this.groupSpecicalTime.Controls.Add(this.label3);
-            this.groupSpecicalTime.Controls.Add(this.label4);
-            this.groupSpecicalTime.Controls.Add(this.label2);
-            this.groupSpecicalTime.Controls.Add(this.label1);
-            this.groupSpecicalTime.Controls.Add(this.dataGridView1);
+            this.groupSpecicalTime.Controls.Add(this.btnShowAll);
+            this.groupSpecicalTime.Controls.Add(this.txtDescription);
+            this.groupSpecicalTime.Controls.Add(this.lbDescription);
+            this.groupSpecicalTime.Controls.Add(this.btnReset);
+            this.groupSpecicalTime.Controls.Add(this.btnDelete);
+            this.groupSpecicalTime.Controls.Add(this.btnOK);
+            this.groupSpecicalTime.Controls.Add(this.btnSearch);
+            this.groupSpecicalTime.Controls.Add(this.dateFilter);
+            this.groupSpecicalTime.Controls.Add(this.dateStart);
+            this.groupSpecicalTime.Controls.Add(this.dateEnd);
+            this.groupSpecicalTime.Controls.Add(this.txtPrice);
+            this.groupSpecicalTime.Controls.Add(this.lbPrice);
+            this.groupSpecicalTime.Controls.Add(this.lbEnd);
+            this.groupSpecicalTime.Controls.Add(this.lbStart);
+            this.groupSpecicalTime.Controls.Add(this.lbStartFilter);
+            this.groupSpecicalTime.Controls.Add(this.tableSpecialPrice);
             this.groupSpecicalTime.Location = new System.Drawing.Point(411, 33);
             this.groupSpecicalTime.Name = "groupSpecicalTime";
             this.groupSpecicalTime.Size = new System.Drawing.Size(338, 474);
@@ -101,160 +134,156 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
             this.groupSpecicalTime.TabStop = false;
             this.groupSpecicalTime.Text = "Giá thời gian đặt biệt";
             // 
-            // cbDay
+            // txtDescription
             // 
-            this.cbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDay.FormattingEnabled = true;
-            this.cbDay.Items.AddRange(new object[] {
-            "Thứ 2",
-            "Thứ 3",
-            "Thứ 4",
-            "Thứ 5",
-            "Thứ 6",
-            "Thứ 7",
-            "Chủ nhật"});
-            this.cbDay.Location = new System.Drawing.Point(35, 46);
-            this.cbDay.Name = "cbDay";
-            this.cbDay.Size = new System.Drawing.Size(137, 24);
-            this.cbDay.TabIndex = 1;
+            this.txtDescription.Location = new System.Drawing.Point(129, 98);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(192, 22);
+            this.txtDescription.TabIndex = 16;
             // 
-            // btnSaveChange
+            // lbDescription
             // 
-            this.btnSaveChange.Location = new System.Drawing.Point(193, 46);
-            this.btnSaveChange.Name = "btnSaveChange";
-            this.btnSaveChange.Size = new System.Drawing.Size(121, 24);
-            this.btnSaveChange.TabIndex = 2;
-            this.btnSaveChange.Text = "Lưu thay đổi";
-            this.btnSaveChange.UseVisualStyleBackColor = true;
+            this.lbDescription.AutoSize = true;
+            this.lbDescription.Location = new System.Drawing.Point(23, 98);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Size = new System.Drawing.Size(57, 17);
+            this.lbDescription.TabIndex = 15;
+            this.lbDescription.Text = "Ghi chú";
             // 
-            // dataGridView1
+            // btnReset
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 263);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(300, 185);
-            this.dataGridView1.TabIndex = 0;
+            this.btnReset.Location = new System.Drawing.Point(127, 132);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(93, 23);
+            this.btnReset.TabIndex = 14;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // label1
+            // btnDelete
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ngày bắt đầu";
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(228, 132);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(93, 23);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // label2
+            // btnOK
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 190);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ngày kết thúc";
+            this.btnOK.Location = new System.Drawing.Point(29, 132);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(92, 23);
+            this.btnOK.TabIndex = 12;
+            this.btnOK.Text = "Thêm";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // label3
+            // btnSearch
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ngày kết thúc";
+            this.btnSearch.Location = new System.Drawing.Point(21, 236);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(297, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label4
+            // dateFilter
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Ngày bắt đầu";
+            this.dateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateFilter.Location = new System.Drawing.Point(126, 208);
+            this.dateFilter.Name = "dateFilter";
+            this.dateFilter.Size = new System.Drawing.Size(192, 22);
+            this.dateFilter.TabIndex = 10;
             // 
-            // label5
+            // dateStart
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 17);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Đơn giá";
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateStart.Location = new System.Drawing.Point(129, 32);
+            this.dateStart.Name = "dateStart";
+            this.dateStart.Size = new System.Drawing.Size(192, 22);
+            this.dateStart.TabIndex = 8;
             // 
-            // textBox1
+            // dateEnd
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 6;
+            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateEnd.Location = new System.Drawing.Point(129, 54);
+            this.dateEnd.Name = "dateEnd";
+            this.dateEnd.Size = new System.Drawing.Size(192, 22);
+            this.dateEnd.TabIndex = 7;
             // 
-            // dateTimePicker1
+            // txtPrice
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 54);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(192, 22);
-            this.dateTimePicker1.TabIndex = 7;
+            this.txtPrice.Location = new System.Drawing.Point(129, 75);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(192, 22);
+            this.txtPrice.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // lbPrice
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(129, 32);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(192, 22);
-            this.dateTimePicker2.TabIndex = 8;
+            this.lbPrice.AutoSize = true;
+            this.lbPrice.Location = new System.Drawing.Point(23, 75);
+            this.lbPrice.Name = "lbPrice";
+            this.lbPrice.Size = new System.Drawing.Size(57, 17);
+            this.lbPrice.TabIndex = 5;
+            this.lbPrice.Text = "Đơn giá";
             // 
-            // dateTimePicker3
+            // lbEnd
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(126, 168);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(192, 22);
-            this.dateTimePicker3.TabIndex = 10;
+            this.lbEnd.AutoSize = true;
+            this.lbEnd.Location = new System.Drawing.Point(23, 54);
+            this.lbEnd.Name = "lbEnd";
+            this.lbEnd.Size = new System.Drawing.Size(95, 17);
+            this.lbEnd.TabIndex = 4;
+            this.lbEnd.Text = "Ngày kết thúc";
             // 
-            // dateTimePicker4
+            // lbStart
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(126, 190);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(192, 22);
-            this.dateTimePicker4.TabIndex = 9;
+            this.lbStart.AutoSize = true;
+            this.lbStart.Location = new System.Drawing.Point(23, 32);
+            this.lbStart.Name = "lbStart";
+            this.lbStart.Size = new System.Drawing.Size(93, 17);
+            this.lbStart.TabIndex = 3;
+            this.lbStart.Text = "Ngày bắt đầu";
             // 
-            // button1
+            // lbStartFilter
             // 
-            this.button1.Location = new System.Drawing.Point(21, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(297, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbStartFilter.AutoSize = true;
+            this.lbStartFilter.Location = new System.Drawing.Point(18, 208);
+            this.lbStartFilter.Name = "lbStartFilter";
+            this.lbStartFilter.Size = new System.Drawing.Size(93, 17);
+            this.lbStartFilter.TabIndex = 1;
+            this.lbStartFilter.Text = "Ngày bắt đầu";
             // 
-            // button2
+            // tableSpecialPrice
             // 
-            this.button2.Location = new System.Drawing.Point(26, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Thêm";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tableSpecialPrice.AllowUserToAddRows = false;
+            this.tableSpecialPrice.AllowUserToDeleteRows = false;
+            this.tableSpecialPrice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tableSpecialPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableSpecialPrice.Location = new System.Drawing.Point(21, 299);
+            this.tableSpecialPrice.Name = "tableSpecialPrice";
+            this.tableSpecialPrice.ReadOnly = true;
+            this.tableSpecialPrice.RowHeadersVisible = false;
+            this.tableSpecialPrice.RowHeadersWidth = 51;
+            this.tableSpecialPrice.RowTemplate.Height = 24;
+            this.tableSpecialPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableSpecialPrice.Size = new System.Drawing.Size(300, 149);
+            this.tableSpecialPrice.TabIndex = 0;
+            this.tableSpecialPrice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableSpecialPrice_CellClick);
             // 
-            // button3
+            // btnShowAll
             // 
-            this.button3.Location = new System.Drawing.Point(225, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Xoá";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(124, 106);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Reset";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnShowAll.Location = new System.Drawing.Point(21, 265);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(297, 23);
+            this.btnShowAll.TabIndex = 17;
+            this.btnShowAll.Text = "Xem tất cả";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // ManageUnitPrice
             // 
@@ -269,7 +298,7 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
             ((System.ComponentModel.ISupportInitialize)(this.tableDayPrice)).EndInit();
             this.groupSpecicalTime.ResumeLayout(false);
             this.groupSpecicalTime.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSpecialPrice)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,20 +310,21 @@ namespace HeThongGiuXe.View.ManageUnitPriceForm
         private System.Windows.Forms.GroupBox groupSpecicalTime;
         private System.Windows.Forms.Button btnSaveChange;
         private System.Windows.Forms.ComboBox cbDay;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dateFilter;
+        private System.Windows.Forms.DateTimePicker dateStart;
+        private System.Windows.Forms.DateTimePicker dateEnd;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.Label lbPrice;
+        private System.Windows.Forms.Label lbEnd;
+        private System.Windows.Forms.Label lbStart;
+        private System.Windows.Forms.Label lbStartFilter;
+        private System.Windows.Forms.DataGridView tableSpecialPrice;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.Label lbDescription;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }

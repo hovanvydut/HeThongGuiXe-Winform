@@ -97,6 +97,7 @@
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\ParkingHistoryBLL.cs" />
+    <Compile Include="BLL\UnitPriceBLL.cs" />
     <Compile Include="BLL\Validator.cs" />
     <Compile Include="DAL\Customer.cs">
       <DependentUpon>Model.tt</DependentUpon>
