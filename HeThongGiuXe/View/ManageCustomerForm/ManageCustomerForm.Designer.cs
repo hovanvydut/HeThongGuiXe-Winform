@@ -31,6 +31,9 @@ namespace HeThongGiuXe
         {
             this.components = new System.ComponentModel.Container();
             this.groupInfo = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnReset = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnOK = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.cbPort = new System.Windows.Forms.ComboBox();
             this.txtCardID = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -46,11 +49,11 @@ namespace HeThongGiuXe
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
             this.lbFullname = new System.Windows.Forms.Label();
-            this.btnCancel = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnOK = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnReset = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupList = new System.Windows.Forms.GroupBox();
+            this.tableCustomers = new System.Windows.Forms.DataGridView();
             this.groupFilter = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnShowAll = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.txtStudentIDFilter = new System.Windows.Forms.TextBox();
             this.txtEmailFilter = new System.Windows.Forms.TextBox();
             this.txtPhoneFilter = new System.Windows.Forms.TextBox();
@@ -59,13 +62,10 @@ namespace HeThongGiuXe
             this.lbEmailFilter = new System.Windows.Forms.Label();
             this.lbPhoneFilter = new System.Windows.Forms.Label();
             this.lbFullnameFilter = new System.Windows.Forms.Label();
-            this.tableCustomers = new System.Windows.Forms.DataGridView();
-            this.btnShowAll = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnSearch = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupInfo.SuspendLayout();
             this.groupList.SuspendLayout();
-            this.groupFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableCustomers)).BeginInit();
+            this.groupFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupInfo
@@ -95,6 +95,78 @@ namespace HeThongGiuXe
             this.groupInfo.TabIndex = 0;
             this.groupInfo.TabStop = false;
             this.groupInfo.Text = "Thông tin";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnCancel.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnCancel.Location = new System.Drawing.Point(478, 218);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnCancel.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancel.Size = new System.Drawing.Size(101, 36);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Xóa";
+            this.btnCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnReset.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnReset.Location = new System.Drawing.Point(301, 218);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnReset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnReset.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnReset.Size = new System.Drawing.Size(101, 36);
+            this.btnReset.TabIndex = 19;
+            this.btnReset.Text = "Đặt lại";
+            this.btnReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnOK
+            // 
+            this.btnOK.BackColor = System.Drawing.Color.Transparent;
+            this.btnOK.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnOK.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnOK.FlatAppearance.BorderSize = 0;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnOK.Location = new System.Drawing.Point(116, 218);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnOK.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnOK.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnOK.Size = new System.Drawing.Size(101, 36);
+            this.btnOK.TabIndex = 18;
+            this.btnOK.Text = "Thêm";
+            this.btnOK.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // cbPort
             // 
@@ -236,78 +308,6 @@ namespace HeThongGiuXe
             this.lbFullname.TabIndex = 2;
             this.lbFullname.Text = "Họ và tên (*)";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
-            this.btnCancel.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnCancel.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnCancel.Location = new System.Drawing.Point(478, 218);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnCancel.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCancel.Size = new System.Drawing.Size(101, 36);
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Xóa";
-            this.btnCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.Color.Transparent;
-            this.btnOK.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnOK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnOK.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnOK.FlatAppearance.BorderSize = 0;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnOK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnOK.Location = new System.Drawing.Point(116, 218);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnOK.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnOK.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnOK.Size = new System.Drawing.Size(101, 36);
-            this.btnOK.TabIndex = 18;
-            this.btnOK.Text = "Thêm";
-            this.btnOK.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnOK.UseVisualStyleBackColor = false;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.Color.Transparent;
-            this.btnReset.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnReset.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnReset.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnReset.FlatAppearance.BorderSize = 0;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnReset.Location = new System.Drawing.Point(301, 218);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnReset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnReset.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnReset.Size = new System.Drawing.Size(101, 36);
-            this.btnReset.TabIndex = 19;
-            this.btnReset.Text = "Đặt lại";
-            this.btnReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // groupList
             // 
             this.groupList.Controls.Add(this.tableCustomers);
@@ -318,6 +318,25 @@ namespace HeThongGiuXe
             this.groupList.TabIndex = 2;
             this.groupList.TabStop = false;
             this.groupList.Text = "Danh sách";
+            // 
+            // tableCustomers
+            // 
+            this.tableCustomers.AllowUserToAddRows = false;
+            this.tableCustomers.AllowUserToDeleteRows = false;
+            this.tableCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableCustomers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.tableCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tableCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableCustomers.Location = new System.Drawing.Point(3, 23);
+            this.tableCustomers.Margin = new System.Windows.Forms.Padding(4);
+            this.tableCustomers.Name = "tableCustomers";
+            this.tableCustomers.ReadOnly = true;
+            this.tableCustomers.RowHeadersWidth = 51;
+            this.tableCustomers.RowTemplate.Height = 24;
+            this.tableCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tableCustomers.Size = new System.Drawing.Size(1025, 251);
+            this.tableCustomers.TabIndex = 4;
             // 
             // groupFilter
             // 
@@ -338,6 +357,54 @@ namespace HeThongGiuXe
             this.groupFilter.TabIndex = 3;
             this.groupFilter.TabStop = false;
             this.groupFilter.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnSearch.Location = new System.Drawing.Point(185, 218);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSearch.Size = new System.Drawing.Size(120, 36);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowAll.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnShowAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnShowAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnShowAll.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnShowAll.FlatAppearance.BorderSize = 0;
+            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnShowAll.Location = new System.Drawing.Point(55, 218);
+            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnShowAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnShowAll.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnShowAll.Size = new System.Drawing.Size(122, 36);
+            this.btnShowAll.TabIndex = 25;
+            this.btnShowAll.Text = "Xem tất cả";
+            this.btnShowAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnShowAll.UseVisualStyleBackColor = false;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // txtStudentIDFilter
             // 
@@ -411,71 +478,6 @@ namespace HeThongGiuXe
             this.lbFullnameFilter.TabIndex = 0;
             this.lbFullnameFilter.Text = "Họ và tên";
             // 
-            // tableCustomers
-            // 
-            this.tableCustomers.AllowUserToAddRows = false;
-            this.tableCustomers.AllowUserToDeleteRows = false;
-            this.tableCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tableCustomers.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.tableCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableCustomers.Location = new System.Drawing.Point(3, 23);
-            this.tableCustomers.Margin = new System.Windows.Forms.Padding(4);
-            this.tableCustomers.Name = "tableCustomers";
-            this.tableCustomers.ReadOnly = true;
-            this.tableCustomers.RowHeadersWidth = 51;
-            this.tableCustomers.RowTemplate.Height = 24;
-            this.tableCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableCustomers.Size = new System.Drawing.Size(1025, 251);
-            this.tableCustomers.TabIndex = 4;
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnShowAll.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnShowAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnShowAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnShowAll.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnShowAll.FlatAppearance.BorderSize = 0;
-            this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnShowAll.Location = new System.Drawing.Point(55, 218);
-            this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnShowAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnShowAll.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnShowAll.Size = new System.Drawing.Size(122, 36);
-            this.btnShowAll.TabIndex = 25;
-            this.btnShowAll.Text = "Xem tất cả";
-            this.btnShowAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnShowAll.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.Location = new System.Drawing.Point(185, 218);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSearch.Size = new System.Drawing.Size(120, 36);
-            this.btnSearch.TabIndex = 26;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.UseVisualStyleBackColor = false;
-            // 
             // ManageCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -492,9 +494,9 @@ namespace HeThongGiuXe
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
             this.groupList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableCustomers)).EndInit();
             this.groupFilter.ResumeLayout(false);
             this.groupFilter.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCustomers)).EndInit();
             this.ResumeLayout(false);
 
         }
