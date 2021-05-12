@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeThongGiuXe.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -133,6 +134,85 @@ namespace HeThongGiuXe
                 throw new ArgumentException("Email không hợp lệ");
             }
 
+        }
+
+        public static void ValidateEmployeeBeforeInsert(Employee employee)
+        {
+            ValidateEmployee(employee);
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                // Validate if duplicate in DB
+                if (db.Employees.Any(o => o.identity_card_number == employee.identity_card_number))
+                {
+                    throw new ArgumentException("Số CMND đã tồn tại");
+                }
+                if ((employee.username != null) &&
+                    (db.Employees.Any(o => o.username == employee.username)))
+                {
+                    throw new ArgumentException("Tên tài khoản đã được sử dụng");
+                }
+            }
+        }
+
+        public static void ValidateEmployee(Employee employee)
+        {
+            // Validate fullname
+            if (employee.fullname == null || employee.fullname == "")
+            {
+                throw new ArgumentException("Họ và tên là bắt buộc");
+            }
+            // Validate Student ID
+            if ((employee.identity_card_number != null) && (!employee.identity_card_number.All(c => Char.IsDigit(c))))
+            {
+                throw new ArgumentException("Số CMND chỉ được chứa chữ số");
+            }
+            if ((employee.identity_card_number != null) && (employee.identity_card_number.Length != 9))
+            {
+                throw new ArgumentException("Số CMND phải có 9 kí tự");
+            }
+            // Validate username 
+            if (employee.username == null)
+            {
+                throw new ArgumentException("Tên tài khoản là bắt buộc");
+            }
+            if ((employee.username != null) && (employee.username.Length < 6))
+            {
+                throw new ArgumentException("Tên tài khoản phải dài hơn 5 kí tự");
+            }
+            // Validate password 
+            if (employee.password == null)
+            {
+                throw new ArgumentException("Mật khẩu là bắt buộc");
+            }
+            if ((employee.password != null) && (employee.password.Length < 6))
+            {
+                throw new ArgumentException("Mật khẩu phải dài hơn 5 kí tự");
+            }
+            // Validate role
+            if (employee.role_id == null)
+            {
+                throw new ArgumentNullException("Vui lòng chọn chức vụ");
+            }
+        }
+
+        public static void ValidateEmployeeBeforeUpdate(Employee employee)
+        {
+            ValidateEmployee(employee);
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                // Validate if duplicate in DB
+                if (db.Employees.Any(o => o.identity_card_number == employee.identity_card_number &&
+                                          o.ID_employee != employee.ID_employee))
+                {
+                    throw new ArgumentException("Số CMND đã được đăng ký");
+                }
+                if ((employee.username != null) &&
+                    (db.Employees.Any(o => o.username == employee.username &&
+                                      o.ID_employee != employee.ID_employee)))
+                {
+                    throw new ArgumentException("Tên tài khoản đã được sử dụng");
+                }
+            }
         }
     }
 }

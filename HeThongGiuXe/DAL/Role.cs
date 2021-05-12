@@ -7,10 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.DAL
 {
     using System;
     using System.Collections.Generic;
+    using System.Text;
     
     public partial class Role
     {
@@ -26,5 +27,10 @@ namespace HeThongGiuXe
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee> Employees { get; set; }
+
+        public override string ToString()
+        {
+            return this.description;
+        }
     }
 }

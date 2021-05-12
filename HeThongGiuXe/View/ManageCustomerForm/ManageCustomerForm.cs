@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeThongGiuXe.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,7 +63,6 @@ namespace HeThongGiuXe
         {
             this.txtCardID.Clear();
             this.txtEmail.Clear();
-            this.txtFullname.Clear();
             this.txtFullname.Clear();
             this.txtPassword.Clear();
             this.txtPhone.Clear();

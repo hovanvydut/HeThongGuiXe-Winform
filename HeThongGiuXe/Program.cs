@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeThongGiuXe.View.ManageEmployeeForm;
 
 namespace HeThongGiuXe
 {
@@ -18,7 +19,7 @@ namespace HeThongGiuXe
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CheckinForm());
             //Application.Run(new CheckoutForm());
-            Application.Run(new MainForm());
+            Application.Run(new ManageEmployeeForm());
         }
     }
 }

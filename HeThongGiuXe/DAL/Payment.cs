@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.DAL
 {
     using System;
     using System.Collections.Generic;
