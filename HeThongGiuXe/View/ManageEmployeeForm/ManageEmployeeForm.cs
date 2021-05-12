@@ -8,9 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongGiuXe.BLL;
-using HeThongGiuXe.DAL;
 
-namespace HeThongGiuXe.View.ManageEmployeeForm
+namespace HeThongGiuXe
 {
     public partial class ManageEmployeeForm : Form
     {

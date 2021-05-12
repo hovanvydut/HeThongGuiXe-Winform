@@ -53,5 +53,21 @@ namespace HeThongGiuXe
             form.ShowDialog(this);
             this.Show();
         }
+
+        private void btnManageManager_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageEmployeeForm form = new ManageEmployeeForm();
+            form.ShowDialog(this);
+            this.Show();
+        }
+
+        private void btnUnitPrice_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ManageUnitPrice form = new ManageUnitPrice();
+            form.ShowDialog(this);
+            this.Show();
+        }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HeThongGiuXe.DAL
+namespace HeThongGiuXe
 {
     using System;
     using System.Data.Entity;

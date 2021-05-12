@@ -38,6 +38,8 @@ namespace HeThongGiuXe
             this.imgIT = new System.Windows.Forms.PictureBox();
             this.lbHeader1 = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
+            this.btnManageManager = new System.Windows.Forms.Button();
+            this.btnUnitPrice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgDUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSgroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIT)).BeginInit();
@@ -135,11 +137,33 @@ namespace HeThongGiuXe
             this.lbName.TabIndex = 8;
             this.lbName.Text = "HỆ THỐNG QUẢN LÍ BÃI ĐỖ XE MÁY SINH VIÊN";
             // 
+            // btnManageManager
+            // 
+            this.btnManageManager.Location = new System.Drawing.Point(115, 442);
+            this.btnManageManager.Name = "btnManageManager";
+            this.btnManageManager.Size = new System.Drawing.Size(235, 69);
+            this.btnManageManager.TabIndex = 9;
+            this.btnManageManager.Text = "Quản lí nhân viên";
+            this.btnManageManager.UseVisualStyleBackColor = true;
+            this.btnManageManager.Click += new System.EventHandler(this.btnManageManager_Click);
+            // 
+            // btnUnitPrice
+            // 
+            this.btnUnitPrice.Location = new System.Drawing.Point(422, 442);
+            this.btnUnitPrice.Name = "btnUnitPrice";
+            this.btnUnitPrice.Size = new System.Drawing.Size(235, 69);
+            this.btnUnitPrice.TabIndex = 10;
+            this.btnUnitPrice.Text = "Quản lí đơn giá";
+            this.btnUnitPrice.UseVisualStyleBackColor = true;
+            this.btnUnitPrice.Click += new System.EventHandler(this.btnUnitPrice_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 435);
+            this.ClientSize = new System.Drawing.Size(768, 626);
+            this.Controls.Add(this.btnUnitPrice);
+            this.Controls.Add(this.btnManageManager);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.lbHeader1);
             this.Controls.Add(this.imgIT);
@@ -171,6 +195,8 @@ namespace HeThongGiuXe
         private System.Windows.Forms.PictureBox imgIT;
         private System.Windows.Forms.Label lbHeader1;
         private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Button btnManageManager;
+        private System.Windows.Forms.Button btnUnitPrice;
     }
 }
 

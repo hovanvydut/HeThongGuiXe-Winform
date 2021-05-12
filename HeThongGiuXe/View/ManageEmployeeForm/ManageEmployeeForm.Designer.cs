@@ -1,5 +1,5 @@
 ﻿
-namespace HeThongGiuXe.View.ManageEmployeeForm
+namespace HeThongGiuXe
 {
     partial class ManageEmployeeForm
     {
@@ -95,6 +95,7 @@ namespace HeThongGiuXe.View.ManageEmployeeForm
             // cbbRole
             // 
             this.cbbRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.cbbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbRole.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.cbbRole.FormattingEnabled = true;
@@ -492,7 +493,7 @@ namespace HeThongGiuXe.View.ManageEmployeeForm
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ManageEmployeeForm";
-            this.Text = "ManageEmployeeForm";
+            this.Text = "Quản lí nhân viên";
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
             this.grbGender.ResumeLayout(false);
