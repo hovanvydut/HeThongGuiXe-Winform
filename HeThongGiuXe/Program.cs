@@ -18,7 +18,8 @@ namespace HeThongGiuXe
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CheckinForm());
             //Application.Run(new CheckoutForm());
-            Application.Run(new ManageCustomer());
+            // Application.Run(new ManageCustomer());
+            Application.Run(new ManageUnitPrice());
         }
     }
 }
