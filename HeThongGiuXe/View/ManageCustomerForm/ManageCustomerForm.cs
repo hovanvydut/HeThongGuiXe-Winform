@@ -128,7 +128,7 @@ namespace HeThongGiuXe.View
             this.txtCardID.Text = customer.card_id;
             this.txtEmail.Text = customer.email;
             this.txtFullname.Text = customer.fullname;
-            this.txtPassword.Text = customer.password;
+            //this.txtPassword.Text = customer.password;
             this.txtPhone.Text = customer.phone;
             this.txtStudentID.Text = customer.student_id;
             this.txtUsername.Text = customer.username;

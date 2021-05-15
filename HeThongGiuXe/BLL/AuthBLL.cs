@@ -42,7 +42,7 @@ namespace HeThongGiuXe.BLL
             {
                 UTF8Encoding utf8 = new UTF8Encoding();
                 //Hash data
-                byte[] hash = md5.ComputeHash(utf8.GetBytes("adminadmin"));
+                byte[] hash = md5.ComputeHash(utf8.GetBytes(value));
                 StringBuilder sb = new StringBuilder();
                 for (int j = 0; j < hash.Length; j++)
                 {
