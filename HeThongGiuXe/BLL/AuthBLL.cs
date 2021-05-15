@@ -37,14 +37,20 @@ namespace HeThongGiuXe.BLL
         public string Encrypt(string value)
         {
             //Using MD5 to encrypt a string
-            byte[] data;
+            string result;
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
                 UTF8Encoding utf8 = new UTF8Encoding();
                 //Hash data
-                data = md5.ComputeHash(utf8.GetBytes(value));
+                byte[] hash = md5.ComputeHash(utf8.GetBytes("adminadmin"));
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < hash.Length; j++)
+                {
+                    sb.Append(hash[j].ToString("X2"));
+                }
+                result = sb.ToString();
             }
-            return Convert.ToBase64String(data);
+            return result;
         }
         private AuthBLL() { }
         public static AuthBLL _Instance { get; set; }
