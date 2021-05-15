@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AuthBLL.cs" />
     <Compile Include="BLL\CheckInOutBLL.cs" />
     <Compile Include="BLL\CustomerBLL.cs" />
     <Compile Include="BLL\EmployeeBLL.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Utils\Loading.cs" />
     <Compile Include="Utils\PlateReaderResult.cs" />
     <Compile Include="Utils\ArduinoSerial.cs" />
+    <Compile Include="Utils\Session.cs" />
     <Compile Include="Utils\SoundPlayer.cs" />
     <Compile Include="View\CheckinForm\CheckinForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +161,12 @@
     </Compile>
     <Compile Include="View\CheckoutForm\CheckoutForm.Designer.cs">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginForm\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ManageCustomerForm\ManageCustomerForm.cs">
       <SubType>Form</SubType>
@@ -234,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CheckoutForm\CheckoutForm.resx">
       <DependentUpon>CheckoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ManageCustomerForm\ManageCustomerForm.resx">
       <DependentUpon>ManageCustomerForm.cs</DependentUpon>

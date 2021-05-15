@@ -40,6 +40,8 @@ namespace HeThongGiuXe
             this.lbName = new System.Windows.Forms.Label();
             this.btnManageManager = new System.Windows.Forms.Button();
             this.btnUnitPrice = new System.Windows.Forms.Button();
+            this.lbFullname = new System.Windows.Forms.Label();
+            this.lbLogout = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgDUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSgroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIT)).BeginInit();
@@ -157,11 +159,33 @@ namespace HeThongGiuXe
             this.btnUnitPrice.UseVisualStyleBackColor = true;
             this.btnUnitPrice.Click += new System.EventHandler(this.btnUnitPrice_Click);
             // 
+            // lbFullname
+            // 
+            this.lbFullname.AutoSize = true;
+            this.lbFullname.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lbFullname.Location = new System.Drawing.Point(3, 12);
+            this.lbFullname.Name = "lbFullname";
+            this.lbFullname.Size = new System.Drawing.Size(0, 17);
+            this.lbFullname.TabIndex = 11;
+            // 
+            // lbLogout
+            // 
+            this.lbLogout.AutoSize = true;
+            this.lbLogout.ForeColor = System.Drawing.Color.Red;
+            this.lbLogout.Location = new System.Drawing.Point(3, 40);
+            this.lbLogout.Name = "lbLogout";
+            this.lbLogout.Size = new System.Drawing.Size(72, 17);
+            this.lbLogout.TabIndex = 12;
+            this.lbLogout.Text = "Đăng xuất";
+            this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 626);
+            this.Controls.Add(this.lbLogout);
+            this.Controls.Add(this.lbFullname);
             this.Controls.Add(this.btnUnitPrice);
             this.Controls.Add(this.btnManageManager);
             this.Controls.Add(this.lbName);
@@ -197,6 +221,8 @@ namespace HeThongGiuXe
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Button btnManageManager;
         private System.Windows.Forms.Button btnUnitPrice;
+        private System.Windows.Forms.Label lbFullname;
+        private System.Windows.Forms.Label lbLogout;
     }
 }
 
