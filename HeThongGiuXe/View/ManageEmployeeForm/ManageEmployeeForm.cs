@@ -109,12 +109,11 @@ namespace HeThongGiuXe.View
 
         private void LoadDetail(Employee employee)
         {
-            DatabaseEntities db = new DatabaseEntities();
             this.btnOK.Text = "Cập nhật";
             this.currentSelectedID = employee.ID_employee;
             this.txtIDCardNumb.Text = employee.identity_card_number;
             this.txtFullname.Text = employee.fullname;
-            this.txtPassword.Text = employee.password;
+            //this.txtPassword.Text = employee.password;
             this.dateTimePicker1.Value = Convert.ToDateTime(employee.birthday);
             if (employee.gender == true) this.rdbMale.Checked = true;
             else this.rdbFemale.Checked = true;

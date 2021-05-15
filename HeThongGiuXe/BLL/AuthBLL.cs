@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using HeThongGiuXe.DAL;
@@ -21,16 +22,29 @@ namespace HeThongGiuXe.BLL
                 // Find by username
                 result = db.Employees.Include("Role").Where(o => o.username == username).FirstOrDefault();
                 // Return null if has no user  or wrong password
-                if ((result == default(Employee)) || (!IsMatchingPassword(result.password, password)))
+                if ((result == default(Employee)) || (!IsMatchingPassword(password, result.password)))
                 {
                     result = null;
                 }
             }
             return result;
         }
-        public bool IsMatchingPassword(string pwd1, string pwd2)
+        public bool IsMatchingPassword(string input, string password)
         {
-            return pwd1 == pwd2;
+            //return input == password;
+            return Encrypt(input) == password;
+        }
+        public string Encrypt(string value)
+        {
+            //Using MD5 to encrypt a string
+            byte[] data;
+            using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+            {
+                UTF8Encoding utf8 = new UTF8Encoding();
+                //Hash data
+                data = md5.ComputeHash(utf8.GetBytes(value));
+            }
+            return Convert.ToBase64String(data);
         }
         private AuthBLL() { }
         public static AuthBLL _Instance { get; set; }
