@@ -32,10 +32,9 @@ namespace HeThongGiuXe.View
             this.components = new System.ComponentModel.Container();
             this.lbTotal = new System.Windows.Forms.Label();
             this.gb_Thongke = new System.Windows.Forms.GroupBox();
-            this.lbNumberTotal = new System.Windows.Forms.Label();
-            this.btnAll = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnClear = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btnSearch = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.lbTotalUnpaid = new System.Windows.Forms.Label();
+            this.lbTotalPaid = new System.Windows.Forms.Label();
+            this.lbTotalInPark = new System.Windows.Forms.Label();
             this.gb_payment = new System.Windows.Forms.GroupBox();
             this.rb_isnt_payment = new System.Windows.Forms.RadioButton();
             this.rb_is_payment = new System.Windows.Forms.RadioButton();
@@ -59,6 +58,12 @@ namespace HeThongGiuXe.View
             this.lb_ownername = new System.Windows.Forms.Label();
             this.lb_username = new System.Windows.Forms.Label();
             this.gb_search = new System.Windows.Forms.GroupBox();
+            this.btnAll = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnClear = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btnSearch = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.gbTodayStatistics = new System.Windows.Forms.GroupBox();
+            this.lbTodayCheckin = new System.Windows.Forms.Label();
+            this.lbTodayCheckout = new System.Windows.Forms.Label();
             this.gb_Thongke.SuspendLayout();
             this.gb_payment.SuspendLayout();
             this.gb_vehicleresult.SuspendLayout();
@@ -66,111 +71,63 @@ namespace HeThongGiuXe.View
             this.gb_date.SuspendLayout();
             this.gb_range.SuspendLayout();
             this.gb_search.SuspendLayout();
+            this.gbTodayStatistics.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(332, 42);
+            this.lbTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTotal.Location = new System.Drawing.Point(30, 122);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(240, 50);
+            this.lbTotal.Size = new System.Drawing.Size(234, 25);
             this.lbTotal.TabIndex = 15;
-            this.lbTotal.Text = "Tổng số xe : ";
+            this.lbTotal.Text = "Tổng số xe ( hệ thống ) : ";
             // 
             // gb_Thongke
             // 
-            this.gb_Thongke.Controls.Add(this.lbNumberTotal);
+            this.gb_Thongke.Controls.Add(this.lbTotalUnpaid);
+            this.gb_Thongke.Controls.Add(this.lbTotalPaid);
+            this.gb_Thongke.Controls.Add(this.lbTotalInPark);
             this.gb_Thongke.Controls.Add(this.lbTotal);
-            this.gb_Thongke.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_Thongke.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.gb_Thongke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.gb_Thongke.Location = new System.Drawing.Point(4, 496);
+            this.gb_Thongke.Location = new System.Drawing.Point(4, 452);
             this.gb_Thongke.Name = "gb_Thongke";
-            this.gb_Thongke.Size = new System.Drawing.Size(1096, 125);
+            this.gb_Thongke.Size = new System.Drawing.Size(792, 187);
             this.gb_Thongke.TabIndex = 8;
             this.gb_Thongke.TabStop = false;
             this.gb_Thongke.Text = "Thống kê";
             // 
-            // lbNumberTotal
+            // lbTotalUnpaid
             // 
-            this.lbNumberTotal.AutoSize = true;
-            this.lbNumberTotal.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumberTotal.Location = new System.Drawing.Point(572, 42);
-            this.lbNumberTotal.Name = "lbNumberTotal";
-            this.lbNumberTotal.Size = new System.Drawing.Size(0, 50);
-            this.lbNumberTotal.TabIndex = 16;
+            this.lbTotalUnpaid.AutoSize = true;
+            this.lbTotalUnpaid.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTotalUnpaid.Location = new System.Drawing.Point(409, 122);
+            this.lbTotalUnpaid.Name = "lbTotalUnpaid";
+            this.lbTotalUnpaid.Size = new System.Drawing.Size(237, 25);
+            this.lbTotalUnpaid.TabIndex = 15;
+            this.lbTotalUnpaid.Text = "Số lượt chưa thanh toán :";
             // 
-            // btnAll
+            // lbTotalPaid
             // 
-            this.btnAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnAll.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnAll.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnAll.FlatAppearance.BorderSize = 0;
-            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnAll.Location = new System.Drawing.Point(956, 128);
-            this.btnAll.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnAll.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAll.Size = new System.Drawing.Size(127, 40);
-            this.btnAll.TabIndex = 5;
-            this.btnAll.Text = "Xem tất cả";
-            this.btnAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnAll.UseVisualStyleBackColor = false;
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            this.lbTotalPaid.AutoSize = true;
+            this.lbTotalPaid.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTotalPaid.Location = new System.Drawing.Point(409, 58);
+            this.lbTotalPaid.Name = "lbTotalPaid";
+            this.lbTotalPaid.Size = new System.Drawing.Size(216, 25);
+            this.lbTotalPaid.TabIndex = 15;
+            this.lbTotalPaid.Text = "Số lượt đã thanh toán :";
             // 
-            // btnClear
+            // lbTotalInPark
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Transparent;
-            this.btnClear.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnClear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnClear.Location = new System.Drawing.Point(956, 80);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnClear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnClear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnClear.Size = new System.Drawing.Size(127, 40);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Đặt lại";
-            this.btnClear.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.Location = new System.Drawing.Point(956, 27);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSearch.Size = new System.Drawing.Size(127, 40);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.lbTotalInPark.AutoSize = true;
+            this.lbTotalInPark.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTotalInPark.Location = new System.Drawing.Point(30, 58);
+            this.lbTotalInPark.Name = "lbTotalInPark";
+            this.lbTotalInPark.Size = new System.Drawing.Size(251, 25);
+            this.lbTotalInPark.TabIndex = 15;
+            this.lbTotalInPark.Text = "Tổng số xe còn trong bãi  :";
             // 
             // gb_payment
             // 
@@ -226,7 +183,7 @@ namespace HeThongGiuXe.View
             this.gb_vehicleresult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.gb_vehicleresult.Location = new System.Drawing.Point(4, 192);
             this.gb_vehicleresult.Name = "gb_vehicleresult";
-            this.gb_vehicleresult.Size = new System.Drawing.Size(1096, 298);
+            this.gb_vehicleresult.Size = new System.Drawing.Size(1096, 254);
             this.gb_vehicleresult.TabIndex = 7;
             this.gb_vehicleresult.TabStop = false;
             this.gb_vehicleresult.Text = "Danh sách xe";
@@ -248,7 +205,7 @@ namespace HeThongGiuXe.View
             this.dtgv_list_vehicle.RowHeadersWidth = 51;
             this.dtgv_list_vehicle.RowTemplate.Height = 24;
             this.dtgv_list_vehicle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv_list_vehicle.Size = new System.Drawing.Size(1090, 272);
+            this.dtgv_list_vehicle.Size = new System.Drawing.Size(1090, 228);
             this.dtgv_list_vehicle.TabIndex = 4;
             // 
             // rb_inpark
@@ -306,7 +263,7 @@ namespace HeThongGiuXe.View
             this.dtp_end_day.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_end_day.Location = new System.Drawing.Point(79, 69);
             this.dtp_end_day.Name = "dtp_end_day";
-            this.dtp_end_day.Size = new System.Drawing.Size(185, 27);
+            this.dtp_end_day.Size = new System.Drawing.Size(185, 26);
             this.dtp_end_day.TabIndex = 5;
             this.dtp_end_day.Value = new System.DateTime(2021, 5, 5, 23, 59, 0, 0);
             // 
@@ -315,7 +272,7 @@ namespace HeThongGiuXe.View
             this.lb_endday.AutoSize = true;
             this.lb_endday.Location = new System.Drawing.Point(6, 74);
             this.lb_endday.Name = "lb_endday";
-            this.lb_endday.Size = new System.Drawing.Size(75, 20);
+            this.lb_endday.Size = new System.Drawing.Size(72, 19);
             this.lb_endday.TabIndex = 0;
             this.lb_endday.Text = "Đến ngày";
             // 
@@ -324,7 +281,7 @@ namespace HeThongGiuXe.View
             this.lb_startday.AutoSize = true;
             this.lb_startday.Location = new System.Drawing.Point(6, 33);
             this.lb_startday.Name = "lb_startday";
-            this.lb_startday.Size = new System.Drawing.Size(66, 20);
+            this.lb_startday.Size = new System.Drawing.Size(63, 19);
             this.lb_startday.TabIndex = 0;
             this.lb_startday.Text = "Từ ngày";
             // 
@@ -344,17 +301,18 @@ namespace HeThongGiuXe.View
             this.cb_date.AutoSize = true;
             this.cb_date.Location = new System.Drawing.Point(367, 26);
             this.cb_date.Name = "cb_date";
-            this.cb_date.Size = new System.Drawing.Size(156, 24);
+            this.cb_date.Size = new System.Drawing.Size(150, 23);
             this.cb_date.TabIndex = 12;
             this.cb_date.Text = "Tìm theo ngày gửi";
             this.cb_date.UseVisualStyleBackColor = true;
+            this.cb_date.CheckedChanged += new System.EventHandler(this.cb_date_CheckedChanged);
             // 
             // lb_licenseplates
             // 
             this.lb_licenseplates.AutoSize = true;
             this.lb_licenseplates.Location = new System.Drawing.Point(24, 131);
             this.lb_licenseplates.Name = "lb_licenseplates";
-            this.lb_licenseplates.Size = new System.Drawing.Size(80, 20);
+            this.lb_licenseplates.Size = new System.Drawing.Size(77, 19);
             this.lb_licenseplates.TabIndex = 1;
             this.lb_licenseplates.Text = "Biển số xe";
             // 
@@ -365,7 +323,7 @@ namespace HeThongGiuXe.View
             this.txt_license_plates.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_license_plates.Location = new System.Drawing.Point(133, 128);
             this.txt_license_plates.Name = "txt_license_plates";
-            this.txt_license_plates.Size = new System.Drawing.Size(148, 20);
+            this.txt_license_plates.Size = new System.Drawing.Size(148, 19);
             this.txt_license_plates.TabIndex = 3;
             // 
             // gb_range
@@ -389,7 +347,7 @@ namespace HeThongGiuXe.View
             this.txt_fullname.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_fullname.Location = new System.Drawing.Point(133, 25);
             this.txt_fullname.Name = "txt_fullname";
-            this.txt_fullname.Size = new System.Drawing.Size(148, 20);
+            this.txt_fullname.Size = new System.Drawing.Size(148, 19);
             this.txt_fullname.TabIndex = 1;
             // 
             // txt_username
@@ -399,7 +357,7 @@ namespace HeThongGiuXe.View
             this.txt_username.ForeColor = System.Drawing.SystemColors.Info;
             this.txt_username.Location = new System.Drawing.Point(133, 76);
             this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(148, 20);
+            this.txt_username.Size = new System.Drawing.Size(148, 19);
             this.txt_username.TabIndex = 2;
             // 
             // lb_ownername
@@ -407,7 +365,7 @@ namespace HeThongGiuXe.View
             this.lb_ownername.AutoSize = true;
             this.lb_ownername.Location = new System.Drawing.Point(24, 79);
             this.lb_ownername.Name = "lb_ownername";
-            this.lb_ownername.Size = new System.Drawing.Size(103, 20);
+            this.lb_ownername.Size = new System.Drawing.Size(98, 19);
             this.lb_ownername.TabIndex = 1;
             this.lb_ownername.Text = "Tên tài khoản";
             // 
@@ -416,7 +374,7 @@ namespace HeThongGiuXe.View
             this.lb_username.AutoSize = true;
             this.lb_username.Location = new System.Drawing.Point(24, 32);
             this.lb_username.Name = "lb_username";
-            this.lb_username.Size = new System.Drawing.Size(90, 20);
+            this.lb_username.Size = new System.Drawing.Size(84, 19);
             this.lb_username.TabIndex = 0;
             this.lb_username.Text = "Tên chủ thẻ";
             // 
@@ -436,7 +394,7 @@ namespace HeThongGiuXe.View
             this.gb_search.Controls.Add(this.txt_username);
             this.gb_search.Controls.Add(this.lb_ownername);
             this.gb_search.Controls.Add(this.lb_username);
-            this.gb_search.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gb_search.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Bold);
             this.gb_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.gb_search.Location = new System.Drawing.Point(4, 12);
             this.gb_search.Name = "gb_search";
@@ -445,12 +403,118 @@ namespace HeThongGiuXe.View
             this.gb_search.TabStop = false;
             this.gb_search.Text = "Tìm kiếm";
             // 
+            // btnAll
+            // 
+            this.btnAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnAll.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAll.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnAll.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnAll.FlatAppearance.BorderSize = 0;
+            this.btnAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnAll.Location = new System.Drawing.Point(956, 122);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnAll.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAll.Size = new System.Drawing.Size(127, 40);
+            this.btnAll.TabIndex = 5;
+            this.btnAll.Text = "Xem tất cả";
+            this.btnAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnAll.UseVisualStyleBackColor = false;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnClear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnClear.Location = new System.Drawing.Point(956, 74);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnClear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnClear.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnClear.Size = new System.Drawing.Size(127, 40);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Đặt lại";
+            this.btnClear.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BackgroundImage = global::HeThongGiuXe.Properties.Resources.icons8_automatic_96;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btnSearch.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnSearch.Location = new System.Drawing.Point(956, 21);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnSearch.Size = new System.Drawing.Size(127, 40);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // gbTodayStatistics
+            // 
+            this.gbTodayStatistics.Controls.Add(this.lbTodayCheckin);
+            this.gbTodayStatistics.Controls.Add(this.lbTodayCheckout);
+            this.gbTodayStatistics.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.gbTodayStatistics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.gbTodayStatistics.Location = new System.Drawing.Point(819, 452);
+            this.gbTodayStatistics.Name = "gbTodayStatistics";
+            this.gbTodayStatistics.Size = new System.Drawing.Size(278, 187);
+            this.gbTodayStatistics.TabIndex = 8;
+            this.gbTodayStatistics.TabStop = false;
+            this.gbTodayStatistics.Text = "Thống kê hôm nay";
+            // 
+            // lbTodayCheckin
+            // 
+            this.lbTodayCheckin.AutoSize = true;
+            this.lbTodayCheckin.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTodayCheckin.Location = new System.Drawing.Point(34, 58);
+            this.lbTodayCheckin.Name = "lbTodayCheckin";
+            this.lbTodayCheckin.Size = new System.Drawing.Size(86, 25);
+            this.lbTodayCheckin.TabIndex = 15;
+            this.lbTodayCheckin.Text = "Xe vào  :";
+            // 
+            // lbTodayCheckout
+            // 
+            this.lbTodayCheckout.AutoSize = true;
+            this.lbTodayCheckout.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lbTodayCheckout.Location = new System.Drawing.Point(34, 122);
+            this.lbTodayCheckout.Name = "lbTodayCheckout";
+            this.lbTodayCheckout.Size = new System.Drawing.Size(72, 25);
+            this.lbTodayCheckout.TabIndex = 15;
+            this.lbTodayCheckout.Text = "Xe ra : ";
+            // 
             // ManageVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(1112, 637);
+            this.ClientSize = new System.Drawing.Size(1112, 643);
+            this.Controls.Add(this.gbTodayStatistics);
             this.Controls.Add(this.gb_Thongke);
             this.Controls.Add(this.gb_vehicleresult);
             this.Controls.Add(this.gb_search);
@@ -469,6 +533,8 @@ namespace HeThongGiuXe.View
             this.gb_range.PerformLayout();
             this.gb_search.ResumeLayout(false);
             this.gb_search.PerformLayout();
+            this.gbTodayStatistics.ResumeLayout(false);
+            this.gbTodayStatistics.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,7 +543,6 @@ namespace HeThongGiuXe.View
 
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.GroupBox gb_Thongke;
-        private System.Windows.Forms.Label lbNumberTotal;
         private DTO.RoundedButton btnAll;
         private DTO.RoundedButton btnClear;
         private DTO.RoundedButton btnSearch;
@@ -504,5 +569,11 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Label lb_ownername;
         private System.Windows.Forms.Label lb_username;
         private System.Windows.Forms.GroupBox gb_search;
+        private System.Windows.Forms.Label lbTotalInPark;
+        private System.Windows.Forms.Label lbTotalUnpaid;
+        private System.Windows.Forms.Label lbTotalPaid;
+        private System.Windows.Forms.GroupBox gbTodayStatistics;
+        private System.Windows.Forms.Label lbTodayCheckin;
+        private System.Windows.Forms.Label lbTodayCheckout;
     }
 }

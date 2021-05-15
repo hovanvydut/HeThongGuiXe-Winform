@@ -39,15 +39,27 @@ namespace HeThongGiuXe.View
             this.rb_all_range.Checked = true;
             this.rb_all_payment.Checked = true;
             this.dtgv_list_vehicle.DataSource = ParkingHistoryBLL.Instance.GetDataTableParkingHistories();
-            this.lbNumberTotal.Text = this.dtgv_list_vehicle.Rows.Count.ToString();
+            setStatisticsInfo();
+            // set view for table
             this.dtgv_list_vehicle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_list_vehicle.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgv_list_vehicle.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+ 
         }
         private void setStatusBtn()
         {
             this.btnAll.Enabled = !this.btnAll.Enabled;
             this.btnClear.Enabled = !this.btnClear.Enabled;
             this.btnSearch.Enabled = !this.btnSearch.Enabled;
+        }
+        private void setStatisticsInfo()
+        {
+            this.lbTotal.Text = "Tổng số xe (hệ thống) : " +  ParkingHistoryBLL.Instance.getTotalHistory().ToString();
+            this.lbTotalInPark.Text = "Tổng số xe (trong bãi) : " + ParkingHistoryBLL.Instance.getTotalInPark().ToString();
+            this.lbTotalPaid.Text = "Tổng số lượt (đã thanh toán) : " +  ParkingHistoryBLL.Instance.getTotalPaid().ToString();
+            this.lbTotalUnpaid.Text = "Tổng số lượt (chưa thanh toán) : " + ParkingHistoryBLL.Instance.getTotalUnPaid().ToString();
+            this.lbTodayCheckin.Text = "Xe Vào : " + ParkingHistoryBLL.Instance.getTodayCheckin().ToString();
+            this.lbTodayCheckout.Text = "Xe Ra : " + ParkingHistoryBLL.Instance.getTodayCheckout().ToString();
         }
         private void search()
         {
@@ -72,7 +84,8 @@ namespace HeThongGiuXe.View
             }
             this.dtgv_list_vehicle.DataSource =
             ParkingHistoryBLL.Instance.GetDataTableParkingHistories(customer_name: fullname, username: username, plate: licence_plate, start: start, end: end, isPayment: isPayment, hasCheckout: hasCheckout);
-            this.lbNumberTotal.Text = this.dtgv_list_vehicle.Rows.Count.ToString();
+            this.lbTotal.Text += this.dtgv_list_vehicle.Rows.Count.ToString();
+            setStatisticsInfo();
             setStatusBtn();
         }
         private void clear()
@@ -115,5 +128,6 @@ namespace HeThongGiuXe.View
             clear();
             search();
         }
+
     }
 }
