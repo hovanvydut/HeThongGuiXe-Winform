@@ -13,6 +13,7 @@ namespace HeThongGiuXe.BLL
         public void CreateCustomer(Customer customer)
         {
             Validator.ValidateCustomerBeforeInsert(customer);
+            customer.password = AuthBLL.Instance.Encrypt(customer.password);
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 customer.created_at = DateTime.Now;
@@ -131,7 +132,9 @@ namespace HeThongGiuXe.BLL
                     target.fullname = customer.fullname;
                     target.email = customer.email;
                     target.card_id = customer.card_id;
-                    target.password = customer.password;
+                    target.password = customer.password == null 
+                        ? target.password
+                        : AuthBLL.Instance.Encrypt(customer.password);
                     target.phone = customer.phone;
                     target.username = customer.username;
                     target.updated_at = DateTime.Now;
