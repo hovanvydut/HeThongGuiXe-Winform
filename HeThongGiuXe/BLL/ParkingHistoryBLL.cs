@@ -19,13 +19,20 @@ namespace HeThongGiuXe.BLL
             Nullable<DateTime> start = null,
             Nullable<DateTime> end = null,
             Nullable<bool> isPayment = null,
-            Nullable<bool> hasCheckout = null )
+            Nullable<bool> hasCheckout = null ,
+            Nullable<DateTime> checkout_at = null)
         {
             // Prepare table
+
+            if( checkout_at != null )
+            {
+
+                MessageBox.Show(checkout_at.Value.ToString()) ;
+            }    
             List<Parking_History> results = null;
             DataTable table = new DataTable();
             table.Columns.AddRange(new DataColumn[] {
-                new DataColumn("ID", typeof(int)),
+                new DataColumn("Mã số sinh viên", typeof(int)),
                 new DataColumn("Họ & tên", typeof(string)),
                 new DataColumn("Tên tài khoản", typeof(string)),
                 new DataColumn("Biển số", typeof(string)),
@@ -45,6 +52,7 @@ namespace HeThongGiuXe.BLL
                     && ((username == null) ? true : (o.Customer.username.Contains(username)))
                     && ((start == null) ? true : (o.check_in_at >= start))
                     && ((end == null) ? true : (o.check_in_at <= end))
+                     && ((checkout_at == null) ? true : (o.check_out_at >= checkout_at))
                     && ((isPayment == null) ? true : ( o.is_payment == isPayment))
                     && ((hasCheckout == null) ? true :
                         ((hasCheckout == true && o.check_out_at != null)
@@ -55,7 +63,7 @@ namespace HeThongGiuXe.BLL
                 foreach (Parking_History item in results)
                 {
                     DataRow newRow = table.NewRow();
-                    newRow["ID"] = item.ID_parking;
+                    newRow["Mã số sinh viên"] = item.customer_id;
                     newRow["Họ & tên"] = item.Customer.fullname;
                     newRow["Tên tài khoản"] = item.Customer.username;
                     newRow["Biển số"] = item.license_plate;
@@ -72,6 +80,40 @@ namespace HeThongGiuXe.BLL
             }
             return table;
         }
+        public int getTotalHistory()
+        {
+            DataTable table = this.GetDataTableParkingHistories();
+            return table.Rows.Count;
+        }
+        public int getTotalPaid()
+        {
+            DataTable table = this.GetDataTableParkingHistories(isPayment:true);
+            return table.Rows.Count;
+        }
+        public int getTotalUnPaid()
+        {
+            DataTable table = this.GetDataTableParkingHistories(isPayment: false);
+            return table.Rows.Count;
+        }
+        public int getTotalInPark()
+        {
+            DataTable table = this.GetDataTableParkingHistories(hasCheckout: false);
+            return table.Rows.Count;
+        }
+
+        public int getTodayCheckin()
+        {
+            DateTime today = DateTime.Now;
+            DataTable table = this.GetDataTableParkingHistories(start: today.Date);
+            return table.Rows.Count;
+        }
+        public int getTodayCheckout()
+        {
+            DateTime today = DateTime.Now.Date;
+            DataTable table = this.GetDataTableParkingHistories(checkout_at: today);
+            return table.Rows.Count;
+        }
+        
         // Singleton
         private ParkingHistoryBLL() { }
         public static ParkingHistoryBLL _Instance { get; set; }
