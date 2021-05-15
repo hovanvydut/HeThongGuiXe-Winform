@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using HeThongGiuXe.DAL;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.BLL
 {
     class Validator
     {

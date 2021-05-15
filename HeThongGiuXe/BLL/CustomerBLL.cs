@@ -4,8 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HeThongGiuXe.DAL;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.BLL
 {
     class CustomerBLL
     {
@@ -83,7 +84,11 @@ namespace HeThongGiuXe
                     row["Mã thẻ"] = customer.student_id;
                     row["Tên tài khoản"] = customer.username;
                     row["Lượt gửi xe"] = customer.Parking_History.Count;
-                    row["Tạo lúc"] = customer.created_at;
+                    if (customer.created_at != null)
+                    {
+                        row["Tạo lúc"] = customer.created_at;
+
+                    }
                     if (customer.updated_at != null)
                     {
                         row["Cập nhật lúc"] = customer.updated_at;
@@ -116,6 +121,7 @@ namespace HeThongGiuXe
         }
         public void UpdateCustomer(Customer customer)
         {
+            Validator.ValidateCustomerBeforeUpdate(customer);
             Customer target = null;
             using (DatabaseEntities db = new DatabaseEntities())
             {

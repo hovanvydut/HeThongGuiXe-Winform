@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using HeThongGiuXe.BLL;
+using HeThongGiuXe.DAL;
+using HeThongGiuXe.Utils;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.View
 {
     public partial class CheckinForm : Form
     {

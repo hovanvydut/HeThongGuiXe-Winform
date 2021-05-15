@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeThongGiuXe.DAL;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.BLL
 {
     class ParkingHistoryBLL
     {

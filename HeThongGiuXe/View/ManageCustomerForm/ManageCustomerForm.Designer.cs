@@ -1,5 +1,5 @@
 ﻿
-namespace HeThongGiuXe
+namespace HeThongGiuXe.View
 {
     partial class ManageCustomer
     {
@@ -178,7 +178,7 @@ namespace HeThongGiuXe
             this.cbPort.FormattingEnabled = true;
             this.cbPort.Location = new System.Drawing.Point(433, 157);
             this.cbPort.Name = "cbPort";
-            this.cbPort.Size = new System.Drawing.Size(188, 28);
+            this.cbPort.Size = new System.Drawing.Size(188, 33);
             this.cbPort.TabIndex = 17;
             this.cbPort.SelectedIndexChanged += new System.EventHandler(this.cbPort_SelectedIndexChanged);
             // 
@@ -190,7 +190,7 @@ namespace HeThongGiuXe
             this.txtCardID.Name = "txtCardID";
             this.txtCardID.PasswordChar = '*';
             this.txtCardID.ReadOnly = true;
-            this.txtCardID.Size = new System.Drawing.Size(188, 20);
+            this.txtCardID.Size = new System.Drawing.Size(188, 25);
             this.txtCardID.TabIndex = 16;
             // 
             // txtPassword
@@ -200,7 +200,7 @@ namespace HeThongGiuXe
             this.txtPassword.Location = new System.Drawing.Point(116, 164);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(192, 20);
+            this.txtPassword.Size = new System.Drawing.Size(192, 25);
             this.txtPassword.TabIndex = 15;
             // 
             // txtUsername
@@ -209,7 +209,7 @@ namespace HeThongGiuXe
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Location = new System.Drawing.Point(116, 122);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(192, 20);
+            this.txtUsername.Size = new System.Drawing.Size(192, 25);
             this.txtUsername.TabIndex = 14;
             // 
             // txtStudentID
@@ -218,7 +218,7 @@ namespace HeThongGiuXe
             this.txtStudentID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentID.Location = new System.Drawing.Point(433, 79);
             this.txtStudentID.Name = "txtStudentID";
-            this.txtStudentID.Size = new System.Drawing.Size(188, 20);
+            this.txtStudentID.Size = new System.Drawing.Size(188, 25);
             this.txtStudentID.TabIndex = 13;
             // 
             // txtEmail
@@ -227,7 +227,7 @@ namespace HeThongGiuXe
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Location = new System.Drawing.Point(116, 78);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(192, 20);
+            this.txtEmail.Size = new System.Drawing.Size(192, 25);
             this.txtEmail.TabIndex = 12;
             // 
             // txtPhone
@@ -236,7 +236,7 @@ namespace HeThongGiuXe
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Location = new System.Drawing.Point(433, 37);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(188, 20);
+            this.txtPhone.Size = new System.Drawing.Size(188, 25);
             this.txtPhone.TabIndex = 11;
             // 
             // txtFullname
@@ -245,7 +245,7 @@ namespace HeThongGiuXe
             this.txtFullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullname.Location = new System.Drawing.Point(116, 41);
             this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(192, 20);
+            this.txtFullname.Size = new System.Drawing.Size(192, 25);
             this.txtFullname.TabIndex = 10;
             // 
             // lbCardID
@@ -253,7 +253,7 @@ namespace HeThongGiuXe
             this.lbCardID.AutoSize = true;
             this.lbCardID.Location = new System.Drawing.Point(314, 122);
             this.lbCardID.Name = "lbCardID";
-            this.lbCardID.Size = new System.Drawing.Size(78, 20);
+            this.lbCardID.Size = new System.Drawing.Size(98, 25);
             this.lbCardID.TabIndex = 9;
             this.lbCardID.Text = "Mã thẻ từ";
             // 
@@ -262,7 +262,7 @@ namespace HeThongGiuXe
             this.lbPassword.AutoSize = true;
             this.lbPassword.Location = new System.Drawing.Point(11, 167);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(75, 20);
+            this.lbPassword.Size = new System.Drawing.Size(96, 25);
             this.lbPassword.TabIndex = 8;
             this.lbPassword.Text = "Mật khẩu";
             // 
@@ -271,7 +271,7 @@ namespace HeThongGiuXe
             this.lbUsername.AutoSize = true;
             this.lbUsername.Location = new System.Drawing.Point(11, 125);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(103, 20);
+            this.lbUsername.Size = new System.Drawing.Size(131, 25);
             this.lbUsername.TabIndex = 7;
             this.lbUsername.Text = "Tên tài khoản";
             // 
@@ -280,7 +280,7 @@ namespace HeThongGiuXe
             this.lbStudentID.AutoSize = true;
             this.lbStudentID.Location = new System.Drawing.Point(314, 81);
             this.lbStudentID.Name = "lbStudentID";
-            this.lbStudentID.Size = new System.Drawing.Size(117, 20);
+            this.lbStudentID.Size = new System.Drawing.Size(148, 25);
             this.lbStudentID.TabIndex = 6;
             this.lbStudentID.Text = "Mã số sinh viên";
             // 
@@ -289,7 +289,7 @@ namespace HeThongGiuXe
             this.lbEmail.AutoSize = true;
             this.lbEmail.Location = new System.Drawing.Point(11, 82);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(43, 20);
+            this.lbEmail.Size = new System.Drawing.Size(54, 25);
             this.lbEmail.TabIndex = 4;
             this.lbEmail.Text = "Emai";
             // 
@@ -298,7 +298,7 @@ namespace HeThongGiuXe
             this.lbPhone.AutoSize = true;
             this.lbPhone.Location = new System.Drawing.Point(314, 44);
             this.lbPhone.Name = "lbPhone";
-            this.lbPhone.Size = new System.Drawing.Size(100, 20);
+            this.lbPhone.Size = new System.Drawing.Size(129, 25);
             this.lbPhone.TabIndex = 3;
             this.lbPhone.Text = "Số điện thoại";
             // 
@@ -307,7 +307,7 @@ namespace HeThongGiuXe
             this.lbFullname.AutoSize = true;
             this.lbFullname.Location = new System.Drawing.Point(11, 43);
             this.lbFullname.Name = "lbFullname";
-            this.lbFullname.Size = new System.Drawing.Size(99, 20);
+            this.lbFullname.Size = new System.Drawing.Size(126, 25);
             this.lbFullname.TabIndex = 2;
             this.lbFullname.Text = "Họ và tên (*)";
             // 
@@ -331,15 +331,16 @@ namespace HeThongGiuXe
             this.tableCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableCustomers.Location = new System.Drawing.Point(3, 23);
+            this.tableCustomers.Location = new System.Drawing.Point(3, 28);
             this.tableCustomers.Margin = new System.Windows.Forms.Padding(4);
             this.tableCustomers.Name = "tableCustomers";
             this.tableCustomers.ReadOnly = true;
             this.tableCustomers.RowHeadersWidth = 51;
             this.tableCustomers.RowTemplate.Height = 24;
             this.tableCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableCustomers.Size = new System.Drawing.Size(1025, 251);
+            this.tableCustomers.Size = new System.Drawing.Size(1025, 246);
             this.tableCustomers.TabIndex = 4;
+            this.tableCustomers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.tableCustomers_RowHeaderMouseClick);
             // 
             // groupFilter
             // 
@@ -417,7 +418,7 @@ namespace HeThongGiuXe
             this.txtStudentIDFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentIDFilter.Location = new System.Drawing.Point(135, 119);
             this.txtStudentIDFilter.Name = "txtStudentIDFilter";
-            this.txtStudentIDFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtStudentIDFilter.Size = new System.Drawing.Size(201, 25);
             this.txtStudentIDFilter.TabIndex = 23;
             // 
             // txtEmailFilter
@@ -426,7 +427,7 @@ namespace HeThongGiuXe
             this.txtEmailFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmailFilter.Location = new System.Drawing.Point(135, 78);
             this.txtEmailFilter.Name = "txtEmailFilter";
-            this.txtEmailFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtEmailFilter.Size = new System.Drawing.Size(201, 25);
             this.txtEmailFilter.TabIndex = 22;
             // 
             // txtPhoneFilter
@@ -435,7 +436,7 @@ namespace HeThongGiuXe
             this.txtPhoneFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhoneFilter.Location = new System.Drawing.Point(135, 160);
             this.txtPhoneFilter.Name = "txtPhoneFilter";
-            this.txtPhoneFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtPhoneFilter.Size = new System.Drawing.Size(201, 25);
             this.txtPhoneFilter.TabIndex = 24;
             // 
             // txtFullnameFilter
@@ -444,7 +445,7 @@ namespace HeThongGiuXe
             this.txtFullnameFilter.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtFullnameFilter.Location = new System.Drawing.Point(135, 41);
             this.txtFullnameFilter.Name = "txtFullnameFilter";
-            this.txtFullnameFilter.Size = new System.Drawing.Size(201, 20);
+            this.txtFullnameFilter.Size = new System.Drawing.Size(201, 25);
             this.txtFullnameFilter.TabIndex = 21;
             // 
             // lbStudentIdFilter
@@ -452,7 +453,7 @@ namespace HeThongGiuXe
             this.lbStudentIdFilter.AutoSize = true;
             this.lbStudentIdFilter.Location = new System.Drawing.Point(20, 125);
             this.lbStudentIdFilter.Name = "lbStudentIdFilter";
-            this.lbStudentIdFilter.Size = new System.Drawing.Size(51, 20);
+            this.lbStudentIdFilter.Size = new System.Drawing.Size(65, 25);
             this.lbStudentIdFilter.TabIndex = 4;
             this.lbStudentIdFilter.Text = "Mã số";
             // 
@@ -461,7 +462,7 @@ namespace HeThongGiuXe
             this.lbEmailFilter.AutoSize = true;
             this.lbEmailFilter.Location = new System.Drawing.Point(24, 82);
             this.lbEmailFilter.Name = "lbEmailFilter";
-            this.lbEmailFilter.Size = new System.Drawing.Size(47, 20);
+            this.lbEmailFilter.Size = new System.Drawing.Size(59, 25);
             this.lbEmailFilter.TabIndex = 2;
             this.lbEmailFilter.Text = "Email";
             // 
@@ -470,7 +471,7 @@ namespace HeThongGiuXe
             this.lbPhoneFilter.AutoSize = true;
             this.lbPhoneFilter.Location = new System.Drawing.Point(18, 171);
             this.lbPhoneFilter.Name = "lbPhoneFilter";
-            this.lbPhoneFilter.Size = new System.Drawing.Size(100, 20);
+            this.lbPhoneFilter.Size = new System.Drawing.Size(129, 25);
             this.lbPhoneFilter.TabIndex = 1;
             this.lbPhoneFilter.Text = "Số điện thoại";
             // 
@@ -479,13 +480,13 @@ namespace HeThongGiuXe
             this.lbFullnameFilter.AutoSize = true;
             this.lbFullnameFilter.Location = new System.Drawing.Point(20, 43);
             this.lbFullnameFilter.Name = "lbFullnameFilter";
-            this.lbFullnameFilter.Size = new System.Drawing.Size(76, 20);
+            this.lbFullnameFilter.Size = new System.Drawing.Size(98, 25);
             this.lbFullnameFilter.TabIndex = 0;
             this.lbFullnameFilter.Text = "Họ và tên";
             // 
             // ManageCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.ClientSize = new System.Drawing.Size(1094, 633);

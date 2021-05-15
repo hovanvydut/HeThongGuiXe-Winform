@@ -7,7 +7,7 @@ using System.IO;
 using System.Net.Http;
 using Newtonsoft.Json;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.Utils
 {
     class APIPlateRecognizer
     {

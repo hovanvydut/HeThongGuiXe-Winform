@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeThongGiuXe.View;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.Utils
 {
     class Loading
     {

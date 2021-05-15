@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongGiuXe.BLL;
+using HeThongGiuXe.DAL;
+using HeThongGiuXe.Utils;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.View
 {
     public partial class LoginForm : Form
     {

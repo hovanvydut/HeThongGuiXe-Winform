@@ -4,8 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HeThongGiuXe.DAL;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.BLL
 {
     class CheckInOutBLL
     {

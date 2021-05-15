@@ -1,5 +1,5 @@
 ﻿
-namespace HeThongGiuXe
+namespace HeThongGiuXe.View
 {
     partial class LoginForm
     {

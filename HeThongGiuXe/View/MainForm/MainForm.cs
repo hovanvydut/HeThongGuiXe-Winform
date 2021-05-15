@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongGiuXe.BLL;
+using HeThongGiuXe.DAL;
+using HeThongGiuXe.Utils;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.View
 {
     public partial class MainForm : Form
     {
@@ -60,10 +62,10 @@ namespace HeThongGiuXe
 
         private void btnGeneralManagement_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //GeneralManagement form = new GeneralManagement();
-            //form.ShowDialog(this);
-            //this.Show();
+            this.Hide();
+            ManageCustomer form = new ManageCustomer();
+            form.ShowDialog(this);
+            this.Show();
         }
 
         private void btnParkingManagement_Click(object sender, EventArgs e)

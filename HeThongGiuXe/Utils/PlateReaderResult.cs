@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeThongGiuXe
+namespace HeThongGiuXe.Utils
 {
     [DataContract]
     public class Box
