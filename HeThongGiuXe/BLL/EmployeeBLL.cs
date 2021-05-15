@@ -25,6 +25,7 @@ namespace HeThongGiuXe.BLL
         public void CreateEmployee(Employee employee)
         {
             Validator.ValidateEmployeeBeforeInsert(employee);
+            employee.password = AuthBLL.Instance.Encrypt(employee.password);
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 employee.created_at = DateTime.Now;
@@ -105,9 +106,9 @@ namespace HeThongGiuXe.BLL
             Employee result = null;
             using (DatabaseEntities db = new DatabaseEntities())
             {
-                result = db.Employees.Find(ID);
+                result = db.Employees.Include("Role").Where(o => o.ID_employee == ID).FirstOrDefault();
             }
-            return result;
+            return result == default(Employee) ? null : result;
         }
 
         public void DeleteEmployee(int ID)
@@ -134,7 +135,9 @@ namespace HeThongGiuXe.BLL
                     target.fullname = employee.fullname;
                     target.birthday = employee.birthday;
                     target.identity_card_number = employee.identity_card_number;
-                    target.password = employee.password;
+                    target.password = employee.password == null 
+                        ? target.password
+                        : AuthBLL.Instance.Encrypt(employee.password);
                     target.gender = employee.gender;
                     target.username = employee.username;
                     target.updated_at = DateTime.Now;

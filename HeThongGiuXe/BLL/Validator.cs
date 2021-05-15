@@ -12,7 +12,13 @@ namespace HeThongGiuXe.BLL
     {
         public static void ValidateCustomerBeforeInsert(Customer customer)
         {
+            // Validate basic info 
             ValidateCustomer(customer);
+            // Validate password 
+            if (customer.password == null)
+            {
+                throw new ArgumentException("Mật khẩu là bắt buộc");
+            }
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 // Validate if duplicate in DB
@@ -114,11 +120,6 @@ namespace HeThongGiuXe.BLL
             {
                 throw new ArgumentException("Tên tài khoản phải dài hơn 5 kí tự");
             }
-            // Validate password 
-            if (customer.password == null)
-            {
-                throw new ArgumentException("Mật khẩu là bắt buộc");
-            }
             if ((customer.password != null) && (customer.password.Length < 6))
             {
                 throw new ArgumentException("Mật khẩu phải dài hơn 5 kí tự");
@@ -139,6 +140,15 @@ namespace HeThongGiuXe.BLL
         public static void ValidateEmployeeBeforeInsert(Employee employee)
         {
             ValidateEmployee(employee);
+            // Validate password 
+            if (employee.password == null)
+            {
+                throw new ArgumentException("Mật khẩu là bắt buộc");
+            }
+            if (employee.password.Length < 6)
+            {
+                throw new ArgumentException("Mật khẩu phải dài hơn 5 kí tự");
+            }
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 // Validate if duplicate in DB
@@ -162,6 +172,10 @@ namespace HeThongGiuXe.BLL
                 throw new ArgumentException("Họ và tên là bắt buộc");
             }
             // Validate Student ID
+            if (employee.identity_card_number == null)
+            {
+                throw new ArgumentException("Số CMND là bắt buộc");
+            }
             if ((employee.identity_card_number != null) && (!employee.identity_card_number.All(c => Char.IsDigit(c))))
             {
                 throw new ArgumentException("Số CMND chỉ được chứa chữ số");
@@ -178,15 +192,6 @@ namespace HeThongGiuXe.BLL
             if ((employee.username != null) && (employee.username.Length < 6))
             {
                 throw new ArgumentException("Tên tài khoản phải dài hơn 5 kí tự");
-            }
-            // Validate password 
-            if (employee.password == null)
-            {
-                throw new ArgumentException("Mật khẩu là bắt buộc");
-            }
-            if ((employee.password != null) && (employee.password.Length < 6))
-            {
-                throw new ArgumentException("Mật khẩu phải dài hơn 5 kí tự");
             }
             // Validate role
             if (employee.role_id == null)
