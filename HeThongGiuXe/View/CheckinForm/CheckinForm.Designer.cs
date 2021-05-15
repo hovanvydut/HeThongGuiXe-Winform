@@ -175,7 +175,7 @@ namespace HeThongGiuXe
             this.txtPlate.Location = new System.Drawing.Point(20, 44);
             this.txtPlate.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlate.Name = "txtPlate";
-            this.txtPlate.Size = new System.Drawing.Size(230, 36);
+            this.txtPlate.Size = new System.Drawing.Size(230, 29);
             this.txtPlate.TabIndex = 0;
             this.txtPlate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPlate.TextChanged += new System.EventHandler(this.txtPlate_TextChanged);
@@ -229,7 +229,7 @@ namespace HeThongGiuXe
             this.txtCard.Location = new System.Drawing.Point(17, 47);
             this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
-            this.txtCard.Size = new System.Drawing.Size(246, 36);
+            this.txtCard.Size = new System.Drawing.Size(246, 29);
             this.txtCard.TabIndex = 1;
             this.txtCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -437,7 +437,7 @@ namespace HeThongGiuXe
             this.checkAutoCheckin.Location = new System.Drawing.Point(428, 64);
             this.checkAutoCheckin.Margin = new System.Windows.Forms.Padding(4);
             this.checkAutoCheckin.Name = "checkAutoCheckin";
-            this.checkAutoCheckin.Size = new System.Drawing.Size(107, 29);
+            this.checkAutoCheckin.Size = new System.Drawing.Size(84, 24);
             this.checkAutoCheckin.TabIndex = 7;
             this.checkAutoCheckin.Text = "Tự động";
             this.checkAutoCheckin.UseVisualStyleBackColor = false;
@@ -468,11 +468,11 @@ namespace HeThongGiuXe
             // 
             // CheckinForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1377, 735);
+            this.ClientSize = new System.Drawing.Size(1370, 735);
             this.Controls.Add(this.groupControl);
             this.Controls.Add(this.groupExtractInfo);
             this.Controls.Add(this.groupCamera);
