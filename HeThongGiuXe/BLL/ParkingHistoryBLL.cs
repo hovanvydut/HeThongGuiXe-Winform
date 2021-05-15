@@ -24,11 +24,6 @@ namespace HeThongGiuXe.BLL
         {
             // Prepare table
 
-            if( checkout_at != null )
-            {
-
-                MessageBox.Show(checkout_at.Value.ToString()) ;
-            }    
             List<Parking_History> results = null;
             DataTable table = new DataTable();
             table.Columns.AddRange(new DataColumn[] {
