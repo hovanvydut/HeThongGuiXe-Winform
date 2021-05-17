@@ -76,6 +76,7 @@ namespace HeThongGiuXe.View
             this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.Window;
             this.txtUsername.Location = new System.Drawing.Point(201, 90);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(214, 23);
@@ -86,7 +87,7 @@ namespace HeThongGiuXe.View
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.txtPassword.Location = new System.Drawing.Point(201, 132);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -113,13 +114,13 @@ namespace HeThongGiuXe.View
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.btnLogin.Location = new System.Drawing.Point(201, 175);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btnLogin.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btnLogin.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnLogin.OnHoverBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.OnHoverButtonColor = System.Drawing.Color.Transparent;
+            this.btnLogin.OnHoverTextColor = System.Drawing.Color.Transparent;
             this.btnLogin.Size = new System.Drawing.Size(193, 51);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Đăng nhập";
@@ -129,6 +130,7 @@ namespace HeThongGiuXe.View
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
