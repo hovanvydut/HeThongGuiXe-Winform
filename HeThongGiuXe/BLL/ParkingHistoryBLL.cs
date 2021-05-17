@@ -27,9 +27,8 @@ namespace HeThongGiuXe.BLL
             List<Parking_History> results = null;
             DataTable table = new DataTable();
             table.Columns.AddRange(new DataColumn[] {
-                new DataColumn("Mã số sinh viên", typeof(int)),
+                new DataColumn("Mã số sinh viên", typeof(string)),
                 new DataColumn("Họ & tên", typeof(string)),
-                new DataColumn("Tên tài khoản", typeof(string)),
                 new DataColumn("Biển số", typeof(string)),
                 new DataColumn("Giờ vào", typeof(DateTime)),
                 new DataColumn("Giờ ra", typeof(DateTime)),
@@ -58,9 +57,8 @@ namespace HeThongGiuXe.BLL
                 foreach (Parking_History item in results)
                 {
                     DataRow newRow = table.NewRow();
-                    newRow["Mã số sinh viên"] = item.customer_id;
+                    newRow["Mã số sinh viên"] = item.Customer.student_id;
                     newRow["Họ & tên"] = item.Customer.fullname;
-                    newRow["Tên tài khoản"] = item.Customer.username;
                     newRow["Biển số"] = item.license_plate;
                     newRow["Giờ vào"] = item.check_in_at;
                     // set value checkout if not checkout 

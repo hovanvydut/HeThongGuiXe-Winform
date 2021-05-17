@@ -33,7 +33,6 @@ namespace HeThongGiuXe.View
             {
                 MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu", "Lỗi hệ thống");
                 EnableElement(true);
-                Console.WriteLine(err.Message);
                 return;
             }
             if (user == null)
