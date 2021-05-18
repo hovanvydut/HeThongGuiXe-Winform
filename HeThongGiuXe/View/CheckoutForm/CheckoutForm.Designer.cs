@@ -50,7 +50,6 @@ namespace HeThongGiuXe.View
             this.tableVehicleInPark = new System.Windows.Forms.DataGridView();
             this.groupConfirmControl = new System.Windows.Forms.GroupBox();
             this.btnConfirm = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.cbDebit = new System.Windows.Forms.CheckBox();
             this.checkAutoCheckout = new System.Windows.Forms.CheckBox();
             this.groupControlSOS = new System.Windows.Forms.GroupBox();
             this.btnClose = new HeThongGiuXe.DTO.RoundedButton(this.components);
@@ -352,7 +351,6 @@ namespace HeThongGiuXe.View
             // groupConfirmControl
             // 
             this.groupConfirmControl.Controls.Add(this.btnConfirm);
-            this.groupConfirmControl.Controls.Add(this.cbDebit);
             this.groupConfirmControl.Controls.Add(this.checkAutoCheckout);
             this.groupConfirmControl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.groupConfirmControl.Location = new System.Drawing.Point(24, 164);
@@ -387,19 +385,6 @@ namespace HeThongGiuXe.View
             this.btnConfirm.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // cbDebit
-            // 
-            this.cbDebit.AutoSize = true;
-            this.cbDebit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbDebit.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDebit.Location = new System.Drawing.Point(392, 102);
-            this.cbDebit.Margin = new System.Windows.Forms.Padding(4);
-            this.cbDebit.Name = "cbDebit";
-            this.cbDebit.Size = new System.Drawing.Size(89, 29);
-            this.cbDebit.TabIndex = 4;
-            this.cbDebit.Text = "Ghi nợ";
-            this.cbDebit.UseVisualStyleBackColor = true;
             // 
             // checkAutoCheckout
             // 
@@ -528,7 +513,6 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Button btnSetingSerial;
         private System.Windows.Forms.Label lbPlate;
         private System.Windows.Forms.TextBox txtSavedPlate;
-        private System.Windows.Forms.CheckBox cbDebit;
         private DTO.RoundedButton btnTryGetPlate;
         private DTO.RoundedButton btlGetAllInPark;
         private DTO.RoundedButton btnFilterWithPlate;

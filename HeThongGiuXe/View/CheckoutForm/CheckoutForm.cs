@@ -224,8 +224,7 @@ namespace HeThongGiuXe.View
                 return;
             }
             // Must payment?
-            bool isPayment = !this.cbDebit.Checked;
-            if (this.CurentCustomer.student_id == null) isPayment = true;
+            bool isPayment = true;
             Parking_History currentParking = null;
             try
             {
@@ -236,20 +235,10 @@ namespace HeThongGiuXe.View
                 MessageBox.Show(err.Message, "Lỗi hệ thống");
                 return;
             }
-            if (isPayment)
+            if (isPayment && (currentParking.price > 0 || (!this.checkAutoCheckout.Checked)))
             {
                 PaymentForm form = new PaymentForm(currentParking.price, this.CurentCustomer.student_id != null);
                 form.ShowDialog();
-                if (form.DialogResult == DialogResult.Cancel)
-                {
-                    // Update debit card
-                    bool success = CheckInOutBLL.Instance.Debit(currentParking);
-                    if (!success)
-                    {
-                        MessageBox.Show("Không thể tìm thấy lượt gửi xe nữa", "Lỗi hệ thống");
-                    }
-                }
-                // else do no thing
             }
             SystemSound.play(Sound.Thanks);
 ;           InitializeParkingList();
@@ -262,6 +251,14 @@ namespace HeThongGiuXe.View
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            if (this.SavedPlate == null) return;
+            if (this.DetectedPlate == null || this.SavedPlate != this.DetectedPlate)
+            {
+                DialogResult dr = MessageBox.Show("Thông tin không khớp, bạn có muốn check out xe này?",
+                    "Thông báo", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information);
+                if (dr == DialogResult.No) return;
+            }
             CheckOut(true);
         }
 

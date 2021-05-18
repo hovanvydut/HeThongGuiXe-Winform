@@ -127,7 +127,7 @@ namespace HeThongGiuXe.View
             "Thứ 7"});
             this.cbDay.Location = new System.Drawing.Point(28, 49);
             this.cbDay.Name = "cbDay";
-            this.cbDay.Size = new System.Drawing.Size(170, 28);
+            this.cbDay.Size = new System.Drawing.Size(170, 33);
             this.cbDay.TabIndex = 1;
             this.cbDay.SelectedIndexChanged += new System.EventHandler(this.cbDay_SelectedIndexChanged);
             // 
@@ -299,13 +299,14 @@ namespace HeThongGiuXe.View
             this.tableSpecialPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableSpecialPrice.Size = new System.Drawing.Size(338, 191);
             this.tableSpecialPrice.TabIndex = 4;
+            this.tableSpecialPrice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableSpecialPrice_CellClick);
             // 
             // txtDescription
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescription.Location = new System.Drawing.Point(146, 148);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(216, 20);
+            this.txtDescription.Size = new System.Drawing.Size(216, 25);
             this.txtDescription.TabIndex = 16;
             // 
             // lbDescription
@@ -313,7 +314,7 @@ namespace HeThongGiuXe.View
             this.lbDescription.AutoSize = true;
             this.lbDescription.Location = new System.Drawing.Point(20, 148);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(62, 20);
+            this.lbDescription.Size = new System.Drawing.Size(79, 25);
             this.lbDescription.TabIndex = 15;
             this.lbDescription.Text = "Ghi chú";
             // 
@@ -324,27 +325,27 @@ namespace HeThongGiuXe.View
             this.dateFilter.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.dateFilter.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.dateFilter.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.dateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateFilter.Location = new System.Drawing.Point(146, 282);
             this.dateFilter.Name = "dateFilter";
-            this.dateFilter.Size = new System.Drawing.Size(216, 27);
+            this.dateFilter.Size = new System.Drawing.Size(216, 32);
             this.dateFilter.TabIndex = 10;
             // 
             // dateStart
             // 
             this.dateStart.CalendarTrailingForeColor = System.Drawing.Color.Green;
-            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateStart.Location = new System.Drawing.Point(146, 40);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(216, 27);
+            this.dateStart.Size = new System.Drawing.Size(216, 32);
             this.dateStart.TabIndex = 8;
             // 
             // dateEnd
             // 
-            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateEnd.Location = new System.Drawing.Point(146, 75);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(216, 27);
+            this.dateEnd.Size = new System.Drawing.Size(216, 32);
             this.dateEnd.TabIndex = 7;
             // 
             // txtPrice
@@ -352,7 +353,7 @@ namespace HeThongGiuXe.View
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrice.Location = new System.Drawing.Point(146, 116);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(216, 20);
+            this.txtPrice.Size = new System.Drawing.Size(216, 25);
             this.txtPrice.TabIndex = 6;
             // 
             // lbPrice
@@ -360,7 +361,7 @@ namespace HeThongGiuXe.View
             this.lbPrice.AutoSize = true;
             this.lbPrice.Location = new System.Drawing.Point(21, 116);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(63, 20);
+            this.lbPrice.Size = new System.Drawing.Size(82, 25);
             this.lbPrice.TabIndex = 5;
             this.lbPrice.Text = "Đơn giá";
             // 
@@ -369,7 +370,7 @@ namespace HeThongGiuXe.View
             this.lbEnd.AutoSize = true;
             this.lbEnd.Location = new System.Drawing.Point(21, 80);
             this.lbEnd.Name = "lbEnd";
-            this.lbEnd.Size = new System.Drawing.Size(107, 20);
+            this.lbEnd.Size = new System.Drawing.Size(136, 25);
             this.lbEnd.TabIndex = 4;
             this.lbEnd.Text = "Ngày kết thúc";
             // 
@@ -378,7 +379,7 @@ namespace HeThongGiuXe.View
             this.lbStart.AutoSize = true;
             this.lbStart.Location = new System.Drawing.Point(20, 45);
             this.lbStart.Name = "lbStart";
-            this.lbStart.Size = new System.Drawing.Size(103, 20);
+            this.lbStart.Size = new System.Drawing.Size(132, 25);
             this.lbStart.TabIndex = 3;
             this.lbStart.Text = "Ngày bắt đầu";
             // 
@@ -387,13 +388,13 @@ namespace HeThongGiuXe.View
             this.lbStartFilter.AutoSize = true;
             this.lbStartFilter.Location = new System.Drawing.Point(21, 282);
             this.lbStartFilter.Name = "lbStartFilter";
-            this.lbStartFilter.Size = new System.Drawing.Size(103, 20);
+            this.lbStartFilter.Size = new System.Drawing.Size(132, 25);
             this.lbStartFilter.TabIndex = 1;
             this.lbStartFilter.Text = "Ngày bắt đầu";
             // 
             // ManageUnitPrice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.ClientSize = new System.Drawing.Size(889, 649);

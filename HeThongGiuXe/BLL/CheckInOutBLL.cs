@@ -55,7 +55,7 @@ namespace HeThongGiuXe.BLL
                 // Update price
                 DateTime startTime = result.check_in_at;
                 DateTime endTime = (DateTime)(result.check_out_at);
-                result.price = CalculatePrice(startTime, endTime, db);
+                result.price = CalculatePrice(startTime, endTime, (int)result.customer_id, db);
                 // Save
                 db.SaveChanges();
             }
@@ -76,54 +76,121 @@ namespace HeThongGiuXe.BLL
             }
             return success;
         }
-        public int CalculatePrice(DateTime startTime, DateTime endTime, DatabaseEntities db)
+        public int CalculatePrice(DateTime startTime, DateTime endTime, int customerID, DatabaseEntities db)
         {
             int result = 0;
             while (startTime < endTime)
             {
-                // check if in payment package
-                Payment paid = db.Payments.Where(o
-                    => o.start_date <= startTime
-                    && o.end_date >= startTime).FirstOrDefault();
-                if (paid != default(Payment))
+                // Phase 1
                 {
-                    startTime = paid.end_date;
-                    startTime = startTime.AddSeconds(1);
-                    continue;
+                    // check if in payment package
+                    Payment paid = db.Payments.Where(o
+                        => o.start_date <= startTime
+                        && o.end_date >= startTime
+                        && o.customer_id == customerID).FirstOrDefault();
+                    if (paid != default(Payment))
+                    {
+                        startTime = paid.end_date;
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
+                    // have special time
+                    Unit_Price specialTime = db.Unit_Price.Where(o
+                        => o.start_date <= startTime
+                        && o.end_date >= startTime).FirstOrDefault();
+                    if (specialTime != default(Unit_Price))
+                    {
+                        result += specialTime.price;
+                        startTime = (DateTime)(specialTime.end_date);
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
+                    // calc by day
+                    int day = (int)startTime.DayOfWeek + 1; // Monday is 1 -> Monday is 2
+                    Unit_Price priceInDay = db.Unit_Price.Where(o
+                        => o.day_in_week == day
+                        && o.start_time_in_day <= startTime.TimeOfDay
+                        && o.end_time_in_day >= startTime.TimeOfDay).FirstOrDefault();
+                    if (priceInDay != default(Unit_Price))
+                    {
+                        result += priceInDay.price;
+                        startTime = new DateTime(
+                        startTime.Year,
+                        startTime.Month,
+                        startTime.Day,
+                        ((TimeSpan)(priceInDay.end_time_in_day)).Hours,
+                        ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
+                        ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
+                        );
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
                 }
-                // have special time
-                Unit_Price specialTime = db.Unit_Price.Where(o
-                    => o.start_date <= startTime 
-                    && o.end_date >= startTime).FirstOrDefault();
-                if (specialTime != default(Unit_Price))
+                // Phase 2
                 {
-                    result += specialTime.price;
-                    startTime = (DateTime)(specialTime.end_date);
-                    startTime = startTime.AddSeconds(1);
-                    continue;
+                    // check if in payment package
+                    Payment paid = db.Payments.Where(o
+                        => o.start_date >= startTime
+                        && o.start_date <= endTime
+                        && o.customer_id == customerID).FirstOrDefault();
+                    if (paid != default(Payment))
+                    {
+                        startTime = paid.end_date;
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
+                    // have special time
+                    Unit_Price specialTime = db.Unit_Price.Where(o
+                        => o.start_date >= startTime
+                        && o.start_date <= endTime).FirstOrDefault();
+                    if (specialTime != default(Unit_Price))
+                    {
+                        result += specialTime.price;
+                        startTime = (DateTime)(specialTime.end_date);
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
+                    // calc by day
+                    int day = (int)startTime.DayOfWeek + 1; // Monday is 1 -> Monday is 2
+                    TimeSpan endTimeInDay = startTime.Date == endTime.Date
+                        ? TimeSpan.Parse("23:59:59")
+                        : endTime.TimeOfDay;
+                    Unit_Price priceInDay = db.Unit_Price.Where(o
+                        => o.day_in_week == day
+                        && o.start_time_in_day >= startTime.TimeOfDay
+                        && o.start_time_in_day <= endTimeInDay).FirstOrDefault();
+                    if (priceInDay != default(Unit_Price))
+                    {
+                        result += priceInDay.price;
+                        startTime = new DateTime(
+                            startTime.Year,
+                            startTime.Month,
+                            startTime.Day,
+                            ((TimeSpan)(priceInDay.end_time_in_day)).Hours,
+                            ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
+                            ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
+                        );
+                        startTime = startTime.AddSeconds(1);
+                        continue;
+                    }
                 }
-                // calc by day
-                int day = (int)startTime.DayOfWeek + 1; // Monday is 1 -> Monday is 2
-                Unit_Price priceInDay = db.Unit_Price.Where(o
-                    => o.day_in_week == day
-                    && o.start_time_in_day <= startTime.TimeOfDay
-                    && o.end_time_in_day >= startTime.TimeOfDay).FirstOrDefault();
-                if (priceInDay != default(Unit_Price))
+                // Cannot calc fee -> try next day
                 {
-                    result += priceInDay.price;
-                    startTime = new DateTime(
-                    startTime.Year,
-                    startTime.Month,
-                    startTime.Day,
-                    ((TimeSpan)(priceInDay.end_time_in_day)).Hours,
-                    ((TimeSpan)(priceInDay.end_time_in_day)).Minutes,
-                    ((TimeSpan)(priceInDay.end_time_in_day)).Seconds
-                    );
-                    startTime = startTime.AddSeconds(1);
-                    continue;
+                    if (startTime.Date != endTime.Date)
+                    {
+                        startTime = startTime.AddDays(1);
+                        startTime = new DateTime(
+                            startTime.Year,
+                            startTime.Month,
+                            startTime.Day,
+                            0,
+                            0,
+                            0
+                        );
+                        continue;
+                    }
                 }
-                throw new Exception("Không thể tính tiền");
-                    
+                break;
             }
               
             return result;
@@ -205,7 +272,7 @@ namespace HeThongGiuXe.BLL
                 foreach (Parking_History item in results)
                 {
                     DataRow newRow = table.NewRow();
-                    newRow["ID"] = item.ID_parking;
+                    newRow["ID"] = item.Customer.student_id;
                     newRow["Họ & tên"] = item.Customer.fullname;
                     newRow["Biển số"] = item.license_plate;
                     newRow["Giờ vào"] = item.check_in_at;
