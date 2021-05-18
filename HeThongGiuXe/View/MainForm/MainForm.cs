@@ -18,7 +18,7 @@ namespace HeThongGiuXe.View
         public MainForm()
         {
             InitializeComponent();
-            LoginRequire();
+            //LoginRequire();
 
         }
         private void LoginRequire()
