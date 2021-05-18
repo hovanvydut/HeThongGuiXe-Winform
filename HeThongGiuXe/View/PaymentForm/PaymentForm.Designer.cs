@@ -32,7 +32,6 @@ namespace HeThongGiuXe.View
             this.lbPayment = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnDebit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbPayment
@@ -57,34 +56,21 @@ namespace HeThongGiuXe.View
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(34, 122);
+            this.btnOK.Location = new System.Drawing.Point(105, 112);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(113, 23);
+            this.btnOK.Size = new System.Drawing.Size(119, 28);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "Đã thanh toán";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // btnDebit
-            // 
-            this.btnDebit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnDebit.Location = new System.Drawing.Point(170, 122);
-            this.btnDebit.Name = "btnDebit";
-            this.btnDebit.Size = new System.Drawing.Size(119, 23);
-            this.btnDebit.TabIndex = 3;
-            this.btnDebit.Text = "Ghi nợ";
-            this.btnDebit.UseVisualStyleBackColor = true;
-            this.btnDebit.Click += new System.EventHandler(this.btnDebit_Click);
             // 
             // PaymentForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnDebit;
-            this.ClientSize = new System.Drawing.Size(339, 210);
+            this.ClientSize = new System.Drawing.Size(338, 180);
             this.ControlBox = false;
-            this.Controls.Add(this.btnDebit);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.lbPayment);
@@ -101,6 +87,5 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Label lbPayment;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnDebit;
     }
 }

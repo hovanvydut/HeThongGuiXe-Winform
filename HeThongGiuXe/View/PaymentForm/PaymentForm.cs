@@ -19,10 +19,6 @@ namespace HeThongGiuXe.View
         {
             InitializeComponent();
             this.txtPrice.Text = price.ToString() + " vnd";
-            if (!canDebit)
-            {
-                this.btnDebit.Enabled = false;
-            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
