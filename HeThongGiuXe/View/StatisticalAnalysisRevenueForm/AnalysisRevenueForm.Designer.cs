@@ -29,13 +29,12 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_export_pdf = new System.Windows.Forms.Button();
-            this.btn_show_chart = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_analysis = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@ namespace HeThongGiuXe.View
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_export_pdf);
-            this.groupBox3.Controls.Add(this.btn_show_chart);
             this.groupBox3.Location = new System.Drawing.Point(686, 42);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(607, 100);
@@ -77,23 +75,13 @@ namespace HeThongGiuXe.View
             // 
             // btn_export_pdf
             // 
-            this.btn_export_pdf.Location = new System.Drawing.Point(332, 26);
+            this.btn_export_pdf.Location = new System.Drawing.Point(48, 35);
             this.btn_export_pdf.Name = "btn_export_pdf";
             this.btn_export_pdf.Size = new System.Drawing.Size(209, 35);
             this.btn_export_pdf.TabIndex = 1;
             this.btn_export_pdf.Text = "Xuất báo cáo";
             this.btn_export_pdf.UseVisualStyleBackColor = true;
             this.btn_export_pdf.Click += new System.EventHandler(this.btn_export_pdf_Click);
-            // 
-            // btn_show_chart
-            // 
-            this.btn_show_chart.Location = new System.Drawing.Point(33, 24);
-            this.btn_show_chart.Name = "btn_show_chart";
-            this.btn_show_chart.Size = new System.Drawing.Size(209, 35);
-            this.btn_show_chart.TabIndex = 0;
-            this.btn_show_chart.Text = "Biểu đồ so sánh tháng/năm";
-            this.btn_show_chart.UseVisualStyleBackColor = true;
-            this.btn_show_chart.Click += new System.EventHandler(this.btn_show_chart_Click);
             // 
             // groupBox2
             // 
@@ -105,7 +93,7 @@ namespace HeThongGiuXe.View
             this.groupBox2.Size = new System.Drawing.Size(483, 100);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Phân tích";
             // 
             // btn_analysis
             // 
@@ -161,12 +149,12 @@ namespace HeThongGiuXe.View
             // 
             // chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Revenue";
-            legend2.Name = "NumberVehicles";
-            this.chart.Legends.Add(legend1);
-            this.chart.Legends.Add(legend2);
+            chartArea2.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea2);
+            legend3.Name = "Revenue";
+            legend4.Name = "NumberVehicles";
+            this.chart.Legends.Add(legend3);
+            this.chart.Legends.Add(legend4);
             this.chart.Location = new System.Drawing.Point(6, 89);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(657, 361);
@@ -181,7 +169,7 @@ namespace HeThongGiuXe.View
             this.groupBox5.Size = new System.Drawing.Size(669, 546);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Chart";
+            this.groupBox5.Text = "Biểu đồ";
             // 
             // AnalysisRevenueForm
             // 
@@ -213,7 +201,6 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_export_pdf;
-        private System.Windows.Forms.Button btn_show_chart;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dtgv_list_revenue;
         private System.Windows.Forms.Button btn_analysis;

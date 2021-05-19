@@ -79,16 +79,22 @@ namespace HeThongGiuXe.View
         private void btn_export_pdf_Click(object sender, EventArgs e)
         {
 
+            if (this.dtgv_list_revenue.Rows.Count <= 0)
+            {
+                MessageBox.Show("Không có dữ liệu để xuất. Vui lòng phân tích dữ liệu trước");
+                return;
+            }
+
             string fileName = "D:\\report_" + DateTime.Now.ToString().Replace("/", "_").Replace(" ", "_").Replace(":", "_") + ".pdf";
-            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
-            string fontDirectory = string.Format("{0}Resources\\font\\times-new-roman.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
-            FontProgram fontProgram = FontProgramFactory.CreateFont(fontDirectory);
-            PdfFont font = PdfFontFactory.CreateFont(fontProgram, PdfEncodings.WINANSI, true);
+            //string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string fontDirectory = string.Format("{0}Resources\\font\\times-new-roman.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            //FontProgram fontProgram = FontProgramFactory.CreateFont(fontDirectory);
+            //PdfFont font = PdfFontFactory.CreateFont(fontProgram);
             PdfWriter writer = new PdfWriter(fileName);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
-            document.SetFontFamily("Times New Roman");
-            document.SetFont(font);
+            //document.SetFontFamily("Times New Roman");
+            //document.SetFont(font);
 
             document.Add(new Paragraph("BAO CAO DOANH THU")
                             .SetTextAlignment(TextAlignment.CENTER)
@@ -103,7 +109,7 @@ namespace HeThongGiuXe.View
                 Cell cell = new Cell(1, 1)
                             .SetBackgroundColor(ColorConstants.BLUE)
                             .SetTextAlignment(TextAlignment.CENTER)
-                            .Add(new Paragraph(column.HeaderText).SetFont(font));
+                            .Add(new Paragraph(column.HeaderText));
                 table.AddCell(cell);
                 i++;
             }
@@ -134,45 +140,7 @@ namespace HeThongGiuXe.View
 
 
             document.Close();
-            ////Creating iTextSharp Table from the DataTable data
-            //PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
-            //pdfTable.DefaultCell.Padding = 3;
-            //pdfTable.WidthPercentage = 30;
-            //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
-            //pdfTable.DefaultCell.BorderWidth = 1;
-
-            ////Adding Header row
-            //foreach (DataGridViewColumn column in dataGridView1.Columns)
-            //{
-            //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
-            //    cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
-            //    pdfTable.AddCell(cell);
-            //}
-
-            ////Adding DataRow
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    foreach (DataGridViewCell cell in row.Cells)
-            //    {
-            //        pdfTable.AddCell(cell.Value.ToString());
-            //    }
-            //}
-
-            ////Exporting to PDF
-            //string folderPath = "C:\\PDFs\\";
-            //if (!Directory.Exists(folderPath))
-            //{
-            //    Directory.CreateDirectory(folderPath);
-            //}
-            //using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
-            //{
-            //    Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
-            //    PdfWriter.GetInstance(pdfDoc, stream);
-            //    pdfDoc.Open();
-            //    pdfDoc.Add(pdfTable);
-            //    pdfDoc.Close();
-            //    stream.Close();
-            //}
+            MessageBox.Show("Đã export file PDF thành công. Vui lòng check file ở D:\\");
         }
     }
 }
