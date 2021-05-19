@@ -1,7 +1,7 @@
 ﻿
 namespace HeThongGiuXe.View
 {
-    partial class StatisticalAnalysisRevenueForm
+    partial class AnalysisRevenueForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,21 +29,28 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_export_pdf = new System.Windows.Forms.Button();
+            this.btn_show_chart = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_analysis = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_list_revenue = new System.Windows.Forms.DataGridView();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_list_revenue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,8 +66,8 @@ namespace HeThongGiuXe.View
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btn_export_pdf);
+            this.groupBox3.Controls.Add(this.btn_show_chart);
             this.groupBox3.Location = new System.Drawing.Point(686, 42);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(607, 100);
@@ -68,27 +75,29 @@ namespace HeThongGiuXe.View
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hành động";
             // 
-            // button2
+            // btn_export_pdf
             // 
-            this.button2.Location = new System.Drawing.Point(332, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(209, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Xuất báo cáo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_export_pdf.Location = new System.Drawing.Point(332, 26);
+            this.btn_export_pdf.Name = "btn_export_pdf";
+            this.btn_export_pdf.Size = new System.Drawing.Size(209, 35);
+            this.btn_export_pdf.TabIndex = 1;
+            this.btn_export_pdf.Text = "Xuất báo cáo";
+            this.btn_export_pdf.UseVisualStyleBackColor = true;
+            this.btn_export_pdf.Click += new System.EventHandler(this.btn_export_pdf_Click);
             // 
-            // button1
+            // btn_show_chart
             // 
-            this.button1.Location = new System.Drawing.Point(33, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Biểu đồ so sánh tháng/năm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_show_chart.Location = new System.Drawing.Point(33, 24);
+            this.btn_show_chart.Name = "btn_show_chart";
+            this.btn_show_chart.Size = new System.Drawing.Size(209, 35);
+            this.btn_show_chart.TabIndex = 0;
+            this.btn_show_chart.Text = "Biểu đồ so sánh tháng/năm";
+            this.btn_show_chart.UseVisualStyleBackColor = true;
+            this.btn_show_chart.Click += new System.EventHandler(this.btn_show_chart_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btn_analysis);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Location = new System.Drawing.Point(29, 42);
@@ -98,15 +107,15 @@ namespace HeThongGiuXe.View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // button3
+            // btn_analysis
             // 
-            this.button3.Location = new System.Drawing.Point(349, 42);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Phân tích";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_analysis.Location = new System.Drawing.Point(349, 42);
+            this.btn_analysis.Name = "btn_analysis";
+            this.btn_analysis.Size = new System.Drawing.Size(103, 23);
+            this.btn_analysis.TabIndex = 2;
+            this.btn_analysis.Text = "Phân tích";
+            this.btn_analysis.UseVisualStyleBackColor = true;
+            this.btn_analysis.Click += new System.EventHandler(this.btn_analysis_Click);
             // 
             // label1
             // 
@@ -130,9 +139,9 @@ namespace HeThongGiuXe.View
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dtgv_list_revenue);
-            this.groupBox4.Location = new System.Drawing.Point(12, 273);
+            this.groupBox4.Location = new System.Drawing.Point(12, 235);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1332, 456);
+            this.groupBox4.Size = new System.Drawing.Size(650, 546);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Danh sách";
@@ -142,22 +151,47 @@ namespace HeThongGiuXe.View
             this.dtgv_list_revenue.AllowUserToAddRows = false;
             this.dtgv_list_revenue.AllowUserToDeleteRows = false;
             this.dtgv_list_revenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_list_revenue.Location = new System.Drawing.Point(29, 56);
+            this.dtgv_list_revenue.Location = new System.Drawing.Point(6, 56);
             this.dtgv_list_revenue.Name = "dtgv_list_revenue";
             this.dtgv_list_revenue.ReadOnly = true;
             this.dtgv_list_revenue.RowHeadersWidth = 51;
             this.dtgv_list_revenue.RowTemplate.Height = 24;
-            this.dtgv_list_revenue.Size = new System.Drawing.Size(1264, 379);
+            this.dtgv_list_revenue.Size = new System.Drawing.Size(621, 461);
             this.dtgv_list_revenue.TabIndex = 0;
             // 
-            // StatisticalAnalysisRevenueForm
+            // chart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Revenue";
+            legend2.Name = "NumberVehicles";
+            this.chart.Legends.Add(legend1);
+            this.chart.Legends.Add(legend2);
+            this.chart.Location = new System.Drawing.Point(6, 89);
+            this.chart.Name = "chart";
+            this.chart.Size = new System.Drawing.Size(657, 361);
+            this.chart.TabIndex = 1;
+            this.chart.Text = "chart1";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.chart);
+            this.groupBox5.Location = new System.Drawing.Point(712, 235);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(669, 546);
+            this.groupBox5.TabIndex = 2;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Chart";
+            // 
+            // AnalysisRevenueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1393, 793);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
-            this.Name = "StatisticalAnalysisRevenueForm";
+            this.Name = "AnalysisRevenueForm";
             this.Text = "StatisticalAnalysisRevenueForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -165,6 +199,8 @@ namespace HeThongGiuXe.View
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_list_revenue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -176,10 +212,12 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_export_pdf;
+        private System.Windows.Forms.Button btn_show_chart;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dtgv_list_revenue;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_analysis;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }

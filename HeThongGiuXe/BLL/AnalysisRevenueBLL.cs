@@ -11,8 +11,20 @@ namespace HeThongGiuXe.BLL
     class AnalysisRevenueMonthResult
     {
         public int MONTH { get; set; }
-        public int COUNT { get; set; }
+        public int NUM_VEHICLES { get; set; }
         public int SUM { get; set; }
+
+        public int REVENUE_PACKAGE { get; set; }
+        public int REVENUE_PAYMENT_AT_PARKING { get; set; }
+    }
+
+    class AnalysDTableColumnEnum
+    {
+        public static string MONTH = "Tháng";
+        public static string NUM_VEHICLES = "Số lượng xe ra/vào";
+        public static string REVENUE_PACKAGE = "Tiền thu các gói";
+        public static string REVENUE_PAYMENT_AT_PARKING = "Tiền thu tại quầy";
+        public static string REVENUE = "Doanh thu";
     }
     class AnalysisRevenueBLL
     {
@@ -37,20 +49,23 @@ namespace HeThongGiuXe.BLL
         public DataTable GetDataTableRevenue(int year)
         {
             /**
-             * Doanh thu = ParkingHistory.price where paid_at = (month, year) + 
+             * Revenue = ParkingHistory.price where paid_at = (month, year) + 
              *              Payment.price where check_out_at = (month,year)
              */
             DataTable dt = new DataTable();
 
             dt.Columns.AddRange(new DataColumn[] {
-                new DataColumn("Tháng", typeof(string)),
-                new DataColumn("Số lượng xe ra/vào", typeof(int)),
-                new DataColumn("Doanh thu", typeof(string))
+                new DataColumn(AnalysDTableColumnEnum.MONTH, typeof(string)),
+                new DataColumn(AnalysDTableColumnEnum.NUM_VEHICLES, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE_PACKAGE, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE_PAYMENT_AT_PARKING, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE, typeof(string))
             });
 
             
             using (DatabaseEntities db = new DatabaseEntities())
             {
+                // doanh thu cac thang tu viec thu tien truc tiep
                 List<AnalysisRevenueMonthResult> result1 = db.Parking_History.Where(item => 
                         (item.check_out_at.HasValue ? item.check_out_at.Value.Year == year : false))
                     .GroupBy(item => item.check_out_at.Value.Month)
@@ -59,10 +74,12 @@ namespace HeThongGiuXe.BLL
                         {
                             MONTH = g.Key,
                             SUM = g.Sum(item => item.price),
-                            COUNT = g.Count()
+                            NUM_VEHICLES = g.Count(),
+                            REVENUE_PAYMENT_AT_PARKING = g.Sum(item => item.price)
                         }
                     ).OrderBy(item => item.MONTH).ToList();
 
+                // Doanh thu cac thang tu viec dang ki tra truoc thong qua cac goi gui xe
                 List<AnalysisRevenueMonthResult> result2 = db.Payments
                     .Where(payment => (payment.paid_at.HasValue ? payment.paid_at.Value.Year == year : false))
                     .GroupBy(payment => payment.paid_at.Value.Month)
@@ -70,9 +87,11 @@ namespace HeThongGiuXe.BLL
                     {
                         MONTH = g.Key,
                         SUM = g.Sum(payment => payment.price),
-                        COUNT = 0
+                        NUM_VEHICLES = 0,
+                        REVENUE_PACKAGE = g.Sum(payment => payment.price)
                     }).ToList();
 
+                // Tong doanh thu hang thang
                 Dictionary<int, AnalysisRevenueMonthResult> dict = new Dictionary<int, AnalysisRevenueMonthResult>();
 
                 foreach (AnalysisRevenueMonthResult item in result1)
@@ -92,18 +111,24 @@ namespace HeThongGiuXe.BLL
                     if (dict.ContainsKey(item.MONTH))
                     {
                         dict[item.MONTH].SUM += item.SUM;
+                        dict[item.MONTH].REVENUE_PACKAGE += item.REVENUE_PACKAGE;
                     } else
                     {
                         dict[item.MONTH] = item;
                     }
                 }
+
                 List<AnalysisRevenueMonthResult> list = dict.Values.ToList();
+
                 foreach (AnalysisRevenueMonthResult item in list)
                 {
                     DataRow row = dt.NewRow();
-                    row["Tháng"] = item.MONTH;
-                    row["Số lượng xe ra/vào"] = item.COUNT;
-                    row["Doanh thu"] = item.SUM;
+                    row[AnalysDTableColumnEnum.MONTH] = item.MONTH;
+                    row[AnalysDTableColumnEnum.NUM_VEHICLES] = item.NUM_VEHICLES;
+                    row[AnalysDTableColumnEnum.REVENUE] = item.SUM;
+                    row[AnalysDTableColumnEnum.REVENUE_PACKAGE] = item.REVENUE_PACKAGE;
+                    row[AnalysDTableColumnEnum.REVENUE_PAYMENT_AT_PARKING] = item.REVENUE_PAYMENT_AT_PARKING;
+
                     dt.Rows.Add(row);
                 }
             }

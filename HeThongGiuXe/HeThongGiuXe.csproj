@@ -55,6 +55,15 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.9\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV.Bitmap, Version=4.4.0.4099, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <HintPath>..\packages\Emgu.CV.Bitmap.4.4.0.4099\lib\netstandard2.0\Emgu.CV.Bitmap.dll</HintPath>
     </Reference>
@@ -69,6 +78,33 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.15.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.15\lib\net45\itext.svg.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -168,6 +204,7 @@
     <Compile Include="Utils\APIPlateRecognizer.cs" />
     <Compile Include="Utils\ImageProcesing.cs" />
     <Compile Include="Utils\Loading.cs" />
+    <Compile Include="Utils\PDFExporter.cs" />
     <Compile Include="Utils\PlateReaderResult.cs" />
     <Compile Include="Utils\ArduinoSerial.cs" />
     <Compile Include="Utils\Session.cs" />
@@ -246,18 +283,13 @@
     <Compile Include="View\SettingSerial\SerialSettingForm.Designer.cs">
       <DependentUpon>SerialSettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StatisticalAnalysisRevenueForm\ChartForm.cs">
+    <Compile Include="View\StatisticalAnalysisRevenueForm\AnalysisRevenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StatisticalAnalysisRevenueForm\ChartForm.Designer.cs">
-      <DependentUpon>ChartForm.cs</DependentUpon>
+    <Compile Include="View\StatisticalAnalysisRevenueForm\AnalysisRevenueForm.Designer.cs">
+      <DependentUpon>AnalysisRevenueForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StatisticalAnalysisRevenueForm\StatisticalAnalysisRevenueForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\StatisticalAnalysisRevenueForm\StatisticalAnalysisRevenueForm.Designer.cs">
-      <DependentUpon>StatisticalAnalysisRevenueForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="View\StatisticalAnalysisRevenueForm\ChartSeriesEnum.cs" />
     <EmbeddedResource Include="DTO\RoundedButton.resx">
       <DependentUpon>RoundedButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,11 +339,8 @@
     <EmbeddedResource Include="View\SettingSerial\SerialSettingForm.resx">
       <DependentUpon>SerialSettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\ChartForm.resx">
-      <DependentUpon>ChartForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\StatisticalAnalysisRevenueForm.resx">
-      <DependentUpon>StatisticalAnalysisRevenueForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\AnalysisRevenueForm.resx">
+      <DependentUpon>AnalysisRevenueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

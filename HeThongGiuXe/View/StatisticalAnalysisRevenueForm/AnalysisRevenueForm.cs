@@ -1,0 +1,178 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using HeThongGiuXe.BLL;
+using System.Windows.Forms.DataVisualization.Charting;
+using iText.IO.Image;
+using iText.Kernel.Colors;
+using iText.Kernel.Pdf;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf.Action;
+using iText.Kernel.Pdf.Canvas.Draw;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using System.IO;
+using iText.IO.Font.Constants;
+using iText.IO.Font;
+
+namespace HeThongGiuXe.View
+{
+
+    public partial class AnalysisRevenueForm : Form
+    {
+        public AnalysisRevenueForm()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_analysis_Click(object sender, EventArgs e)
+        {
+            this.dtgv_list_revenue.DataSource = AnalysisRevenueBLL.Instance().GetDataTableRevenue(2021);
+            FillChart();
+        }
+
+        private void btn_show_chart_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FillChart()
+        {
+            ClearChart();
+
+            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PAYMENT_AT_PARKING);
+            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PACKAGE);
+            this.chart.Series.Add(ChartSeriesEnum.TOTAL_REVENUE);
+
+            DataTable data = (DataTable)this.dtgv_list_revenue.DataSource;
+
+            foreach (DataRow dr in data.Rows)
+            {
+                this.chart.Series[ChartSeriesEnum.REVENUE_PACKAGE]
+                    .Points.AddXY(dr[AnalysDTableColumnEnum.MONTH], dr[AnalysDTableColumnEnum.REVENUE_PACKAGE]);
+
+                this.chart.Series[ChartSeriesEnum.REVENUE_PAYMENT_AT_PARKING]
+                    .Points.AddXY(dr[AnalysDTableColumnEnum.MONTH], dr[AnalysDTableColumnEnum.REVENUE_PAYMENT_AT_PARKING]);
+
+                this.chart.Series[ChartSeriesEnum.TOTAL_REVENUE]
+                    .Points.AddXY(dr[AnalysDTableColumnEnum.MONTH], dr[AnalysDTableColumnEnum.REVENUE]);
+
+            }
+
+            this.chart.DataBind();
+        }
+
+        private void ClearChart()
+        {
+            foreach(var series in this.chart.Series)
+            {
+                series.Points.Clear();
+            }
+        }
+
+        private void btn_export_pdf_Click(object sender, EventArgs e)
+        {
+
+            string fileName = "D:\\report_" + DateTime.Now.ToString().Replace("/", "_").Replace(" ", "_").Replace(":", "_") + ".pdf";
+            string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
+            string fontDirectory = string.Format("{0}Resources\\font\\times-new-roman.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
+            FontProgram fontProgram = FontProgramFactory.CreateFont(fontDirectory);
+            PdfFont font = PdfFontFactory.CreateFont(fontProgram, PdfEncodings.WINANSI, true);
+            PdfWriter writer = new PdfWriter(fileName);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            document.SetFontFamily("Times New Roman");
+            document.SetFont(font);
+
+            document.Add(new Paragraph("BAO CAO DOANH THU")
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .SetFontSize(20));
+            document.Add(new Paragraph(new Text("\n")));
+
+            Table table = new Table(this.dtgv_list_revenue.Columns.Count, false);
+
+            int i = 1;
+            foreach(DataGridViewColumn column in this.dtgv_list_revenue.Columns)
+            {
+                Cell cell = new Cell(1, 1)
+                            .SetBackgroundColor(ColorConstants.BLUE)
+                            .SetTextAlignment(TextAlignment.CENTER)
+                            .Add(new Paragraph(column.HeaderText).SetFont(font));
+                table.AddCell(cell);
+                i++;
+            }
+
+            foreach (DataGridViewRow row in this.dtgv_list_revenue.Rows)
+            {
+                foreach (DataGridViewCell c in row.Cells)
+                {
+                    Cell cell = new Cell().Add(new Paragraph(c.Value.ToString()));
+                    table.AddCell(cell);
+                }
+            }
+
+            document.Add(table.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER));
+            document.Add(new Paragraph(new Text("\n")));
+
+            
+            using (MemoryStream stream = new MemoryStream())
+            {
+                this.chart.SaveImage(stream, ChartImageFormat.Png);
+
+                ImageData img = ImageDataFactory.Create(stream.GetBuffer(), false);
+
+                document.Add(new Image(img).SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER));
+                
+                stream.Close();
+            }
+
+
+            document.Close();
+            ////Creating iTextSharp Table from the DataTable data
+            //PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
+            //pdfTable.DefaultCell.Padding = 3;
+            //pdfTable.WidthPercentage = 30;
+            //pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            //pdfTable.DefaultCell.BorderWidth = 1;
+
+            ////Adding Header row
+            //foreach (DataGridViewColumn column in dataGridView1.Columns)
+            //{
+            //    PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+            //    cell.BackgroundColor = new iTextSharp.text.Color(240, 240, 240);
+            //    pdfTable.AddCell(cell);
+            //}
+
+            ////Adding DataRow
+            //foreach (DataGridViewRow row in dataGridView1.Rows)
+            //{
+            //    foreach (DataGridViewCell cell in row.Cells)
+            //    {
+            //        pdfTable.AddCell(cell.Value.ToString());
+            //    }
+            //}
+
+            ////Exporting to PDF
+            //string folderPath = "C:\\PDFs\\";
+            //if (!Directory.Exists(folderPath))
+            //{
+            //    Directory.CreateDirectory(folderPath);
+            //}
+            //using (FileStream stream = new FileStream(folderPath + "DataGridViewExport.pdf", FileMode.Create))
+            //{
+            //    Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+            //    PdfWriter.GetInstance(pdfDoc, stream);
+            //    pdfDoc.Open();
+            //    pdfDoc.Add(pdfTable);
+            //    pdfDoc.Close();
+            //    stream.Close();
+            //}
+        }
+    }
+}
