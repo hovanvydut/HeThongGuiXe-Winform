@@ -67,7 +67,7 @@ namespace HeThongGiuXe.BLL
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 results = db.Customers.Where(o
-                    => (fullname == null ? true : o.fullname.Contains(fullname))
+                    => (fullname == null ? true : o.fullname.ToLower().Contains(fullname.ToLower()))
                     && (phone == null ? true : (o.phone == null ? false : o.phone.Contains(phone)))
                     && (email == null ? true : (o.email == null ? false : o.email.Contains(email)))
                     && (studentID == null ? true : (o.student_id == null ? false : o.student_id.Contains(studentID)))

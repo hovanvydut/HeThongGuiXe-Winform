@@ -157,6 +157,8 @@
     <Compile Include="BLL\EmployeeBLL.cs" />
     <Compile Include="BLL\ParkingHistoryBLL.cs" />
     <Compile Include="BLL\AnalysisRevenueBLL.cs" />
+    <Compile Include="BLL\ParkingPackageBLL.cs" />
+    <Compile Include="BLL\PaymentBLL.cs" />
     <Compile Include="BLL\UnitPriceBLL.cs" />
     <Compile Include="BLL\Validator.cs" />
     <Compile Include="DAL\Customer.cs">
@@ -271,6 +273,18 @@
     <Compile Include="View\PaymentForm\PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PaymentForm\PaymentManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PaymentForm\PaymentManagementForm.Designer.cs">
+      <DependentUpon>PaymentManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PaymentForm\PurchaseRegisteredPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PaymentForm\PurchaseRegisteredPaymentForm.Designer.cs">
+      <DependentUpon>PurchaseRegisteredPaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingCamera\SettingCamera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +346,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PaymentForm\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PaymentForm\PaymentManagementForm.resx">
+      <DependentUpon>PaymentManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PaymentForm\PurchaseRegisteredPaymentForm.resx">
+      <DependentUpon>PurchaseRegisteredPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SettingCamera\SettingCamera.resx">
       <DependentUpon>SettingCamera.cs</DependentUpon>
