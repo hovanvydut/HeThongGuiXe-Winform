@@ -29,11 +29,15 @@ namespace HeThongGiuXe.View
         public AnalysisRevenueForm()
         {
             InitializeComponent();
+            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PAYMENT_AT_PARKING);
+            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PACKAGE);
+            this.chart.Series.Add(ChartSeriesEnum.TOTAL_REVENUE);
         }
 
         private void btn_analysis_Click(object sender, EventArgs e)
         {
-            this.dtgv_list_revenue.DataSource = AnalysisRevenueBLL.Instance().GetDataTableRevenue(2021);
+            int year = Convert.ToInt32(this.dtpk_year.Value.Year);
+            this.dtgv_list_revenue.DataSource = AnalysisRevenueBLL.Instance().GetDataTableRevenue(year);
             FillChart();
         }
 
@@ -45,10 +49,6 @@ namespace HeThongGiuXe.View
         private void FillChart()
         {
             ClearChart();
-
-            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PAYMENT_AT_PARKING);
-            this.chart.Series.Add(ChartSeriesEnum.REVENUE_PACKAGE);
-            this.chart.Series.Add(ChartSeriesEnum.TOTAL_REVENUE);
 
             DataTable data = (DataTable)this.dtgv_list_revenue.DataSource;
 

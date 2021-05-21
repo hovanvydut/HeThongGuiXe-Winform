@@ -29,16 +29,16 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_export_pdf = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_analysis = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpk_year = new System.Windows.Forms.DateTimePicker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_list_revenue = new System.Windows.Forms.DataGridView();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -87,7 +87,7 @@ namespace HeThongGiuXe.View
             // 
             this.groupBox2.Controls.Add(this.btn_analysis);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.dtpk_year);
             this.groupBox2.Location = new System.Drawing.Point(29, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(483, 100);
@@ -114,15 +114,15 @@ namespace HeThongGiuXe.View
             this.label1.TabIndex = 1;
             this.label1.Text = "Năm";
             // 
-            // dateTimePicker1
+            // dtpk_year
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(69, 44);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpk_year.CustomFormat = "yyyy";
+            this.dtpk_year.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpk_year.Location = new System.Drawing.Point(69, 44);
+            this.dtpk_year.Name = "dtpk_year";
+            this.dtpk_year.ShowUpDown = true;
+            this.dtpk_year.Size = new System.Drawing.Size(200, 22);
+            this.dtpk_year.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -149,12 +149,12 @@ namespace HeThongGiuXe.View
             // 
             // chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
-            legend3.Name = "Revenue";
-            legend4.Name = "NumberVehicles";
-            this.chart.Legends.Add(legend3);
-            this.chart.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Revenue";
+            legend2.Name = "NumberVehicles";
+            this.chart.Legends.Add(legend1);
+            this.chart.Legends.Add(legend2);
             this.chart.Location = new System.Drawing.Point(6, 89);
             this.chart.Name = "chart";
             this.chart.Size = new System.Drawing.Size(657, 361);
@@ -198,7 +198,7 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpk_year;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_export_pdf;
         private System.Windows.Forms.GroupBox groupBox4;
