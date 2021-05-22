@@ -58,10 +58,14 @@ namespace HeThongGiuXe.View
             // 
             // dtgv_purchase
             // 
+            this.dtgv_purchase.AllowUserToAddRows = false;
+            this.dtgv_purchase.AllowUserToDeleteRows = false;
+            this.dtgv_purchase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_purchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_purchase.Location = new System.Drawing.Point(12, 21);
             this.dtgv_purchase.Name = "dtgv_purchase";
             this.dtgv_purchase.ReadOnly = true;
+            this.dtgv_purchase.RowHeadersVisible = false;
             this.dtgv_purchase.RowHeadersWidth = 51;
             this.dtgv_purchase.RowTemplate.Height = 24;
             this.dtgv_purchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -75,7 +79,7 @@ namespace HeThongGiuXe.View
             this.ClientSize = new System.Drawing.Size(1004, 450);
             this.Controls.Add(this.groupBox1);
             this.Name = "PurchaseRegisteredPaymentForm";
-            this.Text = "PurchaseRegisteredPaymentForm";
+            this.Text = "Danh sách các gói chưa thanh toán";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_purchase)).EndInit();
             this.ResumeLayout(false);

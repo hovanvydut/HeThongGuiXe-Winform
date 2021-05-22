@@ -29,9 +29,9 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_export_pdf = new System.Windows.Forms.Button();
@@ -43,6 +43,12 @@ namespace HeThongGiuXe.View
             this.dtgv_list_revenue = new System.Windows.Forms.DataGridView();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_openFile = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,26 +64,28 @@ namespace HeThongGiuXe.View
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(12, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1332, 181);
+            this.groupBox1.Size = new System.Drawing.Size(1363, 181);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thao tác";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.btn_openFile);
+            this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.btn_export_pdf);
-            this.groupBox3.Location = new System.Drawing.Point(686, 42);
+            this.groupBox3.Location = new System.Drawing.Point(700, 11);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(607, 100);
+            this.groupBox3.Size = new System.Drawing.Size(657, 164);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hành động";
             // 
             // btn_export_pdf
             // 
-            this.btn_export_pdf.Location = new System.Drawing.Point(48, 35);
+            this.btn_export_pdf.Location = new System.Drawing.Point(545, 21);
             this.btn_export_pdf.Name = "btn_export_pdf";
-            this.btn_export_pdf.Size = new System.Drawing.Size(209, 35);
+            this.btn_export_pdf.Size = new System.Drawing.Size(106, 35);
             this.btn_export_pdf.TabIndex = 1;
             this.btn_export_pdf.Text = "Xuất báo cáo";
             this.btn_export_pdf.UseVisualStyleBackColor = true;
@@ -88,9 +96,9 @@ namespace HeThongGiuXe.View
             this.groupBox2.Controls.Add(this.btn_analysis);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.dtpk_year);
-            this.groupBox2.Location = new System.Drawing.Point(29, 42);
+            this.groupBox2.Location = new System.Drawing.Point(6, 11);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(483, 100);
+            this.groupBox2.Size = new System.Drawing.Size(644, 164);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Phân tích";
@@ -138,26 +146,30 @@ namespace HeThongGiuXe.View
             // 
             this.dtgv_list_revenue.AllowUserToAddRows = false;
             this.dtgv_list_revenue.AllowUserToDeleteRows = false;
+            this.dtgv_list_revenue.AllowUserToResizeRows = false;
+            this.dtgv_list_revenue.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_list_revenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_list_revenue.Location = new System.Drawing.Point(6, 56);
             this.dtgv_list_revenue.Name = "dtgv_list_revenue";
             this.dtgv_list_revenue.ReadOnly = true;
+            this.dtgv_list_revenue.RowHeadersVisible = false;
             this.dtgv_list_revenue.RowHeadersWidth = 51;
             this.dtgv_list_revenue.RowTemplate.Height = 24;
+            this.dtgv_list_revenue.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_list_revenue.Size = new System.Drawing.Size(621, 461);
             this.dtgv_list_revenue.TabIndex = 0;
             // 
             // chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Revenue";
-            legend2.Name = "NumberVehicles";
-            this.chart.Legends.Add(legend1);
-            this.chart.Legends.Add(legend2);
-            this.chart.Location = new System.Drawing.Point(6, 89);
+            chartArea5.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea5);
+            legend9.Name = "Revenue";
+            legend10.Name = "NumberVehicles";
+            this.chart.Legends.Add(legend9);
+            this.chart.Legends.Add(legend10);
+            this.chart.Location = new System.Drawing.Point(6, 56);
             this.chart.Name = "chart";
-            this.chart.Size = new System.Drawing.Size(657, 361);
+            this.chart.Size = new System.Drawing.Size(657, 394);
             this.chart.TabIndex = 1;
             this.chart.Text = "chart1";
             // 
@@ -171,6 +183,43 @@ namespace HeThongGiuXe.View
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Biểu đồ";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            // 
+            // openFileDialog3
+            // 
+            this.openFileDialog3.FileName = "openFileDialog3";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(295, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // btn_openFile
+            // 
+            this.btn_openFile.Location = new System.Drawing.Point(421, 18);
+            this.btn_openFile.Name = "btn_openFile";
+            this.btn_openFile.Size = new System.Drawing.Size(106, 35);
+            this.btn_openFile.TabIndex = 3;
+            this.btn_openFile.Text = "Chọn thư mục";
+            this.btn_openFile.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Thư mục lưu";
+            // 
             // AnalysisRevenueForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -180,9 +229,10 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Name = "AnalysisRevenueForm";
-            this.Text = "StatisticalAnalysisRevenueForm";
+            this.Text = "Thống kê doanh thu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -206,5 +256,11 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Button btn_analysis;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog3;
+        private System.Windows.Forms.Button btn_openFile;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -69,9 +69,13 @@ namespace HeThongGiuXe.View
             // 
             // dtgv_payment
             // 
+            this.dtgv_payment.AllowUserToAddRows = false;
+            this.dtgv_payment.AllowUserToDeleteRows = false;
+            this.dtgv_payment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_payment.Location = new System.Drawing.Point(687, 42);
             this.dtgv_payment.Name = "dtgv_payment";
+            this.dtgv_payment.RowHeadersVisible = false;
             this.dtgv_payment.RowHeadersWidth = 51;
             this.dtgv_payment.RowTemplate.Height = 24;
             this.dtgv_payment.Size = new System.Drawing.Size(652, 135);
@@ -89,11 +93,15 @@ namespace HeThongGiuXe.View
             // 
             // dtgv_package
             // 
+            this.dtgv_package.AllowUserToAddRows = false;
+            this.dtgv_package.AllowUserToDeleteRows = false;
+            this.dtgv_package.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_package.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_package.Location = new System.Drawing.Point(6, 21);
             this.dtgv_package.MultiSelect = false;
             this.dtgv_package.Name = "dtgv_package";
             this.dtgv_package.ReadOnly = true;
+            this.dtgv_package.RowHeadersVisible = false;
             this.dtgv_package.RowHeadersWidth = 51;
             this.dtgv_package.RowTemplate.Height = 24;
             this.dtgv_package.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -113,11 +121,15 @@ namespace HeThongGiuXe.View
             // 
             // dtgv_search
             // 
+            this.dtgv_search.AllowUserToAddRows = false;
+            this.dtgv_search.AllowUserToDeleteRows = false;
+            this.dtgv_search.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_search.Location = new System.Drawing.Point(6, 33);
             this.dtgv_search.MultiSelect = false;
             this.dtgv_search.Name = "dtgv_search";
             this.dtgv_search.ReadOnly = true;
+            this.dtgv_search.RowHeadersVisible = false;
             this.dtgv_search.RowHeadersWidth = 51;
             this.dtgv_search.RowTemplate.Height = 24;
             this.dtgv_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -133,7 +145,7 @@ namespace HeThongGiuXe.View
             this.groupBox3.Size = new System.Drawing.Size(670, 213);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thanh toán";
+            this.groupBox3.Text = "Đăng kí gói thanh toán";
             // 
             // btn_purchase
             // 
@@ -209,12 +221,13 @@ namespace HeThongGiuXe.View
             // 
             // PaymentManagementForm
             // 
+            this.AcceptButton = this.btn_search;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1387, 650);
             this.Controls.Add(this.groupBox1);
             this.Name = "PaymentManagementForm";
-            this.Text = "PaymentManagement";
+            this.Text = "Thanh toán";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_payment)).EndInit();
             this.groupBox5.ResumeLayout(false);

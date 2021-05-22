@@ -18,8 +18,9 @@ namespace HeThongGiuXe
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new MainForm());
-            Application.Run(new AnalysisRevenueForm());
+            //Application.Run(new AnalysisRevenueForm());
             //Application.Run(new PaymentManagementForm());
+            Application.Run(new ParkingPackageForm());
         }
     }
 }

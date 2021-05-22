@@ -140,7 +140,7 @@ namespace HeThongGiuXe.View
 
 
             document.Close();
-            MessageBox.Show("Đã export file PDF thành công. Vui lòng check file ở D:\\");
+            MessageBox.Show("Đã export file PDF thành công. Vui lòng check file: " + fileName);
         }
     }
 }

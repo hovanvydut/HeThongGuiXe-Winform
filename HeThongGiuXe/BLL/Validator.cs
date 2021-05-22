@@ -10,6 +10,25 @@ namespace HeThongGiuXe.BLL
 {
     class Validator
     {
+
+        public static void ValidatePackageBeforeInsert(Parking_Package package)
+        {
+            if (package.name == null || package.name == "")
+            {
+                throw new ArgumentException("Tên gói không được để trống");
+            }
+
+            if (package.price <= 0 || (package.price % 1000 != 0))
+            {
+                throw new ArgumentException("Giá gói phải là một số nguyên dương bội của 1000");
+            }
+
+            if (package.duration <= 0)
+            {
+                throw new ArgumentException("Thời lượng phải là một số nguyên dương");
+            }
+
+        }
         public static void ValidateCustomerBeforeInsert(Customer customer)
         {
             // Validate basic info 

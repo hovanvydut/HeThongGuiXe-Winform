@@ -267,6 +267,18 @@
     <Compile Include="View\ManageVehicle\ManageVehicle.Designer.cs">
       <DependentUpon>ManageVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ParkingPackage\AddPackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ParkingPackage\AddPackageForm.Designer.cs">
+      <DependentUpon>AddPackageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ParkingPackage\ParkingPackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ParkingPackage\ParkingPackageForm.Designer.cs">
+      <DependentUpon>ParkingPackageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PaymentForm\PaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ManageVehicle\ManageVehicle.resx">
       <DependentUpon>ManageVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ParkingPackage\AddPackageForm.resx">
+      <DependentUpon>AddPackageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ParkingPackage\ParkingPackageForm.resx">
+      <DependentUpon>ParkingPackageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PaymentForm\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>

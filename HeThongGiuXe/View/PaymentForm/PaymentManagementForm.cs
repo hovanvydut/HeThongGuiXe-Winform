@@ -17,6 +17,7 @@ namespace HeThongGiuXe.View
         public PaymentManagementForm()
         {
             InitializeComponent();
+            LoadingSearchGridView();
             LoadingPackage();
             LoadingRegisterGridView();
         }
@@ -35,12 +36,16 @@ namespace HeThongGiuXe.View
             this.dtgv_payment.Columns[RegisterDTableField.ID_PACKAGE].Visible = false;
         }
 
-        
+        private void LoadingSearchGridView()
+        {
+            this.dtgv_search.DataSource = this.CreateDTableSearch();
+            this.dtgv_search.Columns[SearchDTableField.CUSTOMER_ID].Visible = false;
+        }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
             bool isSelectedStudentId = this.rb_student_id.Checked;
-            string textSearch = this.txt_search.Text;
+            string textSearch = this.txt_search.Text.Trim();
             List<Customer> list;
 
             if (isSelectedStudentId)
@@ -90,7 +95,7 @@ namespace HeThongGiuXe.View
                 {
                     //Console.WriteLine("HAs sda");
                     //this.dtgv_payment.DataSource = dt;
-                    MessageBox.Show("Nguoi dung nay co 1 goi chua thanh toan");
+                    MessageBox.Show("Người dùng này có " + dtPurchase.Rows.Count + " gói chưa thanh toán!");
                     PurchaseRegisteredPaymentForm purchaseForm = new PurchaseRegisteredPaymentForm(dtPurchase);
 
                     purchaseForm.Show();
@@ -101,6 +106,14 @@ namespace HeThongGiuXe.View
 
                 if (selectedCustomer != null)
                 {
+                    if (this.dtgv_payment.Rows.Count == 0)
+                    {
+                        DataTable oldDt = (DataTable)this.dtgv_payment.DataSource;
+                        DataRow newRow = oldDt.NewRow();
+                        oldDt.Rows.Add(newRow);
+                        this.dtgv_payment.DataSource = oldDt;
+                    }
+
                     DataGridViewRow row = this.dtgv_payment.Rows[0];
                     row.Cells[RegisterDTableField.ID_CUSTOMER].Value = selectedCustomer.ID_customer;
                     row.Cells[RegisterDTableField.NAME].Value = selectedCustomer.fullname;
@@ -151,6 +164,18 @@ namespace HeThongGiuXe.View
                     LoadingRegisterGridView();
                 }
             }
+        }
+
+        private DataTable CreateDTableSearch()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn(SearchDTableField.CUSTOMER_ID, typeof(int)),
+                new DataColumn(SearchDTableField.STUDENT_ID, typeof(string)),
+                new DataColumn(SearchDTableField.NAME, typeof(string))
+            });
+            return dt;
         }
     }
 
