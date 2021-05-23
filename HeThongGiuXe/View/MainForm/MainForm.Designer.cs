@@ -42,6 +42,9 @@ namespace HeThongGiuXe.View
             this.btnUnitPrice = new System.Windows.Forms.Button();
             this.lbFullname = new System.Windows.Forms.Label();
             this.lbLogout = new System.Windows.Forms.Label();
+            this.btn_analysis = new System.Windows.Forms.Button();
+            this.btn_paring_package = new System.Windows.Forms.Button();
+            this.btn_payment = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgDUT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSgroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgIT)).BeginInit();
@@ -83,7 +86,7 @@ namespace HeThongGiuXe.View
             this.btnGeneralManagement.Name = "btnGeneralManagement";
             this.btnGeneralManagement.Size = new System.Drawing.Size(235, 69);
             this.btnGeneralManagement.TabIndex = 3;
-            this.btnGeneralManagement.Text = "Quản lí - thống kê";
+            this.btnGeneralManagement.Text = "Quản lí người dùng";
             this.btnGeneralManagement.UseVisualStyleBackColor = true;
             this.btnGeneralManagement.Click += new System.EventHandler(this.btnGeneralManagement_Click);
             // 
@@ -179,11 +182,44 @@ namespace HeThongGiuXe.View
             this.lbLogout.Text = "Đăng xuất";
             this.lbLogout.Click += new System.EventHandler(this.lbLogout_Click);
             // 
+            // btn_analysis
+            // 
+            this.btn_analysis.Location = new System.Drawing.Point(115, 545);
+            this.btn_analysis.Name = "btn_analysis";
+            this.btn_analysis.Size = new System.Drawing.Size(235, 69);
+            this.btn_analysis.TabIndex = 13;
+            this.btn_analysis.Text = "Quản lí - thống kê";
+            this.btn_analysis.UseVisualStyleBackColor = true;
+            this.btn_analysis.Click += new System.EventHandler(this.btn_analysis_Click);
+            // 
+            // btn_paring_package
+            // 
+            this.btn_paring_package.Location = new System.Drawing.Point(422, 545);
+            this.btn_paring_package.Name = "btn_paring_package";
+            this.btn_paring_package.Size = new System.Drawing.Size(235, 69);
+            this.btn_paring_package.TabIndex = 14;
+            this.btn_paring_package.Text = "Quản lí các gói gửi xe";
+            this.btn_paring_package.UseVisualStyleBackColor = true;
+            this.btn_paring_package.Click += new System.EventHandler(this.btn_paring_package_Click);
+            // 
+            // btn_payment
+            // 
+            this.btn_payment.Location = new System.Drawing.Point(115, 643);
+            this.btn_payment.Name = "btn_payment";
+            this.btn_payment.Size = new System.Drawing.Size(235, 69);
+            this.btn_payment.TabIndex = 15;
+            this.btn_payment.Text = "Thanh toán";
+            this.btn_payment.UseVisualStyleBackColor = true;
+            this.btn_payment.Click += new System.EventHandler(this.btn_payment_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 626);
+            this.ClientSize = new System.Drawing.Size(768, 735);
+            this.Controls.Add(this.btn_payment);
+            this.Controls.Add(this.btn_paring_package);
+            this.Controls.Add(this.btn_analysis);
             this.Controls.Add(this.lbLogout);
             this.Controls.Add(this.lbFullname);
             this.Controls.Add(this.btnUnitPrice);
@@ -223,6 +259,9 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Button btnUnitPrice;
         private System.Windows.Forms.Label lbFullname;
         private System.Windows.Forms.Label lbLogout;
+        private System.Windows.Forms.Button btn_analysis;
+        private System.Windows.Forms.Button btn_paring_package;
+        private System.Windows.Forms.Button btn_payment;
     }
 }
 

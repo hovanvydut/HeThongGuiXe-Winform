@@ -123,6 +123,46 @@ namespace HeThongGiuXe.BLL
             return dt;
         }
 
+        public DataTable GetAllPaymentOfDate(DateTime date)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn(PurchaseDTableField.STUDENT_ID, typeof(string)),
+                new DataColumn(PurchaseDTableField.NAME, typeof(string)),
+                new DataColumn(PurchaseDTableField.PRICE, typeof(int)),
+                new DataColumn(PurchaseDTableField.START_DATE, typeof(string)),
+                new DataColumn(PurchaseDTableField.END_DATE, typeof(string)),
+                new DataColumn(PurchaseDTableField.DESCRIPTION_PAYMENT, typeof(string))
+            });
+
+            List<Payment> list = new List<Payment>();
+
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                list = db.Payments.Where(payment => (
+                    payment.paid_at.Value.Year == date.Year
+                    && payment.paid_at.Value.Month == date.Month
+                    && payment.paid_at.Value.Day == date.Day
+                )).ToList();
+
+                foreach (Payment payment in list)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr[PurchaseDTableField.STUDENT_ID] = payment.Customer.student_id;
+                    dr[PurchaseDTableField.NAME] = payment.Customer.fullname;
+                    dr[PurchaseDTableField.PRICE] = payment.price;
+                    dr[PurchaseDTableField.START_DATE] = payment.start_date;
+                    dr[PurchaseDTableField.END_DATE] = payment.end_date;
+                    dr[PurchaseDTableField.DESCRIPTION_PAYMENT] = payment.description;
+
+                    dt.Rows.Add(dr);
+                }
+            }
+
+            return dt;
+        }
+
         public DataTable CreatePurchaseDTable()
         {
             DataTable dt = new DataTable();

@@ -316,6 +316,12 @@
       <DependentUpon>AnalysisRevenueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StatisticalAnalysisRevenueForm\ChartSeriesEnum.cs" />
+    <Compile Include="View\StatisticalAnalysisRevenueForm\DetailedRevenueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StatisticalAnalysisRevenueForm\DetailedRevenueForm.Designer.cs">
+      <DependentUpon>DetailedRevenueForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DTO\RoundedButton.resx">
       <DependentUpon>RoundedButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\AnalysisRevenueForm.resx">
       <DependentUpon>AnalysisRevenueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\DetailedRevenueForm.resx">
+      <DependentUpon>DetailedRevenueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -32,6 +32,22 @@ namespace HeThongGiuXe.View
             this.chart.Series.Add(ChartSeriesEnum.REVENUE_PAYMENT_AT_PARKING);
             this.chart.Series.Add(ChartSeriesEnum.REVENUE_PACKAGE);
             this.chart.Series.Add(ChartSeriesEnum.TOTAL_REVENUE);
+            LoadDTable();
+        }
+
+        private void LoadDTable()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.AddRange(new DataColumn[] {
+                new DataColumn(AnalysDTableColumnEnum.MONTH, typeof(string)),
+                new DataColumn(AnalysDTableColumnEnum.NUM_VEHICLES, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE_PACKAGE, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE_PAYMENT_AT_PARKING, typeof(int)),
+                new DataColumn(AnalysDTableColumnEnum.REVENUE, typeof(string))
+            });
+
+            this.dtgv_list_revenue.DataSource = dt;
         }
 
         private void btn_analysis_Click(object sender, EventArgs e)
@@ -141,6 +157,19 @@ namespace HeThongGiuXe.View
 
             document.Close();
             MessageBox.Show("Đã export file PDF thành công. Vui lòng check file: " + fileName);
+        }
+
+        private void dtgv_list_revenue_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.dtgv_list_revenue.SelectedRows.Count > 0)
+            {
+                int year = Convert.ToInt32(this.dtpk_year.Value.Year);
+                int month = Convert.ToInt32(this.dtgv_list_revenue.SelectedRows[0].Cells[AnalysDTableColumnEnum.MONTH].Value);
+
+                DetailedRevenueForm detailForm = new DetailedRevenueForm(month, year);
+
+                detailForm.Show();
+            }
         }
     }
 }
