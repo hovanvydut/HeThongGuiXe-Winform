@@ -127,12 +127,20 @@ namespace HeThongGiuXe.View
             if (this.dtgv_package.SelectedRows.Count > 0)
             {
                 DataGridViewRow dgvRow = this.dtgv_package.SelectedRows[0];
-                int packageId = Convert.ToInt32(dgvRow.Cells[PackageDTableField.ID].Value.ToString());
+                int packageId = Convert.ToInt32(dgvRow.Cells[HeThongGiuXe.BLL.PackageDTableField.ID].Value.ToString());
 
                 Parking_Package package = ParkingPackageBLL.Instance().FindById(packageId);
 
                 if (package != null)
                 {
+                    if (this.dtgv_payment.Rows.Count == 0)
+                    {
+                        DataTable oldDt = (DataTable)this.dtgv_payment.DataSource;
+                        DataRow newRow = oldDt.NewRow();
+                        oldDt.Rows.Add(newRow);
+                        this.dtgv_payment.DataSource = oldDt;
+                    }
+
                     DataGridViewRow row = this.dtgv_payment.Rows[0];
                     row.Cells[RegisterDTableField.ID_PACKAGE].Value = package.ID_package;
                     row.Cells[RegisterDTableField.PACKAGE].Value = package.name;

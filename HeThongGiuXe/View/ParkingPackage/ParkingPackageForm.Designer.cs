@@ -57,7 +57,6 @@ namespace HeThongGiuXe.View
             this.groupBox1.Size = new System.Drawing.Size(946, 161);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // groupBox3
             // 
@@ -69,7 +68,7 @@ namespace HeThongGiuXe.View
             this.groupBox3.Size = new System.Drawing.Size(355, 106);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.groupBox3.Text = "Hành động";
             // 
             // btn_update
             // 
@@ -112,7 +111,6 @@ namespace HeThongGiuXe.View
             this.groupBox2.Size = new System.Drawing.Size(558, 112);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // check_visible
             // 
@@ -160,7 +158,7 @@ namespace HeThongGiuXe.View
             this.groupBox4.Size = new System.Drawing.Size(946, 341);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Danh sách";
             // 
             // dtgv_package
             // 
@@ -187,7 +185,7 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Name = "ParkingPackageForm";
-            this.Text = "ParkingPackageForm";
+            this.Text = "Quản lí gói đỗ xe";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

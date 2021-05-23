@@ -63,7 +63,6 @@ namespace HeThongGiuXe.View
             this.groupBox1.Size = new System.Drawing.Size(553, 383);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // lb_duration
             // 
@@ -154,7 +153,7 @@ namespace HeThongGiuXe.View
             this.groupBox2.Size = new System.Drawing.Size(553, 140);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Hành động";
             // 
             // btn_cancel
             // 
