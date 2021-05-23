@@ -77,6 +77,21 @@ namespace HeThongGiuXe.BLL
 
         }
 
+        public List<Payment> GetCurrentRegisteredPackage(int customerId)
+        {
+            List<Payment> list = new List<Payment>();
+
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                db.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
+                list = db.Payments.Where(payment => (payment.start_date <= DateTime.Now)
+                                            && (payment.end_date >= DateTime.Now)
+                                            && (payment.customer_id == customerId)).ToList();
+            }
+
+            return list;
+        }
+
         public DataTable getAvailableAndUnpaidPackage(int customerId)
         {
             DataTable dt = CreatePurchaseDTable();
@@ -84,6 +99,7 @@ namespace HeThongGiuXe.BLL
             {
                 // Liệt kê nhưng payment chưa thanh toán
                 List<Payment> listPayment = db.Payments.Where(payment => (payment.paid_at == null)
+                                            && (payment.start_date <= DateTime.Now)
                                             && (payment.end_date >= DateTime.Now)
                                             && (payment.customer_id == customerId)).ToList();
 

@@ -163,6 +163,35 @@ namespace HeThongGiuXe.View
                 //=> cusomterId > 0 && packageId > 0
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc đăng kí", "Thông báo", MessageBoxButtons.YesNo);
 
+                // Không cho phép ngươi dung đăng kí gói mới khi:
+                // + Hiện tại đang có gói chưa hết hạn
+                // + Hiện tại đang có gói đã đăng kí nhưng thanh toán
+                List<Payment> registeredPayments = PaymentBLL.Instance.GetCurrentRegisteredPackage(cusomterId);
+                int unpaid = 0;
+                int notExpire = 0;
+                foreach (Payment payment in registeredPayments)
+                {
+                    if (payment.paid_at == null)
+                    {
+                        unpaid++;
+                    } else
+                    {
+                        notExpire++;
+                    }
+                }
+
+                if (unpaid != 0)
+                {
+                    MessageBox.Show("Bạn có " + unpaid.ToString() + " chưa thanh toán. Vui lòng thanh toán trước khi đăng kí gói mới, hoặc hủy đăng kí gói đó tại website");
+                    return;
+                }
+
+                if (notExpire != 0)
+                {
+                    MessageBox.Show("Bạn có " + notExpire.ToString() + " còn hạn dùng đến thời điểm hiện tại. Bạn có thể đăng kí gói mới sau khi hết hạn gói hiện tại hoặc hủy gói hiện tại tại website để đăng kí gói mới");
+                    return;
+                }
+
                 if (dialogResult == DialogResult.Yes)
                 {
                     PaymentBLL.Instance.RegisterPackage(packageId, cusomterId);
