@@ -389,11 +389,11 @@
     <EmbeddedResource Include="View\StatisticalAnalysisRevenueForm\DetailedRevenueForm.resx">
       <DependentUpon>DetailedRevenueForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <EntityDeploy Include="DAL\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.config" />
     <None Include="DAL\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>

@@ -106,6 +106,10 @@ namespace HeThongGiuXe.View
             this.btnUnitPrice.Enabled = role == "manager" || role == "admin";
             this.btnGeneralManagement.Enabled = role == "manager" || role == "admin";
             this.btnManageManager.Enabled = role == "admin";
+            this.btn_analysis.Enabled = role == "admin" || role == "manager";
+            this.btn_payment.Enabled = role == "admin" || role == "manager";
+            this.btn_paring_package.Enabled = role == "admin" || role == "manager";
+
         }
 
         private void btn_analysis_Click(object sender, EventArgs e)

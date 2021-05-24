@@ -100,8 +100,14 @@ namespace HeThongGiuXe.View
                 MessageBox.Show("Không có dữ liệu để xuất. Vui lòng phân tích dữ liệu trước");
                 return;
             }
+            // Select folder
+            String dir = SelectFolder();
+            if (dir == null)
+            {
+                return;
+            }
 
-            string fileName = "D:\\report_" + DateTime.Now.ToString().Replace("/", "_").Replace(" ", "_").Replace(":", "_") + ".pdf";
+            string fileName = dir + @"\report_" + DateTime.Now.ToString().Replace("/", "_").Replace(" ", "_").Replace(":", "_") + ".pdf";
             //string RunningPath = AppDomain.CurrentDomain.BaseDirectory;
             //string fontDirectory = string.Format("{0}Resources\\font\\times-new-roman.ttf", Path.GetFullPath(Path.Combine(RunningPath, @"..\..\")));
             //FontProgram fontProgram = FontProgramFactory.CreateFont(fontDirectory);
@@ -169,6 +175,20 @@ namespace HeThongGiuXe.View
                 DetailedRevenueForm detailForm = new DetailedRevenueForm(month, year);
 
                 detailForm.Show();
+            }
+        }
+
+        private String SelectFolder()
+        {
+            FolderBrowserDialog form = new FolderBrowserDialog();
+            DialogResult result = form.ShowDialog(this);
+            if (result == DialogResult.Cancel)
+            {
+                return null;
+            }
+            else
+            {
+                return form.SelectedPath;
             }
         }
     }
