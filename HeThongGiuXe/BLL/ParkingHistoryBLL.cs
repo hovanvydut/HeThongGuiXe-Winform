@@ -119,6 +119,64 @@ namespace HeThongGiuXe.BLL
             }
           
         }
+
+        public DataTable GetCheckoutParkingHistoryOfDay(
+            Nullable<bool> isPayment = null,
+            Nullable<DateTime> checkout_at = null)
+        {
+            // Prepare table
+
+            List<Parking_History> results = null;
+            DataTable table = new DataTable();
+            table.Columns.AddRange(new DataColumn[] {
+                new DataColumn("Mã số sinh viên", typeof(int)),
+                new DataColumn("Họ & tên", typeof(string)),
+                new DataColumn("Biển số", typeof(string)),
+                new DataColumn("Giờ vào", typeof(DateTime)),
+                new DataColumn("Giờ ra", typeof(DateTime)),
+                new DataColumn("Giá", typeof(string)),
+            });
+            // Get data
+            using (DatabaseEntities db = new DatabaseEntities())
+            {
+                // Get data
+                results = db.Parking_History.Where(o
+                    => (
+                    ((isPayment == null || isPayment == false) ?  true : o.price > 0)
+                    && (o.check_out_at.Value.Year == checkout_at.Value.Year 
+                        && o.check_out_at.Value.Month == checkout_at.Value.Month
+                        && o.check_out_at.Value.Day == checkout_at.Value.Day)
+                    )
+                ).ToList();
+                // Parse to table
+                foreach (Parking_History item in results)
+                {
+                    DataRow newRow = table.NewRow();
+                    newRow[ParkingHistoryDTableField.STUDENT_ID] = item.customer_id;
+                    newRow[ParkingHistoryDTableField.CUSTOMER_NAME] = item.Customer.fullname;
+                    newRow[ParkingHistoryDTableField.PLATE_NUM] = item.license_plate;
+                    newRow[ParkingHistoryDTableField.CHECK_IN] = item.check_in_at;
+                    // set value checkout if not checkout 
+                    if (item.check_out_at != null)
+                    {
+                        newRow[ParkingHistoryDTableField.CHECK_OUT] = item.check_out_at;
+                    }
+                    newRow[ParkingHistoryDTableField.PRICE] = item.price;
+                    table.Rows.Add(newRow);
+                }
+            }
+            return table;
+        }
+    }
+
+    class ParkingHistoryDTableField
+    {
+        public static string STUDENT_ID = "Mã số sinh viên";
+        public static string CUSTOMER_NAME = "Họ & tên";
+        public static string PLATE_NUM = "Biển số";
+        public static string CHECK_IN = "Giờ vào";
+        public static string CHECK_OUT = "Giờ ra";
+        public static string PRICE = "Giá";
     }
 }
   

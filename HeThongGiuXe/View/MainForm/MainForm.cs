@@ -107,5 +107,29 @@ namespace HeThongGiuXe.View
             this.btnGeneralManagement.Enabled = role == "manager" || role == "admin";
             this.btnManageManager.Enabled = role == "admin";
         }
+
+        private void btn_analysis_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AnalysisRevenueForm form = new AnalysisRevenueForm();
+            form.ShowDialog(this);
+            this.Show();
+        }
+
+        private void btn_paring_package_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ParkingPackageForm form = new ParkingPackageForm();
+            form.ShowDialog(this);
+            this.Show();
+        }
+
+        private void btn_payment_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PaymentManagementForm form = new PaymentManagementForm();
+            form.ShowDialog(this);
+            this.Show();
+        }
     }
 }
