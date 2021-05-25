@@ -30,6 +30,7 @@ namespace HeThongGiuXe.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUnitPrice));
             this.groupDayPrice = new System.Windows.Forms.GroupBox();
             this.btnSaveChange = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.tableDayPrice = new System.Windows.Forms.DataGridView();
@@ -63,9 +64,9 @@ namespace HeThongGiuXe.View
             this.groupDayPrice.Controls.Add(this.tableDayPrice);
             this.groupDayPrice.Controls.Add(this.cbDay);
             this.groupDayPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.groupDayPrice.Location = new System.Drawing.Point(29, 21);
+            this.groupDayPrice.Location = new System.Drawing.Point(12, 21);
             this.groupDayPrice.Name = "groupDayPrice";
-            this.groupDayPrice.Size = new System.Drawing.Size(381, 598);
+            this.groupDayPrice.Size = new System.Drawing.Size(381, 606);
             this.groupDayPrice.TabIndex = 0;
             this.groupDayPrice.TabStop = false;
             this.groupDayPrice.Text = "Đơn giá hàng ngày";
@@ -82,13 +83,13 @@ namespace HeThongGiuXe.View
             this.btnSaveChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveChange.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSaveChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSaveChange.Location = new System.Drawing.Point(215, 43);
+            this.btnSaveChange.Location = new System.Drawing.Point(205, 41);
             this.btnSaveChange.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveChange.Name = "btnSaveChange";
             this.btnSaveChange.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnSaveChange.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnSaveChange.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSaveChange.Size = new System.Drawing.Size(139, 36);
+            this.btnSaveChange.Size = new System.Drawing.Size(159, 45);
             this.btnSaveChange.TabIndex = 20;
             this.btnSaveChange.Text = "Lưu thay đổi";
             this.btnSaveChange.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -103,19 +104,21 @@ namespace HeThongGiuXe.View
             this.tableDayPrice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.tableDayPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableDayPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableDayPrice.Location = new System.Drawing.Point(28, 105);
+            this.tableDayPrice.Location = new System.Drawing.Point(18, 105);
             this.tableDayPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tableDayPrice.Name = "tableDayPrice";
             this.tableDayPrice.ReadOnly = true;
             this.tableDayPrice.RowHeadersWidth = 51;
             this.tableDayPrice.RowTemplate.Height = 24;
             this.tableDayPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableDayPrice.Size = new System.Drawing.Size(326, 469);
+            this.tableDayPrice.Size = new System.Drawing.Size(346, 482);
             this.tableDayPrice.TabIndex = 4;
             // 
             // cbDay
             // 
+            this.cbDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.cbDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDay.ForeColor = System.Drawing.SystemColors.Window;
             this.cbDay.FormattingEnabled = true;
             this.cbDay.Items.AddRange(new object[] {
             "Chủ nhật",
@@ -125,7 +128,7 @@ namespace HeThongGiuXe.View
             "Thứ 5",
             "Thứ 6",
             "Thứ 7"});
-            this.cbDay.Location = new System.Drawing.Point(28, 49);
+            this.cbDay.Location = new System.Drawing.Point(18, 49);
             this.cbDay.Name = "cbDay";
             this.cbDay.Size = new System.Drawing.Size(170, 33);
             this.cbDay.TabIndex = 1;
@@ -150,9 +153,9 @@ namespace HeThongGiuXe.View
             this.groupSpecicalTime.Controls.Add(this.lbStart);
             this.groupSpecicalTime.Controls.Add(this.lbStartFilter);
             this.groupSpecicalTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.groupSpecicalTime.Location = new System.Drawing.Point(457, 21);
+            this.groupSpecicalTime.Location = new System.Drawing.Point(399, 21);
             this.groupSpecicalTime.Name = "groupSpecicalTime";
-            this.groupSpecicalTime.Size = new System.Drawing.Size(398, 598);
+            this.groupSpecicalTime.Size = new System.Drawing.Size(445, 606);
             this.groupSpecicalTime.TabIndex = 1;
             this.groupSpecicalTime.TabStop = false;
             this.groupSpecicalTime.Text = "Giá thời gian đặt biệt";
@@ -169,13 +172,13 @@ namespace HeThongGiuXe.View
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnDelete.Location = new System.Drawing.Point(261, 198);
+            this.btnDelete.Location = new System.Drawing.Point(319, 198);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnDelete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnDelete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnDelete.Size = new System.Drawing.Size(101, 36);
+            this.btnDelete.Size = new System.Drawing.Size(101, 46);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -194,13 +197,13 @@ namespace HeThongGiuXe.View
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnReset.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnReset.Location = new System.Drawing.Point(141, 198);
+            this.btnReset.Location = new System.Drawing.Point(171, 198);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnReset.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnReset.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnReset.Size = new System.Drawing.Size(101, 36);
+            this.btnReset.Size = new System.Drawing.Size(112, 46);
             this.btnReset.TabIndex = 29;
             this.btnReset.Text = "Đặt lại";
             this.btnReset.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -225,7 +228,7 @@ namespace HeThongGiuXe.View
             this.btnOK.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnOK.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnOK.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnOK.Size = new System.Drawing.Size(101, 36);
+            this.btnOK.Size = new System.Drawing.Size(109, 46);
             this.btnOK.TabIndex = 28;
             this.btnOK.Text = "Thêm";
             this.btnOK.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -244,13 +247,13 @@ namespace HeThongGiuXe.View
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnSearch.Location = new System.Drawing.Point(204, 327);
+            this.btnSearch.Location = new System.Drawing.Point(262, 327);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnSearch.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnSearch.Size = new System.Drawing.Size(158, 36);
+            this.btnSearch.Size = new System.Drawing.Size(158, 48);
             this.btnSearch.TabIndex = 27;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -269,13 +272,13 @@ namespace HeThongGiuXe.View
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnShowAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btnShowAll.Location = new System.Drawing.Point(24, 327);
+            this.btnShowAll.Location = new System.Drawing.Point(41, 327);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.OnHoverBorderColor = System.Drawing.Color.White;
             this.btnShowAll.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
             this.btnShowAll.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnShowAll.Size = new System.Drawing.Size(167, 36);
+            this.btnShowAll.Size = new System.Drawing.Size(172, 48);
             this.btnShowAll.TabIndex = 26;
             this.btnShowAll.Text = "Xem tất cả";
             this.btnShowAll.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
@@ -297,24 +300,27 @@ namespace HeThongGiuXe.View
             this.tableSpecialPrice.RowHeadersWidth = 51;
             this.tableSpecialPrice.RowTemplate.Height = 24;
             this.tableSpecialPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableSpecialPrice.Size = new System.Drawing.Size(338, 191);
+            this.tableSpecialPrice.Size = new System.Drawing.Size(396, 204);
             this.tableSpecialPrice.TabIndex = 4;
             this.tableSpecialPrice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableSpecialPrice_CellClick);
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescription.Location = new System.Drawing.Point(146, 148);
+            this.txtDescription.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtDescription.Location = new System.Drawing.Point(185, 152);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(216, 25);
+            this.txtDescription.Size = new System.Drawing.Size(235, 25);
             this.txtDescription.TabIndex = 16;
             // 
             // lbDescription
             // 
             this.lbDescription.AutoSize = true;
-            this.lbDescription.Location = new System.Drawing.Point(20, 148);
+            this.lbDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(93, 152);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(79, 25);
+            this.lbDescription.Size = new System.Drawing.Size(77, 25);
             this.lbDescription.TabIndex = 15;
             this.lbDescription.Text = "Ghi chú";
             // 
@@ -326,69 +332,76 @@ namespace HeThongGiuXe.View
             this.dateFilter.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.dateFilter.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.dateFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateFilter.Location = new System.Drawing.Point(146, 282);
+            this.dateFilter.Location = new System.Drawing.Point(185, 282);
             this.dateFilter.Name = "dateFilter";
-            this.dateFilter.Size = new System.Drawing.Size(216, 32);
+            this.dateFilter.Size = new System.Drawing.Size(235, 32);
             this.dateFilter.TabIndex = 10;
             // 
             // dateStart
             // 
+            this.dateStart.CalendarForeColor = System.Drawing.SystemColors.Window;
             this.dateStart.CalendarTrailingForeColor = System.Drawing.Color.Green;
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateStart.Location = new System.Drawing.Point(146, 40);
+            this.dateStart.Location = new System.Drawing.Point(184, 39);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(216, 32);
+            this.dateStart.Size = new System.Drawing.Size(236, 32);
             this.dateStart.TabIndex = 8;
             // 
             // dateEnd
             // 
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateEnd.Location = new System.Drawing.Point(146, 75);
+            this.dateEnd.Location = new System.Drawing.Point(184, 78);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(216, 32);
+            this.dateEnd.Size = new System.Drawing.Size(236, 32);
             this.dateEnd.TabIndex = 7;
             // 
             // txtPrice
             // 
+            this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPrice.Location = new System.Drawing.Point(146, 116);
+            this.txtPrice.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtPrice.Location = new System.Drawing.Point(184, 121);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(216, 25);
+            this.txtPrice.Size = new System.Drawing.Size(236, 25);
             this.txtPrice.TabIndex = 6;
             // 
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(21, 116);
+            this.lbPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrice.Location = new System.Drawing.Point(90, 121);
             this.lbPrice.Name = "lbPrice";
-            this.lbPrice.Size = new System.Drawing.Size(82, 25);
+            this.lbPrice.Size = new System.Drawing.Size(80, 25);
             this.lbPrice.TabIndex = 5;
             this.lbPrice.Text = "Đơn giá";
             // 
             // lbEnd
             // 
             this.lbEnd.AutoSize = true;
-            this.lbEnd.Location = new System.Drawing.Point(21, 80);
+            this.lbEnd.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEnd.Location = new System.Drawing.Point(36, 84);
             this.lbEnd.Name = "lbEnd";
-            this.lbEnd.Size = new System.Drawing.Size(136, 25);
+            this.lbEnd.Size = new System.Drawing.Size(133, 25);
             this.lbEnd.TabIndex = 4;
             this.lbEnd.Text = "Ngày kết thúc";
             // 
             // lbStart
             // 
             this.lbStart.AutoSize = true;
-            this.lbStart.Location = new System.Drawing.Point(20, 45);
+            this.lbStart.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStart.Location = new System.Drawing.Point(40, 45);
             this.lbStart.Name = "lbStart";
-            this.lbStart.Size = new System.Drawing.Size(132, 25);
+            this.lbStart.Size = new System.Drawing.Size(129, 25);
             this.lbStart.TabIndex = 3;
             this.lbStart.Text = "Ngày bắt đầu";
             // 
             // lbStartFilter
             // 
             this.lbStartFilter.AutoSize = true;
-            this.lbStartFilter.Location = new System.Drawing.Point(21, 282);
+            this.lbStartFilter.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStartFilter.Location = new System.Drawing.Point(41, 288);
             this.lbStartFilter.Name = "lbStartFilter";
-            this.lbStartFilter.Size = new System.Drawing.Size(132, 25);
+            this.lbStartFilter.Size = new System.Drawing.Size(129, 25);
             this.lbStartFilter.TabIndex = 1;
             this.lbStartFilter.Text = "Ngày bắt đầu";
             // 
@@ -397,11 +410,12 @@ namespace HeThongGiuXe.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(889, 649);
+            this.ClientSize = new System.Drawing.Size(858, 649);
             this.Controls.Add(this.groupSpecicalTime);
             this.Controls.Add(this.groupDayPrice);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageUnitPrice";
             this.Text = "Quản lí đơn giá";
             this.groupDayPrice.ResumeLayout(false);

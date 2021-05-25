@@ -29,64 +29,57 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentManagementForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtgv_payment = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgv_package = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_search = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_purchase = new System.Windows.Forms.Button();
+            this.btn_purchase = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.dtgv_payment = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_search = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rb_student_id = new System.Windows.Forms.RadioButton();
             this.rb_name = new System.Windows.Forms.RadioButton();
-            this.btn_search = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_payment)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_package)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_search)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_payment)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtgv_payment);
             this.groupBox1.Controls.Add(this.groupBox5);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1363, 626);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1445, 828);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            // 
-            // dtgv_payment
-            // 
-            this.dtgv_payment.AllowUserToAddRows = false;
-            this.dtgv_payment.AllowUserToDeleteRows = false;
-            this.dtgv_payment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_payment.Location = new System.Drawing.Point(687, 42);
-            this.dtgv_payment.Name = "dtgv_payment";
-            this.dtgv_payment.RowHeadersVisible = false;
-            this.dtgv_payment.RowHeadersWidth = 51;
-            this.dtgv_payment.RowTemplate.Height = 24;
-            this.dtgv_payment.Size = new System.Drawing.Size(652, 135);
-            this.dtgv_payment.TabIndex = 2;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dtgv_package);
-            this.groupBox5.Location = new System.Drawing.Point(675, 240);
+            this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupBox5.Location = new System.Drawing.Point(738, 294);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(682, 386);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox5.Size = new System.Drawing.Size(693, 526);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Các gói gửi xe";
@@ -96,8 +89,11 @@ namespace HeThongGiuXe.View
             this.dtgv_package.AllowUserToAddRows = false;
             this.dtgv_package.AllowUserToDeleteRows = false;
             this.dtgv_package.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_package.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.dtgv_package.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv_package.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_package.Location = new System.Drawing.Point(6, 21);
+            this.dtgv_package.Location = new System.Drawing.Point(8, 37);
+            this.dtgv_package.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgv_package.MultiSelect = false;
             this.dtgv_package.Name = "dtgv_package";
             this.dtgv_package.ReadOnly = true;
@@ -105,16 +101,19 @@ namespace HeThongGiuXe.View
             this.dtgv_package.RowHeadersWidth = 51;
             this.dtgv_package.RowTemplate.Height = 24;
             this.dtgv_package.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv_package.Size = new System.Drawing.Size(670, 347);
+            this.dtgv_package.Size = new System.Drawing.Size(677, 477);
             this.dtgv_package.TabIndex = 1;
             this.dtgv_package.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dtgv_package_MouseDoubleClick);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dtgv_search);
-            this.groupBox4.Location = new System.Drawing.Point(16, 234);
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupBox4.Location = new System.Drawing.Point(8, 294);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(588, 386);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Size = new System.Drawing.Size(722, 526);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kết quả tìm kiếm";
@@ -124,58 +123,124 @@ namespace HeThongGiuXe.View
             this.dtgv_search.AllowUserToAddRows = false;
             this.dtgv_search.AllowUserToDeleteRows = false;
             this.dtgv_search.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_search.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.dtgv_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgv_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_search.Location = new System.Drawing.Point(6, 33);
+            this.dtgv_search.Location = new System.Drawing.Point(8, 37);
+            this.dtgv_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgv_search.MultiSelect = false;
             this.dtgv_search.Name = "dtgv_search";
             this.dtgv_search.ReadOnly = true;
+            this.dtgv_search.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dtgv_search.RowHeadersVisible = false;
             this.dtgv_search.RowHeadersWidth = 51;
             this.dtgv_search.RowTemplate.Height = 24;
             this.dtgv_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv_search.Size = new System.Drawing.Size(576, 347);
+            this.dtgv_search.Size = new System.Drawing.Size(703, 477);
             this.dtgv_search.TabIndex = 0;
             this.dtgv_search.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dtgv_search_MouseDoubleClick);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_purchase);
-            this.groupBox3.Location = new System.Drawing.Point(675, 21);
+            this.groupBox3.Controls.Add(this.dtgv_payment);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupBox3.Location = new System.Drawing.Point(516, 15);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(670, 213);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(915, 269);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Đăng kí gói thanh toán";
             // 
             // btn_purchase
             // 
-            this.btn_purchase.Location = new System.Drawing.Point(306, 178);
+            this.btn_purchase.BackColor = System.Drawing.Color.Transparent;
+            this.btn_purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_purchase.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_purchase.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_purchase.FlatAppearance.BorderSize = 0;
+            this.btn_purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_purchase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_purchase.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_purchase.Location = new System.Drawing.Point(747, 110);
+            this.btn_purchase.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btn_purchase.Name = "btn_purchase";
-            this.btn_purchase.Size = new System.Drawing.Size(113, 29);
-            this.btn_purchase.TabIndex = 0;
+            this.btn_purchase.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_purchase.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_purchase.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_purchase.Size = new System.Drawing.Size(159, 55);
+            this.btn_purchase.TabIndex = 6;
             this.btn_purchase.Text = "Xác nhận";
-            this.btn_purchase.UseVisualStyleBackColor = true;
+            this.btn_purchase.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_purchase.UseVisualStyleBackColor = false;
             this.btn_purchase.Click += new System.EventHandler(this.btn_purchase_Click);
+            // 
+            // dtgv_payment
+            // 
+            this.dtgv_payment.AllowUserToAddRows = false;
+            this.dtgv_payment.AllowUserToDeleteRows = false;
+            this.dtgv_payment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_payment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.dtgv_payment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_payment.Location = new System.Drawing.Point(25, 37);
+            this.dtgv_payment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtgv_payment.Name = "dtgv_payment";
+            this.dtgv_payment.RowHeadersVisible = false;
+            this.dtgv_payment.RowHeadersWidth = 51;
+            this.dtgv_payment.RowTemplate.Height = 24;
+            this.dtgv_payment.Size = new System.Drawing.Size(713, 212);
+            this.dtgv_payment.TabIndex = 2;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.btn_search);
+            this.groupBox2.Controls.Add(this.groupBox6);
             this.groupBox2.Controls.Add(this.txt_search);
-            this.groupBox2.Location = new System.Drawing.Point(16, 21);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.groupBox2.Location = new System.Drawing.Point(8, 15);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(588, 213);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(500, 269);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_search.Location = new System.Drawing.Point(170, 193);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_search.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_search.Size = new System.Drawing.Size(156, 56);
+            this.btn_search.TabIndex = 5;
+            this.btn_search.Text = "Tìm kiếm";
+            this.btn_search.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.rb_student_id);
             this.groupBox6.Controls.Add(this.rb_name);
-            this.groupBox6.Location = new System.Drawing.Point(37, 88);
+            this.groupBox6.Location = new System.Drawing.Point(67, 84);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(200, 57);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox6.Size = new System.Drawing.Size(374, 86);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             // 
@@ -183,9 +248,11 @@ namespace HeThongGiuXe.View
             // 
             this.rb_student_id.AutoSize = true;
             this.rb_student_id.Checked = true;
-            this.rb_student_id.Location = new System.Drawing.Point(24, 21);
+            this.rb_student_id.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb_student_id.Location = new System.Drawing.Point(23, 37);
+            this.rb_student_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rb_student_id.Name = "rb_student_id";
-            this.rb_student_id.Size = new System.Drawing.Size(67, 21);
+            this.rb_student_id.Size = new System.Drawing.Size(85, 32);
             this.rb_student_id.TabIndex = 2;
             this.rb_student_id.TabStop = true;
             this.rb_student_id.Text = "MSSV";
@@ -194,47 +261,47 @@ namespace HeThongGiuXe.View
             // rb_name
             // 
             this.rb_name.AutoSize = true;
-            this.rb_name.Location = new System.Drawing.Point(125, 21);
+            this.rb_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb_name.Location = new System.Drawing.Point(229, 37);
+            this.rb_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rb_name.Name = "rb_name";
-            this.rb_name.Size = new System.Drawing.Size(54, 21);
+            this.rb_name.Size = new System.Drawing.Size(121, 32);
             this.rb_name.TabIndex = 3;
-            this.rb_name.Text = "Tên";
+            this.rb_name.Text = "Họ và tên";
             this.rb_name.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.rb_name.UseVisualStyleBackColor = true;
             // 
-            // btn_search
-            // 
-            this.btn_search.Location = new System.Drawing.Point(422, 46);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(75, 23);
-            this.btn_search.TabIndex = 1;
-            this.btn_search.Text = "Tìm kiếm";
-            this.btn_search.UseVisualStyleBackColor = true;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(37, 46);
+            this.txt_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(67, 47);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(341, 22);
+            this.txt_search.Size = new System.Drawing.Size(374, 27);
             this.txt_search.TabIndex = 0;
             // 
             // PaymentManagementForm
             // 
-            this.AcceptButton = this.btn_search;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 650);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
+            this.ClientSize = new System.Drawing.Size(1458, 847);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PaymentManagementForm";
             this.Text = "Thanh toán";
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_payment)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_package)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_search)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_payment)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -250,14 +317,14 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rb_name;
         private System.Windows.Forms.RadioButton rb_student_id;
-        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dtgv_search;
         private System.Windows.Forms.DataGridView dtgv_payment;
         private System.Windows.Forms.DataGridView dtgv_package;
-        private System.Windows.Forms.Button btn_purchase;
         private System.Windows.Forms.GroupBox groupBox6;
+        private DTO.RoundedButton btn_purchase;
+        private DTO.RoundedButton btn_search;
     }
 }
