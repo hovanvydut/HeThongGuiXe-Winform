@@ -254,6 +254,7 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPackageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm mới gói gửi xe";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

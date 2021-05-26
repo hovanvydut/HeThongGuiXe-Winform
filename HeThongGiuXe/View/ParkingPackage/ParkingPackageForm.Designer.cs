@@ -33,16 +33,16 @@ namespace HeThongGiuXe.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParkingPackageForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_delete = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btn_update = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btn_add = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new HeThongGiuXe.DTO.RoundedButton(this.components);
+            this.btn_search = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.check_visible = new System.Windows.Forms.CheckBox();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgv_package = new System.Windows.Forms.DataGridView();
-            this.btn_search = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btn_clear = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btn_add = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btn_update = new HeThongGiuXe.DTO.RoundedButton(this.components);
-            this.btn_delete = new HeThongGiuXe.DTO.RoundedButton(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -77,6 +77,75 @@ namespace HeThongGiuXe.View
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hành động";
             // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_delete.FlatAppearance.BorderSize = 0;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_delete.Location = new System.Drawing.Point(327, 62);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_delete.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_delete.Size = new System.Drawing.Size(144, 52);
+            this.btn_delete.TabIndex = 9;
+            this.btn_delete.Text = "Xóa";
+            this.btn_delete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // btn_update
+            // 
+            this.btn_update.BackColor = System.Drawing.Color.Transparent;
+            this.btn_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_update.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_update.FlatAppearance.BorderSize = 0;
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_update.Location = new System.Drawing.Point(173, 62);
+            this.btn_update.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_update.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_update.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_update.Size = new System.Drawing.Size(144, 52);
+            this.btn_update.TabIndex = 8;
+            this.btn_update.Text = "Cập nhật";
+            this.btn_update.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.BackColor = System.Drawing.Color.Transparent;
+            this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_add.Location = new System.Drawing.Point(19, 62);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_add.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_add.Size = new System.Drawing.Size(144, 52);
+            this.btn_add.TabIndex = 7;
+            this.btn_add.Text = "Thêm";
+            this.btn_add.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_clear);
@@ -90,6 +159,51 @@ namespace HeThongGiuXe.View
             this.groupBox2.Size = new System.Drawing.Size(572, 154);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.Transparent;
+            this.btn_clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_clear.FlatAppearance.BorderSize = 0;
+            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_clear.Location = new System.Drawing.Point(414, 95);
+            this.btn_clear.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_clear.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_clear.Size = new System.Drawing.Size(144, 42);
+            this.btn_clear.TabIndex = 6;
+            this.btn_clear.Text = "Xóa";
+            this.btn_clear.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_clear.UseVisualStyleBackColor = false;
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.Color.Transparent;
+            this.btn_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
+            this.btn_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
+            this.btn_search.FlatAppearance.BorderSize = 0;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_search.Location = new System.Drawing.Point(414, 36);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.OnHoverBorderColor = System.Drawing.Color.White;
+            this.btn_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
+            this.btn_search.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_search.Size = new System.Drawing.Size(144, 42);
+            this.btn_search.TabIndex = 5;
+            this.btn_search.Text = "Tìm kiếm";
+            this.btn_search.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // check_visible
             // 
@@ -148,120 +262,6 @@ namespace HeThongGiuXe.View
             this.dtgv_package.Size = new System.Drawing.Size(1068, 428);
             this.dtgv_package.TabIndex = 0;
             // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.Color.Transparent;
-            this.btn_search.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btn_search.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btn_search.FlatAppearance.BorderSize = 0;
-            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_search.Location = new System.Drawing.Point(414, 36);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btn_search.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btn_search.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_search.Size = new System.Drawing.Size(144, 42);
-            this.btn_search.TabIndex = 5;
-            this.btn_search.Text = "Tìm kiếm";
-            this.btn_search.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.Color.Transparent;
-            this.btn_clear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_clear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btn_clear.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btn_clear.FlatAppearance.BorderSize = 0;
-            this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_clear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_clear.Location = new System.Drawing.Point(414, 95);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btn_clear.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btn_clear.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_clear.Size = new System.Drawing.Size(144, 42);
-            this.btn_clear.TabIndex = 6;
-            this.btn_clear.Text = "Xóa";
-            this.btn_clear.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_clear.UseVisualStyleBackColor = false;
-            // 
-            // btn_add
-            // 
-            this.btn_add.BackColor = System.Drawing.Color.Transparent;
-            this.btn_add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_add.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btn_add.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btn_add.FlatAppearance.BorderSize = 0;
-            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_add.Location = new System.Drawing.Point(19, 62);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btn_add.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btn_add.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_add.Size = new System.Drawing.Size(144, 52);
-            this.btn_add.TabIndex = 7;
-            this.btn_add.Text = "Thêm";
-            this.btn_add.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // btn_update
-            // 
-            this.btn_update.BackColor = System.Drawing.Color.Transparent;
-            this.btn_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_update.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btn_update.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btn_update.FlatAppearance.BorderSize = 0;
-            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_update.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_update.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_update.Location = new System.Drawing.Point(173, 62);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btn_update.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btn_update.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_update.Size = new System.Drawing.Size(144, 52);
-            this.btn_update.TabIndex = 8;
-            this.btn_update.Text = "Cập nhật";
-            this.btn_update.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_update.UseVisualStyleBackColor = false;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
-            this.btn_delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_delete.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
-            this.btn_delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(17)))), ((int)(((byte)(18)))));
-            this.btn_delete.FlatAppearance.BorderSize = 0;
-            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_delete.Location = new System.Drawing.Point(327, 62);
-            this.btn_delete.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.OnHoverBorderColor = System.Drawing.Color.White;
-            this.btn_delete.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(163)))), ((int)(((byte)(177)))));
-            this.btn_delete.OnHoverTextColor = System.Drawing.Color.White;
-            this.btn_delete.Size = new System.Drawing.Size(144, 52);
-            this.btn_delete.TabIndex = 9;
-            this.btn_delete.Text = "Xóa";
-            this.btn_delete.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
-            this.btn_delete.UseVisualStyleBackColor = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
             // ParkingPackageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
@@ -275,6 +275,7 @@ namespace HeThongGiuXe.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ParkingPackageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí gói đỗ xe";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

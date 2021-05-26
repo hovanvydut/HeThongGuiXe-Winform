@@ -294,6 +294,7 @@ namespace HeThongGiuXe.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PaymentManagementForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thanh toán";
             this.groupBox1.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);

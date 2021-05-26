@@ -183,6 +183,7 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DetailedRevenueForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doanh thu chi tiết theo ngày";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

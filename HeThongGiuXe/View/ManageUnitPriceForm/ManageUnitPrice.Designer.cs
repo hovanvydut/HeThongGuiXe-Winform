@@ -417,6 +417,7 @@ namespace HeThongGiuXe.View
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageUnitPrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí đơn giá";
             this.groupDayPrice.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tableDayPrice)).EndInit();

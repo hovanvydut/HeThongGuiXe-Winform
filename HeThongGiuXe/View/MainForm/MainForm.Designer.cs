@@ -119,6 +119,7 @@ namespace HeThongGiuXe.View
             // lbLogout
             // 
             this.lbLogout.AutoSize = true;
+            this.lbLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lbLogout.Location = new System.Drawing.Point(440, 540);

@@ -495,6 +495,7 @@ namespace HeThongGiuXe.View
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ManageEmployeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí nhân viên";
             this.groupInfo.ResumeLayout(false);
             this.groupInfo.PerformLayout();
