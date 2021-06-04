@@ -30,6 +30,7 @@ namespace HeThongGiuXe.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckoutForm));
             this.groupCamera = new System.Windows.Forms.GroupBox();
             this.imgCamera = new Emgu.CV.UI.ImageBox();
             this.groupExtractInfo = new System.Windows.Forms.GroupBox();
@@ -472,6 +473,7 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupCamera);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckoutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
