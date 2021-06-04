@@ -111,6 +111,16 @@ namespace HeThongGiuXe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap login__1_ {
+            get {
+                object obj = ResourceManager.GetObject("login__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Logo_DUT {
             get {
                 object obj = ResourceManager.GetObject("Logo_DUT", resourceCulture);
@@ -135,6 +145,16 @@ namespace HeThongGiuXe.Properties {
             get {
                 object obj = ResourceManager.GetObject("Logo_Sgroup", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        public static System.Drawing.Icon motorcycle_23753 {
+            get {
+                object obj = ResourceManager.GetObject("motorcycle_23753", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

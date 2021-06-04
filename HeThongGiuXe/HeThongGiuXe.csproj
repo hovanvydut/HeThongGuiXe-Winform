@@ -425,6 +425,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\motorcycle_23753.ico" />
+    <None Include="Resources\login %281%29.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\settings %281%29.png" />
     <None Include="Resources\settings.png" />

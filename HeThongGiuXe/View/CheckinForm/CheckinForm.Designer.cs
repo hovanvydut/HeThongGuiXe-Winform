@@ -30,6 +30,7 @@ namespace HeThongGiuXe.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CheckinForm));
             this.groupCamera = new System.Windows.Forms.GroupBox();
             this.imgCamera = new Emgu.CV.UI.ImageBox();
             this.groupExtractInfo = new System.Windows.Forms.GroupBox();
@@ -175,7 +176,7 @@ namespace HeThongGiuXe.View
             this.txtPlate.Location = new System.Drawing.Point(20, 44);
             this.txtPlate.Margin = new System.Windows.Forms.Padding(4);
             this.txtPlate.Name = "txtPlate";
-            this.txtPlate.Size = new System.Drawing.Size(230, 29);
+            this.txtPlate.Size = new System.Drawing.Size(230, 36);
             this.txtPlate.TabIndex = 0;
             this.txtPlate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPlate.TextChanged += new System.EventHandler(this.txtPlate_TextChanged);
@@ -229,7 +230,7 @@ namespace HeThongGiuXe.View
             this.txtCard.Location = new System.Drawing.Point(17, 47);
             this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
-            this.txtCard.Size = new System.Drawing.Size(246, 29);
+            this.txtCard.Size = new System.Drawing.Size(246, 36);
             this.txtCard.TabIndex = 1;
             this.txtCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -404,14 +405,14 @@ namespace HeThongGiuXe.View
             this.tableVehicleInPark.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.tableVehicleInPark.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableVehicleInPark.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableVehicleInPark.Location = new System.Drawing.Point(23, 99);
+            this.tableVehicleInPark.Location = new System.Drawing.Point(8, 99);
             this.tableVehicleInPark.Margin = new System.Windows.Forms.Padding(4);
             this.tableVehicleInPark.Name = "tableVehicleInPark";
             this.tableVehicleInPark.ReadOnly = true;
             this.tableVehicleInPark.RowHeadersWidth = 51;
             this.tableVehicleInPark.RowTemplate.Height = 24;
             this.tableVehicleInPark.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableVehicleInPark.Size = new System.Drawing.Size(554, 255);
+            this.tableVehicleInPark.Size = new System.Drawing.Size(574, 255);
             this.tableVehicleInPark.TabIndex = 3;
             // 
             // groupConfirmControl
@@ -437,7 +438,7 @@ namespace HeThongGiuXe.View
             this.checkAutoCheckin.Location = new System.Drawing.Point(428, 64);
             this.checkAutoCheckin.Margin = new System.Windows.Forms.Padding(4);
             this.checkAutoCheckin.Name = "checkAutoCheckin";
-            this.checkAutoCheckin.Size = new System.Drawing.Size(84, 24);
+            this.checkAutoCheckin.Size = new System.Drawing.Size(107, 29);
             this.checkAutoCheckin.TabIndex = 7;
             this.checkAutoCheckin.Text = "Tự động";
             this.checkAutoCheckin.UseVisualStyleBackColor = false;
@@ -468,7 +469,7 @@ namespace HeThongGiuXe.View
             // 
             // CheckinForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -478,6 +479,7 @@ namespace HeThongGiuXe.View
             this.Controls.Add(this.groupCamera);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CheckinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

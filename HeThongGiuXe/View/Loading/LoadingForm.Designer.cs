@@ -29,6 +29,7 @@ namespace HeThongGiuXe.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
             this.imgLoading = new System.Windows.Forms.PictureBox();
             this.lbLoading = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoading)).BeginInit();
@@ -39,29 +40,36 @@ namespace HeThongGiuXe.View
             this.imgLoading.BackColor = System.Drawing.Color.Transparent;
             this.imgLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgLoading.InitialImage = null;
-            this.imgLoading.Location = new System.Drawing.Point(150, 12);
+            this.imgLoading.Location = new System.Drawing.Point(176, 14);
+            this.imgLoading.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imgLoading.Name = "imgLoading";
-            this.imgLoading.Size = new System.Drawing.Size(72, 73);
+            this.imgLoading.Size = new System.Drawing.Size(107, 106);
             this.imgLoading.TabIndex = 0;
             this.imgLoading.TabStop = false;
             // 
             // lbLoading
             // 
             this.lbLoading.AutoSize = true;
-            this.lbLoading.Location = new System.Drawing.Point(105, 108);
+            this.lbLoading.Location = new System.Drawing.Point(116, 134);
+            this.lbLoading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLoading.Name = "lbLoading";
-            this.lbLoading.Size = new System.Drawing.Size(159, 17);
+            this.lbLoading.Size = new System.Drawing.Size(217, 28);
             this.lbLoading.TabIndex = 1;
             this.lbLoading.Text = "Đang tải, Vui lòng chờ...";
             // 
             // LoadingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 148);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
+            this.ClientSize = new System.Drawing.Size(473, 203);
             this.ControlBox = false;
             this.Controls.Add(this.lbLoading);
             this.Controls.Add(this.imgLoading);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(184)))), ((int)(((byte)(248)))));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LoadingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading";
