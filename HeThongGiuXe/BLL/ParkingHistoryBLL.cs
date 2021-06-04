@@ -59,8 +59,18 @@ namespace HeThongGiuXe.BLL
                 foreach (Parking_History item in results)
                 {
                     DataRow newRow = table.NewRow();
+                    // check if user be deleted 
+                    if( item?.Customer == null )
+                    {
+                        newRow["Mã số sinh viên"] = "Không xác định";
+                        newRow["Họ & tên"] = "Không xác định";
+                    }
+                    else
+                    {
+
                     newRow["Mã số sinh viên"] = item.Customer.student_id;
                     newRow["Họ & tên"] = item.Customer.fullname;
+                    }
                     newRow["Biển số"] = item.license_plate;
                     newRow["Giờ vào"] = item.check_in_at;
                     // set value checkout if not checkout 
