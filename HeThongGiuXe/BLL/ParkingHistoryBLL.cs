@@ -16,6 +16,7 @@ namespace HeThongGiuXe.BLL
             string customer_name = null,
             string username = null,
             string plate = null,
+            string student_id = null,
             Nullable<DateTime> start = null,
             Nullable<DateTime> end = null,
             Nullable<bool> isPayment = null,
@@ -44,6 +45,7 @@ namespace HeThongGiuXe.BLL
                     ((plate == null) ? true : (o.license_plate.Contains(plate)))
                     && ((customer_name == null) ? true : (o.Customer.fullname.Contains(customer_name)))
                     && ((username == null) ? true : (o.Customer.username.Contains(username)))
+                     && ((student_id == null) ? true : (o.Customer.student_id.Contains(student_id)))
                     && ((start == null) ? true : (o.check_in_at >= start))
                     && ((end == null) ? true : (o.check_in_at <= end))
                      && ((checkout_at == null) ? true : (o.check_out_at >= checkout_at))
