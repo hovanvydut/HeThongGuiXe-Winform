@@ -114,6 +114,25 @@ namespace HeThongGiuXe.BLL
             Customer customer = null;
             using (DatabaseEntities db = new DatabaseEntities())
             {
+                // check if not checkout
+                var parkingHistory = db.Parking_History.Where(o
+                    => o.customer_id == ID
+                    && o.check_out_at == null
+                    ).FirstOrDefault();
+                if (parkingHistory != default(Parking_History))
+                {
+                    throw new Exception("Tài khoản này chưa lấy xe trong bãi");
+                }
+                // check if not payment
+                var payment = db.Payments.Where(o
+                    => o.customer_id == ID
+                    && o.paid_at == null
+                    ).FirstOrDefault();
+                if (payment != default(Payment))
+                {
+                    throw new Exception("Tài khoản này chưa thanh toán gói: " + payment.description);
+                }
+                // check if exist
                 customer = db.Customers.Find(ID);
                 if (customer != null) db.Customers.Remove(customer);
                 db.SaveChanges();

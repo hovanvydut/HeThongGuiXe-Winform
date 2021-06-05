@@ -107,7 +107,7 @@ namespace HeThongGiuXe.View
             this.tableDayPrice.Location = new System.Drawing.Point(18, 105);
             this.tableDayPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tableDayPrice.Name = "tableDayPrice";
-            this.tableDayPrice.ReadOnly = true;
+            this.tableDayPrice.RowHeadersVisible = false;
             this.tableDayPrice.RowHeadersWidth = 51;
             this.tableDayPrice.RowTemplate.Height = 24;
             this.tableDayPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -297,6 +297,7 @@ namespace HeThongGiuXe.View
             this.tableSpecialPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tableSpecialPrice.Name = "tableSpecialPrice";
             this.tableSpecialPrice.ReadOnly = true;
+            this.tableSpecialPrice.RowHeadersVisible = false;
             this.tableSpecialPrice.RowHeadersWidth = 51;
             this.tableSpecialPrice.RowTemplate.Height = 24;
             this.tableSpecialPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -443,7 +444,6 @@ namespace HeThongGiuXe.View
         private System.Windows.Forms.Label lbStartFilter;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label lbDescription;
-        private System.Windows.Forms.DataGridView tableDayPrice;
         private System.Windows.Forms.DataGridView tableSpecialPrice;
         private DTO.RoundedButton btnSaveChange;
         private DTO.RoundedButton btnShowAll;
@@ -451,5 +451,6 @@ namespace HeThongGiuXe.View
         private DTO.RoundedButton btnOK;
         private DTO.RoundedButton btnReset;
         private DTO.RoundedButton btnDelete;
+        private System.Windows.Forms.DataGridView tableDayPrice;
     }
 }
