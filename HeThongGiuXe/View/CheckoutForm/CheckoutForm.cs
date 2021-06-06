@@ -38,9 +38,8 @@ namespace HeThongGiuXe.View
             }
             catch (Exception err)
             {
-                MessageBox.Show("Không thể kết nối với đầu đọc thẻ từ, vui lòng kiểm tra và khởi động lại ứng dụng",
-                                "Lỗi thiết bị");
-                Console.WriteLine(err.Message);
+                SerialSettingForm form = new SerialSettingForm(InitializeSerial);
+                form.ShowDialog(this);
             }
         }
         private void InitializeVideo(string cam)

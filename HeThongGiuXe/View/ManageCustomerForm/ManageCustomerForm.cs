@@ -188,6 +188,13 @@ namespace HeThongGiuXe.View
         private void btnCancel_Click(object sender, EventArgs e)
         {
             if (this.currentSelectedID == null) return;
+            DialogResult confirmResult = MessageBox.Show("Bạn có chắn muốn xóa người này?",
+                                     "Xác nhận",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.No)
+            {
+                return;
+            }
             try
             {
                 CustomerBLL.Instance.DeleteCustomer((int)this.currentSelectedID);

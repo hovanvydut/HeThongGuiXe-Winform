@@ -248,6 +248,7 @@ namespace HeThongGiuXe.View
             this.txtCard.Location = new System.Drawing.Point(15, 98);
             this.txtCard.Margin = new System.Windows.Forms.Padding(4);
             this.txtCard.Name = "txtCard";
+            this.txtCard.PasswordChar = '*';
             this.txtCard.Size = new System.Drawing.Size(252, 36);
             this.txtCard.TabIndex = 1;
             this.txtCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -343,6 +344,7 @@ namespace HeThongGiuXe.View
             this.tableVehicleInPark.Margin = new System.Windows.Forms.Padding(4);
             this.tableVehicleInPark.Name = "tableVehicleInPark";
             this.tableVehicleInPark.ReadOnly = true;
+            this.tableVehicleInPark.RowHeadersVisible = false;
             this.tableVehicleInPark.RowHeadersWidth = 51;
             this.tableVehicleInPark.RowTemplate.Height = 24;
             this.tableVehicleInPark.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
