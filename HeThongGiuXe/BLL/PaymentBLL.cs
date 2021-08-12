@@ -100,7 +100,7 @@ namespace HeThongGiuXe.BLL
                 // Liệt kê nhưng payment chưa thanh toán
                 List<Payment> listPayment = db.Payments.Where(payment => (payment.paid_at == null)
                                             && (payment.start_date <= DateTime.Now)
-                                            && (payment.end_date >= DateTime.Now)
+                                            //&& (payment.end_date >= DateTime.Now)
                                             && (payment.customer_id == customerId)).ToList();
 
                 Customer customer = CustomerBLL.Instance.GetCustomerByID(customerId);
