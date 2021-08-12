@@ -32,6 +32,8 @@ namespace HeThongGiuXe.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentManagementForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgv_package = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -45,8 +47,6 @@ namespace HeThongGiuXe.View
             this.rb_student_id = new System.Windows.Forms.RadioButton();
             this.rb_name = new System.Windows.Forms.RadioButton();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_package)).BeginInit();
@@ -74,6 +74,26 @@ namespace HeThongGiuXe.View
             this.groupBox1.Size = new System.Drawing.Size(1128, 677);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(475, 633);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(300, 23);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "* Click đúp chuột để chọn gói đăng kí";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(7, 633);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(344, 23);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "* Click đúp chuột để chọn sinh viên đăng kí";
             // 
             // groupBox5
             // 
@@ -256,7 +276,7 @@ namespace HeThongGiuXe.View
             this.rb_student_id.Location = new System.Drawing.Point(23, 37);
             this.rb_student_id.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rb_student_id.Name = "rb_student_id";
-            this.rb_student_id.Size = new System.Drawing.Size(70, 25);
+            this.rb_student_id.Size = new System.Drawing.Size(85, 32);
             this.rb_student_id.TabIndex = 2;
             this.rb_student_id.TabStop = true;
             this.rb_student_id.Text = "MSSV";
@@ -269,7 +289,7 @@ namespace HeThongGiuXe.View
             this.rb_name.Location = new System.Drawing.Point(160, 37);
             this.rb_name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rb_name.Name = "rb_name";
-            this.rb_name.Size = new System.Drawing.Size(97, 25);
+            this.rb_name.Size = new System.Drawing.Size(121, 32);
             this.rb_name.TabIndex = 3;
             this.rb_name.Text = "Họ và tên";
             this.rb_name.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -283,32 +303,12 @@ namespace HeThongGiuXe.View
             this.txt_search.Location = new System.Drawing.Point(29, 52);
             this.txt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(287, 22);
+            this.txt_search.Size = new System.Drawing.Size(287, 27);
             this.txt_search.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(7, 633);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(285, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "* Click đúp chuột để chọn sinh viên đăng kí";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(475, 633);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "* Click đúp chuột để chọn gói đăng kí";
             // 
             // PaymentManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(57)))), ((int)(((byte)(65)))));
             this.ClientSize = new System.Drawing.Size(1168, 703);

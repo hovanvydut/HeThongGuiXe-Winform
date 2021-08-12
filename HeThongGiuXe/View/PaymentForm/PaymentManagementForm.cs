@@ -91,6 +91,7 @@ namespace HeThongGiuXe.View
                 int customerId = Convert.ToInt32(dgvRow.Cells[SearchDTableField.CUSTOMER_ID].Value.ToString());
 
                 DataTable dtPurchase = PaymentBLL.Instance.getAvailableAndUnpaidPackage(customerId);
+
                 if (dtPurchase.Rows.Count > 0)
                 {
                     //Console.WriteLine("HAs sda");
@@ -214,6 +215,7 @@ namespace HeThongGiuXe.View
             });
             return dt;
         }
+
     }
 
     class SearchDTableField
