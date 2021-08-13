@@ -164,7 +164,7 @@ namespace HeThongGiuXe.BLL
                 foreach (Parking_History item in results)
                 {
                     DataRow newRow = table.NewRow();
-                    newRow[ParkingHistoryDTableField.STUDENT_ID] = item.customer_id;
+                    newRow[ParkingHistoryDTableField.STUDENT_ID] = item.Customer.student_id;
                     newRow[ParkingHistoryDTableField.CUSTOMER_NAME] = item.Customer.fullname;
                     newRow[ParkingHistoryDTableField.PLATE_NUM] = item.license_plate;
                     newRow[ParkingHistoryDTableField.CHECK_IN] = item.check_in_at;
