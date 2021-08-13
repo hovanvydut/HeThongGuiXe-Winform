@@ -300,6 +300,7 @@ namespace HeThongGiuXe.View
             this.txt_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txt_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_search.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_search.Location = new System.Drawing.Point(29, 52);
             this.txt_search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_search.Name = "txt_search";

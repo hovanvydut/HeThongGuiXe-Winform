@@ -125,6 +125,7 @@ namespace HeThongGiuXe.View
             // 
             this.txt_duration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txt_duration.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_duration.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_duration.Location = new System.Drawing.Point(351, 61);
             this.txt_duration.Name = "txt_duration";
             this.txt_duration.Size = new System.Drawing.Size(173, 27);
@@ -135,6 +136,7 @@ namespace HeThongGiuXe.View
             // 
             this.rtxt_description.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.rtxt_description.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtxt_description.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.rtxt_description.Location = new System.Drawing.Point(33, 146);
             this.rtxt_description.Name = "rtxt_description";
             this.rtxt_description.Size = new System.Drawing.Size(242, 96);
@@ -145,6 +147,7 @@ namespace HeThongGiuXe.View
             // 
             this.txt_price.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txt_price.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_price.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_price.Location = new System.Drawing.Point(33, 304);
             this.txt_price.Name = "txt_price";
             this.txt_price.Size = new System.Drawing.Size(242, 27);
@@ -155,6 +158,7 @@ namespace HeThongGiuXe.View
             // 
             this.txt_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(40)))), ((int)(((byte)(43)))));
             this.txt_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_name.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_name.Location = new System.Drawing.Point(33, 61);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(242, 27);
