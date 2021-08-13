@@ -135,9 +135,23 @@ namespace HeThongGiuXe.BLL
             {
                 throw new ArgumentException("Tên tài khoản là bắt buộc");
             }
-            if ((customer.username != null) && (customer.username.Length < 6))
+            if ((customer.username != null) && (customer.username.Length < 3))
             {
-                throw new ArgumentException("Tên tài khoản phải dài hơn 5 kí tự");
+                throw new ArgumentException("Tên tài khoản phải chứa ít nhất 3 kí tự");
+            }
+            if ((customer.username != null) && (customer.username.Length > 20))
+            {
+                throw new ArgumentException("Tên tài khoản chỉ chứa tối đa 20 kí tự");
+            }
+            if ((customer.username != null))
+            {
+                foreach (char c in customer.username)
+                {
+                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')))
+                    {
+                        throw new ArgumentException("Tên tài khoản chỉ chứa các kí tự [a-zA-Z0-9]");
+                    }
+                }
             }
             if ((customer.password != null) && (customer.password.Length < 6))
             {
