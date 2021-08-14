@@ -57,11 +57,11 @@ namespace HeThongGiuXe.BLL
                 new DataColumn("Mã sinh viên", typeof(string)),
                 new DataColumn("Email", typeof(string)),
                 new DataColumn("Số điện thoại", typeof(string)),
-                new DataColumn("Mã thẻ", typeof(string)),
                 new DataColumn("Tên tài khoản", typeof(string)),
                 new DataColumn("Lượt gửi xe", typeof(int)),
                 new DataColumn("Tạo lúc", typeof(DateTime)),
                 new DataColumn("Cập nhật lúc", typeof(DateTime)),
+                new DataColumn("Thanh toán đến", typeof(DateTime)),
             });
             List<Customer> results = null;
             using (DatabaseEntities db = new DatabaseEntities())
@@ -82,9 +82,13 @@ namespace HeThongGiuXe.BLL
                     row["Mã sinh viên"] = customer.student_id;
                     row["Email"] = customer.email;
                     row["Số điện thoại"] = customer.phone;
-                    row["Mã thẻ"] = customer.student_id;
                     row["Tên tài khoản"] = customer.username;
                     row["Lượt gửi xe"] = customer.Parking_History.Count;
+                    Payment lastPaid = customer.Payments.LastOrDefault();
+                    if (lastPaid != default)
+                    {
+                        row["Thanh toán đến"] = lastPaid.end_date;
+                    }
                     if (customer.created_at != null)
                     {
                         row["Tạo lúc"] = customer.created_at;
