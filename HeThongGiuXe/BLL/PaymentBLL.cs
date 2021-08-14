@@ -165,8 +165,11 @@ namespace HeThongGiuXe.BLL
                 foreach (Payment payment in list)
                 {
                     DataRow dr = dt.NewRow();
-                    dr[PurchaseDTableField.STUDENT_ID] = payment.Customer.student_id;
-                    dr[PurchaseDTableField.NAME] = payment.Customer.fullname;
+                    if (payment.Customer != null)
+                    {
+                        dr[PurchaseDTableField.STUDENT_ID] = payment.Customer.student_id;
+                        dr[PurchaseDTableField.NAME] = payment.Customer.fullname;
+                    }    
                     dr[PurchaseDTableField.PRICE] = payment.price;
                     dr[PurchaseDTableField.START_DATE] = payment.start_date;
                     dr[PurchaseDTableField.END_DATE] = payment.end_date;
