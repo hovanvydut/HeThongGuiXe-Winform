@@ -54,8 +54,8 @@ namespace HeThongGiuXe.BLL
 
         public DataTable GetDataTableEmployees(
             string fullname = null,
-            string IDcardnumb = null,
-            string username = null
+            string IDcardnumb = null
+            //string username = null
             )
         {
             DataTable table = new DataTable();
@@ -74,9 +74,9 @@ namespace HeThongGiuXe.BLL
             using (DatabaseEntities db = new DatabaseEntities())
             {
                 results = db.Employees.Where(o
-                    => (fullname == null ? true : o.fullname.Contains(fullname))
+                    => (fullname == null ? true : o.fullname.ToLower().Contains(fullname.ToLower()))
                     && (IDcardnumb == null ? true : (o.identity_card_number == null ? false : o.identity_card_number.Contains(IDcardnumb)))
-                    && (username == null ? true : (o.username == null ? false : o.username.Contains(username)))
+                    //&& (username == null ? true : (o.username == null ? false : o.username.Contains(username)))
                 ).ToList();
 
                 foreach(Employee employee in results)
@@ -103,12 +103,18 @@ namespace HeThongGiuXe.BLL
 
         public Employee GetEmployeeByID(int ID)
         {
+            //Employee result = null;
+            //using (DatabaseEntities db = new DatabaseEntities())
+            //{
+            //    result = db.Employees.Include("Role").Where(o => o.ID_employee == ID).FirstOrDefault();
+            //}
+            //return result == default(Employee) ? null : result;
             Employee result = null;
             using (DatabaseEntities db = new DatabaseEntities())
             {
-                result = db.Employees.Include("Role").Where(o => o.ID_employee == ID).FirstOrDefault();
+                result = db.Employees.Find(ID);
             }
-            return result == default(Employee) ? null : result;
+            return result;
         }
 
         public void DeleteEmployee(int ID)

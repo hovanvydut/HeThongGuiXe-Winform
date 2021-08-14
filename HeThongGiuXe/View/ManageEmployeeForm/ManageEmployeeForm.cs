@@ -69,10 +69,17 @@ namespace HeThongGiuXe.View
             this.btnSearch.Enabled = this.btnShowAll.Enabled = true;
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            this.btnSearch.Enabled = this.btnShowAll.Enabled = false;
+            search();
+            this.btnSearch.Enabled = this.btnShowAll.Enabled = true;
+        }
+
         private void search()
         {
             string fullname = this.txtFullnameFilter.Text == "" ? null : this.txtFullnameFilter.Text;
-            string IDcardnumb = this.txtIDCardNumb.Text == "" ? null : this.txtIDCardNumb.Text;
+            string IDcardnumb = this.txtStudentIDFilter.Text == "" ? null : this.txtStudentIDFilter.Text;
             try
             {
                 this.tableEmployees.DataSource = EmployeeBLL.Instance.GetDataTableEmployees(
@@ -85,13 +92,6 @@ namespace HeThongGiuXe.View
 
             }
             this.tableEmployees.Columns[0].Visible = false;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            this.btnSearch.Enabled = this.btnShowAll.Enabled = false;
-            search();
-            this.btnSearch.Enabled = this.btnShowAll.Enabled = true;
         }
 
         private void tableEmployees_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -113,7 +113,6 @@ namespace HeThongGiuXe.View
             this.currentSelectedID = employee.ID_employee;
             this.txtIDCardNumb.Text = employee.identity_card_number;
             this.txtFullname.Text = employee.fullname;
-            //this.txtPassword.Text = employee.password;
             this.dateTimePicker1.Value = Convert.ToDateTime(employee.birthday);
             if (employee.gender == true) this.rdbMale.Checked = true;
             else this.rdbFemale.Checked = true;
