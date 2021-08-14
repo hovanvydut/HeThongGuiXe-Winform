@@ -61,7 +61,7 @@ namespace HeThongGiuXe.BLL
                 new DataColumn("Lượt gửi xe", typeof(int)),
                 new DataColumn("Tạo lúc", typeof(DateTime)),
                 new DataColumn("Cập nhật lúc", typeof(DateTime)),
-                new DataColumn("Thanh toán đến", typeof(DateTime)),
+                new DataColumn("Thanh toán", typeof(string)),
             });
             List<Customer> results = null;
             using (DatabaseEntities db = new DatabaseEntities())
@@ -87,7 +87,14 @@ namespace HeThongGiuXe.BLL
                     Payment lastPaid = customer.Payments.LastOrDefault();
                     if (lastPaid != default)
                     {
-                        row["Thanh toán đến"] = lastPaid.end_date;
+                        if (lastPaid.paid_at != null)
+                        {
+                            row["Thanh toán"] = lastPaid.end_date.ToString();
+                        } else
+                        {
+                            row["Thanh toán"] = "Nợ tiền";
+                        }
+                        
                     }
                     if (customer.created_at != null)
                     {
