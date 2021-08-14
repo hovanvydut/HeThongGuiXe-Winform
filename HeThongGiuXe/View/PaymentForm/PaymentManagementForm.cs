@@ -154,12 +154,29 @@ namespace HeThongGiuXe.View
         {
             if (this.dtgv_payment.Rows.Count > 0)
             {
+                const string customerIdErrorMessage = "Vui lòng chọn khách hàng cần thanh toán!";
+                const string packageIdErrorMessage = "Vui lòng chọn gói cần thanh toán!";
 
-                int cusomterId = Convert.ToInt32(this.dtgv_payment.Rows[0].Cells[RegisterDTableField.ID_CUSTOMER].Value);
-                if (cusomterId <= 0) { MessageBox.Show("Vui lòng chọn khách hàng cần thanh toán!"); return; }
+                DataGridViewCell customerIdCell = this.dtgv_payment.Rows[0].Cells[RegisterDTableField.ID_CUSTOMER];
+                DataGridViewCell packageIdCell = this.dtgv_payment.Rows[0].Cells[RegisterDTableField.ID_PACKAGE];
 
-                int packageId = Convert.ToInt32(this.dtgv_payment.Rows[0].Cells[RegisterDTableField.ID_PACKAGE].Value);
-                if (packageId <= 0) { MessageBox.Show("Vui lòng chọn gói cần thanh toán!"); return; }
+                if (customerIdCell == null || customerIdCell.Value == DBNull.Value)
+                {
+                    MessageBox.Show(customerIdErrorMessage); 
+                    return;
+                }
+
+                if (packageIdCell == null || packageIdCell.Value == DBNull.Value)
+                {
+                    MessageBox.Show(packageIdErrorMessage); 
+                    return;
+                }
+
+                int cusomterId = Convert.ToInt32(customerIdCell.Value);
+                if (cusomterId <= 0) { MessageBox.Show(customerIdErrorMessage); return; }
+
+                int packageId = Convert.ToInt32(packageIdCell.Value);
+                if (packageId <= 0) { MessageBox.Show(packageIdErrorMessage); return; }
 
                 //=> cusomterId > 0 && packageId > 0
                 DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắc đăng kí", "Thông báo", MessageBoxButtons.YesNo);
@@ -189,7 +206,7 @@ namespace HeThongGiuXe.View
 
                 if (notExpire != 0)
                 {
-                    MessageBox.Show("Bạn có " + notExpire.ToString() + " còn hạn dùng đến thời điểm hiện tại. Bạn có thể đăng kí gói mới sau khi hết hạn gói hiện tại hoặc hủy gói hiện tại tại website để đăng kí gói mới");
+                    MessageBox.Show("Bạn có " + notExpire.ToString() + " còn hạn dùng đến thời điểm hiện tại. Bạn có thể đăng kí gói mới sau khi hết hạn gói hiện tại hoặc hủy gói hiện tại để đăng kí gói mới");
                     return;
                 }
 
